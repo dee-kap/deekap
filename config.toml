@@ -7,8 +7,8 @@ theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
 title = "Deepak"
-author = "Deepak Kapoor"
-copyright = "Copyright © 2023, Deepak Kapoor."
+author = "Deepak"
+copyright = "Copyright © 2023, Deepak."
 languageCode = "en-US"
 
 # Generate a nice robots.txt for SEO
