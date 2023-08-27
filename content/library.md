@@ -1,7 +1,8 @@
-+++
-title = "Library"
-menu = "main"
-+++
+---
+title: "Library"
+menu: "main"
+draft: true
+---
 
 # Books I'm reading
 
