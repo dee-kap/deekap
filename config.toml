@@ -6,7 +6,7 @@ baseURL = "https://deekap.com"
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
-title = "Deepak"
+title = "{ Deepak }"
 author = "Deepak"
 copyright = "Copyright © 2023, Deepak."
 languageCode = "en-US"

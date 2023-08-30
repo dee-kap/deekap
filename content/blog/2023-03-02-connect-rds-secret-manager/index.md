@@ -4,7 +4,8 @@ date = "2023-03-02"
 description = ""
 tags = [
     "AWS",
-    "Python"
+    "Python",
+    "TIL"
 ]
 +++
 

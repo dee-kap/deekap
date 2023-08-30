@@ -5,7 +5,7 @@ menu = "main"
 
 ## Operating System and hardware
 
-MacOS on Macbook air with M1 chip.
+MacOS on Macbook air with M2 chip.
 
 ## Editors
 
