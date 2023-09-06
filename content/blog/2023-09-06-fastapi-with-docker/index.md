@@ -12,7 +12,7 @@ As someone who uses Docker for every project, I wanted to setup a dev environmen
 
 ## Sample API
 
-This is a sample API which will dockerized.
+This is a sample API which will be dockerized.
 
 ```python
 from fastapi import FastAPI
