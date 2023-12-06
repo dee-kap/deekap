@@ -27,5 +27,5 @@ MacOS on Macbook air with M2 chip.
 
 ## Colorscheme
 
-- Monokai everywhere (mostly)
-- [Nord](https://www.nordtheme.com/) when I fantasize about traveling to Norway
+- [Catppuccin](https://github.com/catppuccin/catppuccin) everywhere (mostly)
+- [Nord](https://www.nordtheme.com/) when I fantasize about travelling to Norway
