@@ -13,8 +13,6 @@ I write a monthly newsletter which is subjectively interesting. It is mostly abo
 <div style="text-align:center">
   <iframe 
       src="https://bitofbinary.substack.com/embed" 
-      width="480" 
-      height="150" 
       style="background:white;" 
       frameborder="0" 
       scrolling="no"></iframe>
