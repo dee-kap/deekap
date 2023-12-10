@@ -8,7 +8,7 @@ Content of this website is mostly notes for myself. I use it as my little knowle
 
 ### Newsletter
 
-I write a monthly newsletter which is subjectively interesting. It is mostly about my posts on this website, technical links, books and random thoughts.
+I write a periodic newsletter which is subjectively interesting. It is mostly about my posts on this website, technical links, books and random thoughts.
 
 <div style="text-align:center">
   <iframe 
