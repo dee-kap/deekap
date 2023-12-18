@@ -2,7 +2,7 @@
 title: "Starting my YouTube Channel"
 date: "2023-12-09"
 tags: ["YouTube"]
-draft: false
+draft: true
 ---
 
 Yesterday I took the first step towards starting my own YouTube channel.
