@@ -97,7 +97,7 @@ function Form() {
 }
 ```
 
-## Why This Is Super Cool
+## Why This Is Super Cool?
 
 1. Less Repetitive Code: You write less code, which means fewer chances for bugs and more time for coffee breaks.
 2. Scalability: Want to add another field? Just update the formData state object. No need for additional handlers!
