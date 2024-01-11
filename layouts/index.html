@@ -1,1 +1,11 @@
-{{ define "main" }} {{ .Content }} {{ end }}
+{{ define "main" }} {{ .Content }} Content on this website is organised using
+tags
+
+<small>
+  <div>
+    {{ range .Site.Taxonomies.tags }}
+    <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp; {{ end }}
+  </div>
+</small>
+
+{{ end }}
