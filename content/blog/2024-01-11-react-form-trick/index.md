@@ -59,7 +59,7 @@ This function uses the name attribute of each input field to update the formData
 
 Let's see how this all comes together in a simple form component:
 
-```javascript
+```jsx
 function Form() {
   // Our single state object
   const [formData, setFormData] = useState({ username: "", email: "" });
