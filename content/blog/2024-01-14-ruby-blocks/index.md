@@ -2,6 +2,7 @@
 title: "Mastering Ruby Blocks: A Comprehensive Guide"
 date: "2024-01-16"
 tags: ["Ruby"]
+draft: false
 ---
 
 ## Introduction
