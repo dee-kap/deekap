@@ -5,9 +5,9 @@ tags: ["Community"]
 draft: false
 ---
 
-I often think how fascinating it would be if the entire World Wide Web disappeared, leaving only the Wayback Machine behind. It's truly a remarkable tool.
+I often think how fascinating it would be if the entire World Wide Web disappeared, leaving only the Wayback Machine behind. It's truly a remarkable tool and I could live with that.
 
-Today, while going down the internet rabbit hole, I rediscovered the long-lost website of Codecamp OZ on the Wayback Machine. Codecamp was this two-day event that began in 2005, I believe, its final gathering was in 2008.
+Today, while going down the internet rabbit hole, I rediscovered the long-lost website of Codecamp OZ on the Wayback Machine. Codecamp was this two-day event that began in 2005. I believe, its final gathering was in 2008.
 
 In Australia, April 25th is ANZAC Day, often part of a long weekend. What better way to spend it than at a geeky event like Codecamp? Yes, I know what you might be thinking, and I won't argue. There could have been 'better' ways to spend a long weekend, but let's face it: coding has its own addictive charm.
 
