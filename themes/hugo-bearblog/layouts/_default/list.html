@@ -9,14 +9,24 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <div style="display: flex;">
+        {{ if .Params.featured_image }}
+          <img src="{{ .Permalink}}{{ .Params.featured_image}}" style="margin-right: 1em; width: 120px; height: 120px; border-radius:5px;" />
+        {{ else }}
+          <span style="margin-right: 1em; width: 120px; height: 120px; border-radius:5px;">&nbsp</span>
+        {{ end }}
+
+        <div>
+          <a href="{{ .Permalink }}" style="font-size: 1.1em;">{{ .Title }}</a>
+          <div>
+            <i>
+              <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+                {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
     </li>
     {{ else }}
     <li>
