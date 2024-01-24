@@ -2,6 +2,7 @@
 title = "Few thoughts on Blogging"
 date = "2022-05-01"
 description = ""
+featured_image = "bob.png"
 tags = [
     "Blogging",
 ]

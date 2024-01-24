@@ -2,6 +2,7 @@
 title = "Working with env files in Python"
 date = "2023-08-21"
 description = ""
+featured_image = 'python.png'
 tags = [
     "Python"
     ,"TIL"

@@ -1,6 +1,7 @@
 ---
 title: "Simplifying Your React Forms with the Magic of useState"
 date: "2024-01-11"
+featured_image: "react.png"
 tags: ["React"]
 draft: false
 ---

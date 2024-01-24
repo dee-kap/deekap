@@ -11,16 +11,16 @@
     <li>
       <div style="display: flex;">
         {{ if .Params.featured_image }}
-          <img src="{{ .Permalink}}{{ .Params.featured_image}}" style="margin-right: 1em; width: 120px; height: 120px; border-radius:5px;" />
+          <img src="/images/featured/{{ .Params.featured_image}}" class="post-featured-image" />
         {{ else }}
-          <span style="margin-right: 1em; width: 120px; height: 120px; border-radius:5px;">&nbsp</span>
+          <span class="post-featured-image">&nbsp</span>
         {{ end }}
 
         <div>
-          <a href="{{ .Permalink }}" style="font-size: 1.1em;">{{ .Title }}</a>
+          <a href="{{ .Permalink }}" style="font-size: 1em;">{{ .Title }}</a>
           <div>
             <i>
-              <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+              <time style="font-size: .85em; color:#747474" datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
                 {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
               </time>
             </i>

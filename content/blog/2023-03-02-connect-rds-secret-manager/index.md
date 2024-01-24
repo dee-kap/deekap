@@ -2,6 +2,7 @@
 title = "Connect to AWS RDS instance using boto3 and Secret Manager"
 date = "2023-03-02"
 description = ""
+featured_image = "aws.png"
 tags = [
     "AWS",
     "Python",

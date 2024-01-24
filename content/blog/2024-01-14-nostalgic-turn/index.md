@@ -1,6 +1,7 @@
 ---
 title: "Codecamp OZ: A Nostalgic Dive Into The Archives of the Web"
 date: "2024-01-14"
+featured_image: "writing.png"
 tags: ["Community"]
 draft: false
 ---

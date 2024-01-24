@@ -1,7 +1,7 @@
 ---
 title: "Mastering Ruby Blocks: A Comprehensive Guide"
 date: "2024-01-15T00:00:04-07:00"
-featured_image: "Ruby-Blocks.jpg"
+featured_image: "ruby.png"
 tags: ["Ruby"]
 draft: false
 ---

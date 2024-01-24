@@ -1,6 +1,7 @@
 ---
 title: "Understanding Symbols in Ruby Programming Language"
 date: "2024-01-23T00:00:04-07:00"
+featured_image: "ruby.png"
 tags: ["Ruby"]
 draft: false
 ---

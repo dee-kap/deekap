@@ -1,14 +1,11 @@
 ---
 title: "Run FastAPI inside a docker container"
-date: '2023-09-06T01:36:00.232Z'
-tags : [ 
-    "Python",
-    "FastAPI", 
-    "Docker" 
-    ]
+date: "2023-09-06T01:36:00.232Z"
+featured_image: "python.png"
+tags: ["Python", "FastAPI", "Docker"]
 ---
 
-As someone who uses Docker for every project, I wanted to setup a dev environment for FastAPI. These are the steps I followed to dockerize my FastAPI Hello World. 
+As someone who uses Docker for every project, I wanted to setup a dev environment for FastAPI. These are the steps I followed to dockerize my FastAPI Hello World.
 
 ## Sample API
 
@@ -47,6 +44,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 ```bash
 docker build -t testapi .
 ```
+
 I'm tagging it as testapi.
 
 ## Run the image
@@ -60,6 +58,7 @@ docker run -p 8080:8080 testapi
 ```bash
 curl http://localhost:8080
 ```
+
 ## And see the output
 
 ```bash

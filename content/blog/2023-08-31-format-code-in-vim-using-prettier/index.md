@@ -1,19 +1,15 @@
 ---
 title: "Format code before saving in vim with Prettier"
-date: '2023-08-30T01:36:00.232Z'
-tags : [
-    "Vim"
-    ,"TIL"
-]
-
+date: "2023-08-30T01:36:00.232Z"
+featured_image: "vim.png"
+tags: ["Vim", "TIL"]
 ---
 
 To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.
 
-Adding the code below to config will automatically format files of type `*.ts,*.js,*.jsx,*.tsx,*.css`  before saving.
+Adding the code below to config will automatically format files of type `*.ts,*.js,*.jsx,*.tsx,*.css` before saving.
 
-Here I am using [Prettier](https://prettier.io/), so Prettier has to be installed for this to work. 
-
+Here I am using [Prettier](https://prettier.io/), so Prettier has to be installed for this to work.
 
 ```lua
 function format_and_restore_cursor()
@@ -34,4 +30,3 @@ end
 setup_external_formatter_autocmd()
 
 ```
-
