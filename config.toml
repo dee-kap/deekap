@@ -40,7 +40,7 @@ tabWidth = 4
 
 [params]
 # The "description" of your website. This is used in the meta data of your generated html.
-description = "This is a personal blog of Deepak"
+description = "Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby"
 
 # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
 # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
