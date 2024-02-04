@@ -19,6 +19,7 @@ enableRobotsTXT = true
 # Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+
 [permalinks]
 blog = "/:slug/"
 tags = "/blog/:slug"
@@ -45,7 +46,7 @@ description = "Explore BitOfBinary.com, a technical haven for coding enthusiasts
 # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
 # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
 # favicon = "images/favicon.png"
-favicon = false
+favicon = true
 
 # These "images" are used for the structured data templates. This will show up, when
 # services like Twitter or Slack want to generate a preview of a link to your site.
@@ -56,7 +57,7 @@ images = ["images/share.png"]
 # Another "title" :-). This one is used as the site_name on the Hugo's internal
 # opengraph structured data template.
 # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
-title = "Hugo ʕ•ᴥ•ʔ Bear"
+title = "Bit of Binary"
 
 # This theme will, by default, inject a made-with-line at the bottom of the page.
 # You can turn it off, but we would really appreciate if you don’t :-).
