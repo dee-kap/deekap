@@ -21,7 +21,7 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
 <script>
   window.CustomSubstackWidget = {
     substackUrl: "bitofbinary.substack.com",
-    placeholder: "example@gmail.com",
+    placeholder: "example@example.com",
     buttonText: "Subscribe",
     theme: "custom",
     colors: {
@@ -52,6 +52,5 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
 ### Pages of Interest
 
 - [My Setup](/setup)
-- [Sites I Like](/sites-i-like)
 
 <hr/>
