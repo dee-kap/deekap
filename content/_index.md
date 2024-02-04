@@ -6,7 +6,7 @@ My journey in the world of programming began in the mid-1990s, just as the World
 
 To know more about me, you can visit my [About](about) page.
 
-These days I'm having fun building **React** front-ends in **Typescript** and back-ends in **Python** and **node.js**
+These days I'm having fun building **React** front-ends in **Typescript** and back-ends in **Ruby**, **Python** and **node.js**
 
 <hr/>
 
