@@ -1,12 +1,37 @@
-Hello and a warm welcome to my digital space!
+Hi! I'm Deepak.
 
-I'm a passionate Software Developer from Sydney, Australia 🇦🇺
+Welcome to my digital space!
+
+I'm a Software Developer from Sydney, Australia 🇦🇺
 
 My journey in the world of programming began in the mid-1990s, just as the World Wide Web was starting to weave its global tapestry.
 
 To know more about me, you can visit my [About](about) page.
 
 These days I'm having fun building **React** front-ends in **Typescript** and back-ends in **Ruby**, **Python** and **node.js**
+
+<hr/>
+
+### Languages
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px, 1fr));">
+    <div style="text-align:center;">
+      <img src="/images/languages/typescript.svg" style="width:50px;height:50px;">
+      <p style="font-size:80%; margin-top:0;">Typescript</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/javascript.svg" style="width:50px;height:50px;">
+      <p style="font-size:80%; margin-top:0;">Javascript</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/ruby.svg" style="width:50px;height:50px;">
+      <p style="font-size:80%; margin-top:0;">Ruby</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/python.svg" style="width:50px;height:50px;">
+      <p style="font-size:80%; margin-top:0;">Python</p>
+    </div>
+</div>
 
 <hr/>
 
