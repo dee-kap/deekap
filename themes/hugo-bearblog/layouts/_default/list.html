@@ -9,7 +9,7 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
-      <div style="display: flex;">
+      <div style="display: flex; align-items: center;">
         {{ if .Params.featured_image }}
           <img src="/images/featured/{{ .Params.featured_image}}" class="post-featured-image" />
         {{ else }}
