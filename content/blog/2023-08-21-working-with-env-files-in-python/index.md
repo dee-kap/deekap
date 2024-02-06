@@ -37,3 +37,5 @@ REGION = os.getenv('REGION')
 PROFILE = os.getenv('PROFILE')
 SECRET_ARN = os.getenv('SECRET_ARN')
 ```
+
+#3

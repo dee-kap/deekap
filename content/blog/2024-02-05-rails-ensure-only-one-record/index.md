@@ -83,3 +83,5 @@ irb(main):045> get_book("Catcher in The Rye")
 ```
 
 This approach is not only cleaner but also more efficient, as it communicates our intent more clearly and leverages Rails' built-in mechanisms for enforcing record uniqueness.
+
+#11

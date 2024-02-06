@@ -10,3 +10,5 @@ Apple has a good trade-in facility and few weeks ago they were offering $825 for
 As someone who spends a good part of the day working on a computer, I'm enjoying the speed and asthetics of the new M2.
 
 ![Mac M2](neofetch-mac-m2.png)
+
+#6
