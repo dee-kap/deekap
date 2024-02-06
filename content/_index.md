@@ -109,5 +109,6 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
 ### Pages of Interest
 
 - [My Setup](/setup)
+- [Now](/now)
 
 <hr/>
