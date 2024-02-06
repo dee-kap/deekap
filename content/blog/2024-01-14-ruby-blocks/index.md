@@ -6,8 +6,6 @@ tags: ["Ruby"]
 draft: false
 ---
 
-![](Ruby-Blocks.jpg)
-
 ## Introduction
 
 In Ruby, blocks stand as one of the language's most unique and powerful features. They allow you to encapsulate code into discrete units, making your programs more modular, flexible, and expressive. In this article, we will explore the mechanics of Ruby blocks, the versatility of the yield statement, and their practical applications, especially in conjunction with methods which return enumerators.

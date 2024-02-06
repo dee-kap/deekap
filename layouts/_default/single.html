@@ -26,23 +26,25 @@
   {{ .Content }}
 </content>
 
-<div class="previous-next-container">
-    {{ if .PrevPage }}
-    <div class="previous-next-post">
-      <small>
-        <div>Previous Post</div>
-        <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">{{ .PrevPage.Title | truncate 50 "..."}}</a>
-      </small>
-    </div>
-    {{ end }}
+  {{ if eq .Section "blog" }}
+  <div class="previous-next-container">
+      {{ if .PrevPage }}
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="{{ .PrevPage.Permalink }}?ref=footer">{{ .PrevPage.Title | truncate 50 "..."}}</a>
+        </small>
+      </div>
+      {{ end }}
 
-    {{ if .NextPage }}
-    <div class="previous-next-post">
-      <small>
-        <div>Next Post</div>
-        <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }}</a>
-      </small>
-    </div>
-    {{ end }}
-</div>
+      {{ if .NextPage }}
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="{{ .NextPage.Permalink }}?ref=footer">{{ .NextPage.Title | truncate 50 "..." }}</a>
+        </small>
+      </div>
+      {{ end }}
+  </div>
+  {{ end }}
 {{ end }}
