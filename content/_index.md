@@ -60,8 +60,8 @@ These days I'm having fun building **React** front-ends in **Typescript** and ba
       <p style="font-size:90%; margin-top:0;">Python</p>
     </div>
     <div style="text-align:center;">
-      <img src="/images/languages/neovim.svg" style="width:50px;height:50px;">
-      <p style="font-size:90%; margin-top:0;">VIM</p>
+      <img src="/images/languages/css3.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">CSS</p>
     </div>
 </div>
 
