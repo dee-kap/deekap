@@ -12,24 +12,56 @@ These days I'm having fun building **React** front-ends in **Typescript** and ba
 
 <hr/>
 
-### Languages
+### Tech I work with
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px, 1fr));">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px, 1fr));">
+    <div style="text-align:center;">
+      <img src="/images/languages/react.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">React</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/nodejs.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Node.js</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/django.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Django</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/fastapi.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">FastAPI</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/rails.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Rails</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/aws.png" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">AWS</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/tailwindcss.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Tailwind</p>
+    </div>
     <div style="text-align:center;">
       <img src="/images/languages/typescript.svg" style="width:50px;height:50px;">
-      <p style="font-size:80%; margin-top:0;">Typescript</p>
+      <p style="font-size:90%; margin-top:0;">Typescript</p>
     </div>
     <div style="text-align:center;">
       <img src="/images/languages/javascript.svg" style="width:50px;height:50px;">
-      <p style="font-size:80%; margin-top:0;">Javascript</p>
+      <p style="font-size:90%; margin-top:0;">Javascript</p>
     </div>
     <div style="text-align:center;">
       <img src="/images/languages/ruby.svg" style="width:50px;height:50px;">
-      <p style="font-size:80%; margin-top:0;">Ruby</p>
+      <p style="font-size:90%; margin-top:0;">Ruby</p>
     </div>
     <div style="text-align:center;">
       <img src="/images/languages/python.svg" style="width:50px;height:50px;">
-      <p style="font-size:80%; margin-top:0;">Python</p>
+      <p style="font-size:90%; margin-top:0;">Python</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/neovim.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">VIM</p>
     </div>
 </div>
 
