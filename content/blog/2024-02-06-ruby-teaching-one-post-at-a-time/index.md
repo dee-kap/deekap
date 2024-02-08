@@ -69,3 +69,5 @@ print ["a", "b", "c"]
 ```
 
 You can also join me on my [Discord Server](https://discord.gg/QXWg4VvK) to ask me questions about Ruby or engage in programming related chit-chat.
+
+#13
