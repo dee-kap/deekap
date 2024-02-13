@@ -7,6 +7,11 @@ This is my personalized version of a "now" page, structured in reverse chronolog
 
 This arrangement appeals to me as it facilitates an overview of my activities and engagements during specific time frames.
 
+### 2024 Feb 13
+
+- Started Project Restore to restore all the silly posts I wrote in the past
+- Getting more into Ruby on Rails and started using it for a side project
+
 ### 2024 Feb 6
 
 - Teaching Ruby to few junior programmers. I'm having way too much fun doing this
