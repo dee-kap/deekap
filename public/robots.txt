@@ -1,2 +1,0 @@
-User-Agent: *
-Sitemap: https://bitofbinary.com/sitemap.xml
