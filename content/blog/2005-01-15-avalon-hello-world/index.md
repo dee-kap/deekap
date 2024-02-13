@@ -3,7 +3,6 @@ title: "Avalon Says Hello World in XAML"
 date: 2005-01-15
 featured_image: "dotnet.svg"
 tags: [".NET"]
-draft: true
 ---
 
 <div class="restore">
