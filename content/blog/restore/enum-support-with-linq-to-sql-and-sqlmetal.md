@@ -1,17 +1,21 @@
 ---
-title: 'Enum Support With LINQ to SQL and SqlMetal'
+title: "Enum Support With LINQ to SQL and SqlMetal"
 date: Tue, 18 Nov 2008 00:47:00 +0000
 draft: false
-tags: ['.NET']
+tags: [".NET"]
 ---
+
+<div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
 
 As a programmer I love my enums. I find code written using enums to be more readable than without them. However, there has been and there still is a disconnect between lookup tables in a database and enums in code. One has to restore to some creative trickery to get them working in harmony. Recently while working on a project which involves using LINQ To SQL, I came up with a process which gives me the best of both worlds i.e. using lookup tables in database and enums in code. I am documenting my solution here. Hopefully it will help you.
 
- 
+
 
 #### The problem
 
-In my database I have two tables. To make things simple I will call them Customer and CustomerStatus. Customer table stores information about a customer and CustomerStatus table is a lookup table which will store values such as "Active" and "Inactive". ![image](https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/11/image6.png) For CustomerStatus I would like to use an enum in code. This can be done using the designer as explained [here](http://geekswithblogs.net/robp/archive/2008/05/19/using-c-enumerations-as-linq-to-sql-entity-properties.aspx). But I would like to use SqlMetal to automate code generation. SqlMetal does not have any options which can be used to solve my problem.  
+In my database I have two tables. To make things simple I will call them Customer and CustomerStatus. Customer table stores information about a customer and CustomerStatus table is a lookup table which will store values such as "Active" and "Inactive". ![image](https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/11/image6.png) For CustomerStatus I would like to use an enum in code. This can be done using the designer as explained [here](http://geekswithblogs.net/robp/archive/2008/05/19/using-c-enumerations-as-linq-to-sql-entity-properties.aspx). But I would like to use SqlMetal to automate code generation. SqlMetal does not have any options which can be used to solve my problem.
 
 #### My Solution
 
@@ -41,4 +45,4 @@ A batch file can be created to tie this all up. Batch file will do the following
 2.  Run the process which modifies dbml file as mentioned in step 2
 3.  Generate code using SqlMetal from dbml file
 
-  Doing this allows me to work with enums in my code and at the same use lookup tables in database. As an addition a simple process can also be written which can populate lookup tables with the values from enums.
+Doing this allows me to work with enums in my code and at the same use lookup tables in database. As an addition a simple process can also be written which can populate lookup tables with the values from enums.

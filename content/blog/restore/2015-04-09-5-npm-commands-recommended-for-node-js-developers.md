@@ -6,6 +6,10 @@ featured_image: "nodejs.svg"
 tags: ["Node.js"]
 ---
 
+<div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+
 ## Search for packages
 
 npm allows you to search the npm registry from command line. When you execute the command for the first time it builds an index. If you are searching for package(s) which have something to do with png file you can run `$ npm search png` This will find all packages which have png in its metadata. [![npm-search-png](http://kapoor.io/wp-content/uploads/2015/04/npm-search-png.png)](http://kapoor.io/wp-content/uploads/2015/04/npm-search-png.png)

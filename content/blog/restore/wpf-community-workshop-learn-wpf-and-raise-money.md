@@ -23,13 +23,13 @@ To make it easy for you to attend we are running the workshops on a Saturday in 
 
 The WPF Skills day will cover
 
-1.  1.  1.  Creating layouts, compositions and templates
-        2.  Building custom controls
-        3.  Working with Styles and control templates (includes using Expression Blend to restyle)
-        4.  Using the Ribbon control to effortlessly create applications that are as familiar to your customers as Office 2007 (not to mention the Windows 7 Core Applications)
-        5.  Working with the new DataGrid control to display tabular and editable data
-        6.  Binding data with ease to your user interface
-        7.  And more…
+1.  Creating layouts, compositions and templates
+2.  Building custom controls
+3.  Working with Styles and control templates (includes using Expression Blend to restyle)
+4.  Using the Ribbon control to effortlessly create applications that are as familiar to your customers as Office 2007 (not to mention the Windows 7 Core Applications)
+5.  Working with the new DataGrid control to display tabular and editable data
+6.  Binding data with ease to your user interface
+7.  And more…
 
 ###  Event Dates
 

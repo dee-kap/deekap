@@ -1,25 +1,29 @@
 ---
-title: 'Deep Cloning In C#'
+title: "Deep Cloning In C#"
 date: Mon, 01 Sep 2008 07:08:23 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ["Uncategorized"]
 ---
+
+<div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
 
 To make an object cloneable in .NET we should implement ICloneable interface. ICloneable is a simple interface with only one method Clone(). In this post I will show you how to make a deep clone of an object.```
 class Program
-    {
-        static void Main(string\[\] args)
-        {
-            Customer c1 = new Customer
-            {
-                FirstName = "John",
-                LastName = "Smith",
-                Limit = new CreditLimit
-                {
-                    AccountOverdue = false,
-                    ApprovedAmount = 1000
-                }
-            };
+{
+static void Main(string\[\] args)
+{
+Customer c1 = new Customer
+{
+FirstName = "John",
+LastName = "Smith",
+Limit = new CreditLimit
+{
+AccountOverdue = false,
+ApprovedAmount = 1000
+}
+};
 
             Customer c2 = (Customer)c1.Clone();
             c2.FirstName = "Deepak";
@@ -67,4 +71,7 @@ class Program
         public int ApprovedAmount { get; set; }
         public bool AccountOverdue { get; set; }
     }
+
 ```In the code above I have a Customer class which has three properties. In the clone method I use a MemoryStream to serialize and then de-serialize to another object. One of the properties of customer class is called Limit which is of type CreditLimit. I have done this to illustrated deep cloning. As a test I write property values of the original customer class and its clone to console. Note that I modify values for the cloned object. That's all you need to do for cloning. Nice and simple.
+
+```

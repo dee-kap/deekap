@@ -2,6 +2,7 @@
 title: "StyleCop tutorial"
 date: Thu, 07 Aug 2008 01:08:00 +0000
 draft: false
+featured_image: "dotnet.svg"
 tags: [".NET"]
 ---
 
@@ -9,7 +10,7 @@ tags: [".NET"]
 This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
 </div>
 
-[![StyleCop](https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/08/image5.png)](http://code.msdn.microsoft.com/sourceanalysis) [StyleCop](http://code.msdn.microsoft.com/sourceanalysis) is a source analysis tool for C#. It can be used for analysing source code as opposed to compiled assemblies which is the area for FxCop. StyleCop is currently in version 4.2 and can be downloaded [here](http://code.msdn.microsoft.com/sourceanalysis). In this tutorial I will show you how to use StyleCop. I will create a simple console application and use StyleCop to analyse the source. This killer app just initialises a class and prints out few properties. Below is the code for the application.
+[StyleCop](http://code.msdn.microsoft.com/sourceanalysis) is a source analysis tool for C#. It can be used for analysing source code as opposed to compiled assemblies which is the area for FxCop. StyleCop is currently in version 4.2 and can be downloaded [here](http://code.msdn.microsoft.com/sourceanalysis). In this tutorial I will show you how to use StyleCop. I will create a simple console application and use StyleCop to analyse the source. This killer app just initialises a class and prints out few properties. Below is the code for the application.
 
 ```csharp
 public class Customer

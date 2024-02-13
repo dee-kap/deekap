@@ -1,9 +1,13 @@
 ---
-title: 'Dynamic Sort With LINQ to SQL'
+title: "Dynamic Sort With LINQ to SQL"
 date: Wed, 19 Nov 2008 00:50:00 +0000
 draft: false
-tags: ['.NET']
+tags: [".NET"]
 ---
+
+<div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
 
 Sometime ago I wrote a post showing how to do [dynamic sort with LINQ](http://www.debugrelease.com/dynamic-sort-with-linq/). That approach worked well with LINQ To Objects. Today I spotted a [question on the forums](http://forums.asp.net/p/1349895/2753778.aspx) where Levi asked a question about doing dynamic sorts with LINQ To SQL. My earlier approach will work once all the data is retrieved on the client side. This of course is not an ideal way. A  better option is to do sorting on database. Here is the question as it was posted on the forum.
 
