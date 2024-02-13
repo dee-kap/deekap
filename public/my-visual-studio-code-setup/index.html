@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>My Visual Studio Code Setup | :bit :of :binary</title>
+<meta name="title" content="My Visual Studio Code Setup" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code." />
+<meta name="keywords" content="Tools,VS Code," />
+
+
+<meta property="og:title" content="My Visual Studio Code Setup" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/my-visual-studio-code-setup/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-10-19T01:48:25+00:00" />
+<meta property="article:modified_time" content="2018-10-19T01:48:25+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="My Visual Studio Code Setup"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code."/>
+
+
+
+<meta itemprop="name" content="My Visual Studio Code Setup">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code."><meta itemprop="datePublished" content="2018-10-19T01:48:25+00:00" />
+<meta itemprop="dateModified" content="2018-10-19T01:48:25+00:00" />
+<meta itemprop="wordCount" content="448"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Tools,VS Code," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>My Visual Studio Code Setup</h1>
+<p>
+  <i>
+    <time datetime='2018-10-19' pubdate>
+      19 Oct, 2018
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/tools/">#Tools</a>
+  
+  <a href="https://bitofbinary.com/blog/vs-code/">#VS Code</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code.</p>
+<h2 id="theme">Theme</h2>
+<p>The first thing I look for in an editor is support for themes and availability of good themes. VS Code gets five stars in this area. My preferred theme these days in <a href="https://marketplace.visualstudio.com/items?itemName=sdras.night-owl">Night Owl</a> by <a href="https://github.com/sdras">Sarah Drasnar</a>. It looks beautiful on my 4k monitor. Yes, I&rsquo;m <em>showing off</em> :)</p>
+<p><img src="https://bitofbinary.com/wp-content/uploads/2019/05/vs-code-night-owl-1024x738.png" alt=""></p>
+<p>I have also customised a few minor things. One of them is the current line highlight. This is from my settings.json</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>“workbench.colorCustomizations”: {
+</span></span><span style="display:flex;"><span>  “editor.lineHighlightBorder”: “#2e276d”,
+</span></span><span style="display:flex;"><span>  “editor.lineHighlightBackground”: “#1b1a25”
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I feel that there is more art than science to themes and Night Owl is just perfect. Unless something better shows up, I will stick with this one.</p>
+<h2 id="extensions">Extensions</h2>
+<p>Extensions for a code editor can be a hot topic. There are people who are against them and there are people who cannot see the world without them. I belong to the latter camp. Before I tell you about the extensions I use, enjoy this tweet by Damian Edwards.</p>
+<p><img src="https://bitofbinary.com/wp-content/uploads/2019/05/damianedwardstweet-1024x581.png" alt=""></p>
+<p>In the past, I would install any extension which showed up and had good reviews. I have learned to break that habit and now I only install extensions which are must-have for me.</p>
+<p>This is a list of extensions I use on a daily bases.</p>
+<ol>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a>  I cannot praise this extension enough. It has all the usual stuff you&rsquo;d expect such as creating commits, pushing code etc. The feature I like most is how it shows you the history for the line where your cursor is.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint</a> No need to say much about this one.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost">Import Cost</a> I do a lot of work on node.js and React. This extension shows you the code of modules you are importing.</li>
+<li><a href="https://github.com/jest-community/vscode-jest">Jest</a> is for my preferred unit testing framework. I use it not only for React but for all JavaScript unit testing</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> Can&rsquo;t see myself writing Python without this</li>
+</ol>
+<p>That&rsquo;s it. Just five extensions (at present). I find these to do all the heavy lifting for me in my day-to-day work.</p>
+<p>Working with Visual Studio Code is a charm. It feels comfortable and I don&rsquo;t feel like I have to fight the tool to get my job done. Can&rsquo;t see myself using anything else in near future.</p>
+<p>Happy Learning!</p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/path-picker-by-facebook/?ref=footer">Path Picker by Facebook</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/rebooting-my-blog/?ref=footer">Rebooting My Blog</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Connect to AWS RDS instance using boto3 and Secret Manager | :bit :of :binary</title>
+<meta name="title" content="Connect to AWS RDS instance using boto3 and Secret Manager" />
+<meta name="description" content="Code to connect to an AWS RDS instance with boto3 and Secret Manager
+import boto3 import json import psycopg2 REGION = &#39;&lt;region&gt;&#39; PROFILE = &#39;&lt;profile-name&gt;&#39; SECRET_ARN = &#39;&lt;Secret-ARN-From-Secret-Manager&gt;&#39; def main(): session = boto3.Session(profile_name=PROFILE) client = session.client(&#39;secretsmanager&#39;, region_name=REGION) # Get secret from Secret Manager secret = client.get_secret_value(SecretId=SECRET_ARN) # Load secrets into a dictionary secret_dict = json.loads(secret[&#39;SecretString&#39;]) username = secret_dict[&#39;username&#39;] password = secret_dict[&#39;password&#39;] host = secret_dict[&#39;host&#39;] port = secret_dict[&#39;port&#39;] database = secret_dict[&#39;dbname&#39;] # Make a connection conn= psycopg2." />
+<meta name="keywords" content="AWS,Python,TIL," />
+
+
+<meta property="og:title" content="Connect to AWS RDS instance using boto3 and Secret Manager" />
+<meta property="og:description" content="Code to connect to an AWS RDS instance with boto3 and Secret Manager
+import boto3 import json import psycopg2 REGION = &#39;&lt;region&gt;&#39; PROFILE = &#39;&lt;profile-name&gt;&#39; SECRET_ARN = &#39;&lt;Secret-ARN-From-Secret-Manager&gt;&#39; def main(): session = boto3.Session(profile_name=PROFILE) client = session.client(&#39;secretsmanager&#39;, region_name=REGION) # Get secret from Secret Manager secret = client.get_secret_value(SecretId=SECRET_ARN) # Load secrets into a dictionary secret_dict = json.loads(secret[&#39;SecretString&#39;]) username = secret_dict[&#39;username&#39;] password = secret_dict[&#39;password&#39;] host = secret_dict[&#39;host&#39;] port = secret_dict[&#39;port&#39;] database = secret_dict[&#39;dbname&#39;] # Make a connection conn= psycopg2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/connect-to-aws-rds-instance-using-boto3-and-secret-manager/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-02T00:00:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Connect to AWS RDS instance using boto3 and Secret Manager"/>
+<meta name="twitter:description" content="Code to connect to an AWS RDS instance with boto3 and Secret Manager
+import boto3 import json import psycopg2 REGION = &#39;&lt;region&gt;&#39; PROFILE = &#39;&lt;profile-name&gt;&#39; SECRET_ARN = &#39;&lt;Secret-ARN-From-Secret-Manager&gt;&#39; def main(): session = boto3.Session(profile_name=PROFILE) client = session.client(&#39;secretsmanager&#39;, region_name=REGION) # Get secret from Secret Manager secret = client.get_secret_value(SecretId=SECRET_ARN) # Load secrets into a dictionary secret_dict = json.loads(secret[&#39;SecretString&#39;]) username = secret_dict[&#39;username&#39;] password = secret_dict[&#39;password&#39;] host = secret_dict[&#39;host&#39;] port = secret_dict[&#39;port&#39;] database = secret_dict[&#39;dbname&#39;] # Make a connection conn= psycopg2."/>
+
+
+
+<meta itemprop="name" content="Connect to AWS RDS instance using boto3 and Secret Manager">
+<meta itemprop="description" content="Code to connect to an AWS RDS instance with boto3 and Secret Manager
+import boto3 import json import psycopg2 REGION = &#39;&lt;region&gt;&#39; PROFILE = &#39;&lt;profile-name&gt;&#39; SECRET_ARN = &#39;&lt;Secret-ARN-From-Secret-Manager&gt;&#39; def main(): session = boto3.Session(profile_name=PROFILE) client = session.client(&#39;secretsmanager&#39;, region_name=REGION) # Get secret from Secret Manager secret = client.get_secret_value(SecretId=SECRET_ARN) # Load secrets into a dictionary secret_dict = json.loads(secret[&#39;SecretString&#39;]) username = secret_dict[&#39;username&#39;] password = secret_dict[&#39;password&#39;] host = secret_dict[&#39;host&#39;] port = secret_dict[&#39;port&#39;] database = secret_dict[&#39;dbname&#39;] # Make a connection conn= psycopg2."><meta itemprop="datePublished" content="2023-03-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-03-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="91"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="AWS,Python,TIL," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Connect to AWS RDS instance using boto3 and Secret Manager</h1>
+<p>
+  <i>
+    <time datetime='2023-03-02' pubdate>
+      02 Mar, 2023
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/aws/">#AWS</a>
+  
+  <a href="https://bitofbinary.com/blog/python/">#Python</a>
+  
+  <a href="https://bitofbinary.com/blog/til/">#TIL</a>
+  
+</p>
+
+<content>
+  <p>Code to connect to an AWS RDS instance with <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">boto3</a> and Secret Manager</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#e5c890">boto3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#e5c890">json</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#e5c890">psycopg2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">REGION</span> <span style="color:#99d1db">=</span> <span style="color:#a6d189">&#39;&lt;region&gt;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">PROFILE</span> <span style="color:#99d1db">=</span> <span style="color:#a6d189">&#39;&lt;profile-name&gt;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">SECRET_ARN</span> <span style="color:#99d1db">=</span> <span style="color:#a6d189">&#39;&lt;Secret-ARN-From-Secret-Manager&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">def</span> <span style="color:#99d1db">main</span><span style="color:#c6d0f5">():</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">session</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">boto3</span><span style="color:#99d1db">.</span><span style="color:#babbf1">Session</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">profile_name</span><span style="color:#99d1db">=</span><span style="color:#babbf1">PROFILE</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">client</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">session</span><span style="color:#99d1db">.</span><span style="color:#babbf1">client</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#39;secretsmanager&#39;</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">region_name</span><span style="color:#99d1db">=</span><span style="color:#babbf1">REGION</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#626880;font-style:italic"># Get secret from Secret Manager</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">secret</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">client</span><span style="color:#99d1db">.</span><span style="color:#babbf1">get_secret_value</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">SecretId</span><span style="color:#99d1db">=</span><span style="color:#babbf1">SECRET_ARN</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#626880;font-style:italic"># Load secrets into a dictionary</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">secret_dict</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">json</span><span style="color:#99d1db">.</span><span style="color:#babbf1">loads</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">secret</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;SecretString&#39;</span><span style="color:#c6d0f5">])</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">username</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">secret_dict</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;username&#39;</span><span style="color:#c6d0f5">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">password</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">secret_dict</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;password&#39;</span><span style="color:#c6d0f5">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">host</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">secret_dict</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;host&#39;</span><span style="color:#c6d0f5">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">port</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">secret_dict</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;port&#39;</span><span style="color:#c6d0f5">]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">database</span> <span style="color:#99d1db">=</span> <span style="color:#babbf1">secret_dict</span><span style="color:#c6d0f5">[</span><span style="color:#a6d189">&#39;dbname&#39;</span><span style="color:#c6d0f5">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#626880;font-style:italic"># Make a connection</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">conn</span><span style="color:#99d1db">=</span> <span style="color:#babbf1">psycopg2</span><span style="color:#99d1db">.</span><span style="color:#babbf1">connect</span><span style="color:#c6d0f5">(</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">user</span><span style="color:#99d1db">=</span><span style="color:#babbf1">username</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">password</span><span style="color:#99d1db">=</span><span style="color:#babbf1">password</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">host</span><span style="color:#99d1db">=</span><span style="color:#babbf1">host</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">port</span><span style="color:#99d1db">=</span><span style="color:#babbf1">port</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">database</span><span style="color:#99d1db">=</span><span style="color:#babbf1">database</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">connect_timeout</span><span style="color:#99d1db">=</span>10
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5;font-style:italic">print</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;Connection created&#34;</span><span style="color:#c6d0f5">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">if</span> <span style="color:#babbf1">__name__</span> <span style="color:#99d1db">==</span> <span style="color:#a6d189">&#39;__main__&#39;</span><span style="color:#c6d0f5">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">main</span><span style="color:#c6d0f5">()</span>
+</span></span></code></pre></div><p>#2</p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/few-thoughts-on-blogging/?ref=footer">Few thoughts on Blogging</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/working-with-env-files-in-python/?ref=footer">Working with env files in Python</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

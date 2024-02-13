@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Path Picker by Facebook | :bit :of :binary</title>
+<meta name="title" content="Path Picker by Facebook" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &ndash; output from git commands, grep results, searches &ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew." />
+<meta name="keywords" content="Tools," />
+
+
+<meta property="og:title" content="Path Picker by Facebook" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &ndash; output from git commands, grep results, searches &ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/path-picker-by-facebook/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-05-08T02:19:22+00:00" />
+<meta property="article:modified_time" content="2015-05-08T02:19:22+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Path Picker by Facebook"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &ndash; output from git commands, grep results, searches &ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew."/>
+
+
+
+<meta itemprop="name" content="Path Picker by Facebook">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &ndash; output from git commands, grep results, searches &ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew."><meta itemprop="datePublished" content="2015-05-08T02:19:22+00:00" />
+<meta itemprop="dateModified" content="2015-05-08T02:19:22+00:00" />
+<meta itemprop="wordCount" content="349"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Tools," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Path Picker by Facebook</h1>
+<p>
+  <i>
+    <time datetime='2015-05-08' pubdate>
+      08 May, 2015
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/tools/">#Tools</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>Path Picker is a little utility brought to us by Facebook. According to the official website</p>
+<blockquote>
+<p>PathPicker accepts a wide range of input &ndash; output from git commands, grep results, searches &ndash; pretty much anything.</p>
+</blockquote>
+<p>On a mac Path Picker can be installed by using brew. To install on mac with brew. Run these commands```
+brew udpate
+brew install fpp</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### What does it do?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>I will go through some of the features of Path Picker. These features are mentioned on the README file for path picker [repository](https://github.com/facebook/pathpicker/)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt; Parse all incoming lines for entries that look like files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To see how this works, I will work with angular.js repository which I have cloned on my machine. Let&#39;s run a simple command which gives all the files impacted by a commit```
+</span></span><span style="display:flex;"><span>git show --pretty=&#34;format:&#34; --name-only 0681a54
+</span></span><span style="display:flex;"><span>```The command above will list all the files changed in commit 0681a54.```
+</span></span><span style="display:flex;"><span>src/ngAnimate/animateCss.js
+</span></span><span style="display:flex;"><span>src/ngAnimate/animateJs.js
+</span></span><span style="display:flex;"><span>test/ngAnimate/animateJsSpec.js
+</span></span><span style="display:flex;"><span>```If I pipe the output to Path Picker, I can then open the files from within terminal.```
+</span></span><span style="display:flex;"><span>git show --pretty=&#34;format:&#34; --name-only 0681a54 | fpp
+</span></span><span style="display:flex;"><span>```![PathPickerListFiles](http://kapoor.io/wp-content/uploads/2015/05/PathPickerListFiles.png) Files can be opened in preferred editor by pressing ENTER. Path picker also has another trick up its sleeve. From the README
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&gt; PathPicker allows you to also execute arbitrary commands with the specified files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Working with the same command```
+</span></span><span style="display:flex;"><span>git show --pretty=&#34;format:&#34; --name-only 0681a54 | fpp
+</span></span><span style="display:flex;"><span>```I can press c to get into command mode. ![PathPickerCommandMode](http://kapoor.io/wp-content/uploads/2015/05/PathPickerCommandMode.png) Here I can issue a shell command such as `cat | more` to see the contents of file. I can issue a the command `cat $F | wc -l` to count the number of lines in the file. Or a command like `cat $F | grep Firefox` to see if the string Firefox is present in the file. In a nutshell Path Picker is a nifty little utility which makes life a little easy when you spend a lot of time in Terminal.
+</span></span></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/node.js-eventemitter-example/?ref=footer">node.js EventEmitter example</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/my-visual-studio-code-setup/?ref=footer">My Visual Studio Code Setup</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

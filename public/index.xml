@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>:bit :of :binary</title>
+    <link>https://bitofbinary.com/</link>
+    <description>Recent content on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Restore</title>
+      <link>https://bitofbinary.com/project-restore/</link>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/project-restore/</guid>
+      <description>I was browsing through some old files stored on an external disk and I found some of my old writings.
+When I started this blog, I wrote a post in which I mentioned about my past blogging adventures. While browsing through those files, I realized that I started blogging in 2005. At that time I was involved with WinFX which eventually became Microsoft .NET 3.0.
+I also realized that although it may not be of any use to either me or anyone else, it is still a record of my forays into different technologies and I must preserve it.</description>
+    </item>
+    
+    <item>
+      <title>Get Indexes of Negative Numbers from a List in Python</title>
+      <link>https://bitofbinary.com/get-indexes-of-negative-numbers-from-a-list-in-python/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/get-indexes-of-negative-numbers-from-a-list-in-python/</guid>
+      <description>Today I was working on some code in which I had to get indexes of items in a list based on a condition. I found it interesting and thought of writing a post about a similar problem.
+Here it is.
+Given a list containing both positive and negative numbers, the goal is to find indexes of all negative numbers.
+numbers = [1, 5, -9, -3, 0, -3] To get indexes of all negative numbers, I used the enumerate function with a condition in a list comprehension.</description>
+    </item>
+    
+    <item>
+      <title>Teaching Ruby One Post at a Time</title>
+      <link>https://bitofbinary.com/teaching-ruby-one-post-at-a-time/</link>
+      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/teaching-ruby-one-post-at-a-time/</guid>
+      <description>Lately, I have been talking a lot about Ruby on Rails and how it is one of the best frameworks for developing web applications with junior developers I&amp;rsquo;m mentoring these days.
+I have seen some great interest from them and a desire to learn Ruby and then Ruby on Rails. I often show them a snippet of code or demonstrate how a particular problem can be solved in Ruby. This is now happening on almost daily basis and it has motivated me to creates these posts in which I will write about how something can be done using Ruby.</description>
+    </item>
+    
+    <item>
+      <title>7 Essentials for Learning TypeScript</title>
+      <link>https://bitofbinary.com/7-essentials-for-learning-typescript/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/7-essentials-for-learning-typescript/</guid>
+      <description>TypeScript is my preferred langauge for writing front-end code or anything node.js. I have been saved by the Type System numerous time. It has helped me track down potential errors which would have only surfaced during runtime. I think there is value in learning TypeScript and I strongly recommend to anyone who writes front-end code.
+I was recently mentoring a junior programmer and I created a list of things I felt he should now.</description>
+    </item>
+    
+    <item>
+      <title>Handling Single Record Queries in Rails with Grace</title>
+      <link>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</guid>
+      <description>In Ruby on Rails, when dealing with database queries, there are instances where we anticipate a query to return a single record. This expectation arises in scenarios where the uniqueness of a record is integral to the application&amp;rsquo;s logic. However, databases can sometimes contain duplicates or multiple records that meet the query criteria, leading to potential conflicts or unexpected behavior in our application. To ensure robust and error-free application behavior, it&amp;rsquo;s essential to handle these cases effectively.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Symbols in Ruby Programming Language</title>
+      <link>https://bitofbinary.com/understanding-symbols-in-ruby-programming-language/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/understanding-symbols-in-ruby-programming-language/</guid>
+      <description>What is a Symbol in Ruby? In Ruby, a symbol is a lightweight, immutable identifier. It is often used in situations where a string would traditionally be used, but it offers performance benefits. Symbols are denoted by a colon (:) followed by a name. For example, :user and :email are symbols.
+Key Characteristics of Symbols Immutability: Unlike strings, symbols are immutable. Once a symbol is created, it cannot be altered. This property makes them safe to use as identifiers or keys in hashes.</description>
+    </item>
+    
+    <item>
+      <title>Mastering Ruby Blocks: A Comprehensive Guide</title>
+      <link>https://bitofbinary.com/mastering-ruby-blocks-a-comprehensive-guide/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/mastering-ruby-blocks-a-comprehensive-guide/</guid>
+      <description>Introduction In Ruby, blocks stand as one of the language&amp;rsquo;s most unique and powerful features. They allow you to encapsulate code into discrete units, making your programs more modular, flexible, and expressive. In this article, we will explore the mechanics of Ruby blocks, the versatility of the yield statement, and their practical applications, especially in conjunction with methods which return enumerators.
+What are Blocks in Ruby? A block in Ruby is essentially an anonymous piece of code that can be passed to methods as arguments.</description>
+    </item>
+    
+    <item>
+      <title>Codecamp OZ: A Nostalgic Dive Into The Archives of the Web</title>
+      <link>https://bitofbinary.com/codecamp-oz-a-nostalgic-dive-into-the-archives-of-the-web/</link>
+      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/codecamp-oz-a-nostalgic-dive-into-the-archives-of-the-web/</guid>
+      <description>I often think how fascinating it would be if the entire World Wide Web disappeared, leaving only the Wayback Machine behind. It&amp;rsquo;s truly a remarkable tool and I could live with that.
+Today, while going down the internet rabbit hole, I rediscovered the long-lost website of Codecamp OZ on the Wayback Machine. Codecamp was this two-day event that began in 2005. I believe, its final gathering was in 2008.
+In Australia, April 25th is ANZAC Day, often part of a long weekend.</description>
+    </item>
+    
+    <item>
+      <title>Simplifying Your React Forms with the Magic of useState</title>
+      <link>https://bitofbinary.com/simplifying-your-react-forms-with-the-magic-of-usestate/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/simplifying-your-react-forms-with-the-magic-of-usestate/</guid>
+      <description>When working with forms in React, each input field needs its own state and handler, right? Well, what if I told you there&amp;rsquo;s a way to manage all your input fields with just one state and one handler? That&amp;rsquo;s right, it&amp;rsquo;s time to streamline your forms with the magic of the useState hook.
+The Typical Way: One State Per Input In the usual approach, every input field in a React form gets its own state:</description>
+    </item>
+    
+    <item>
+      <title>My New Mac M2</title>
+      <link>https://bitofbinary.com/my-new-mac-m2/</link>
+      <pubDate>Tue, 19 Sep 2023 01:36:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-new-mac-m2/</guid>
+      <description>Apple has a good trade-in facility and few weeks ago they were offering $825 for my old Mac which was M1 with 16gb memory. I took the deal and got myself a new machine.
+As someone who spends a good part of the day working on a computer, I&amp;rsquo;m enjoying the speed and asthetics of the new M2.
+#6</description>
+    </item>
+    
+    <item>
+      <title>Run FastAPI inside a docker container</title>
+      <link>https://bitofbinary.com/run-fastapi-inside-a-docker-container/</link>
+      <pubDate>Wed, 06 Sep 2023 01:36:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/run-fastapi-inside-a-docker-container/</guid>
+      <description>As someone who uses Docker for every project, I wanted to setup a dev environment for FastAPI. These are the steps I followed to dockerize my FastAPI Hello World.
+Sample API This is a sample API which will be dockerized.
+from fastapi import FastAPI app = FastAPI() @app.get(&amp;#34;/&amp;#34;) async def root(): return { &amp;#34;message&amp;#34;: &amp;#34;I&amp;#39;m dockerized FastAPI&amp;#34; } Dockerfile FROM python:3.11-slim WORKDIR /api COPY requirements.txt . RUN pip install -r requirements.</description>
+    </item>
+    
+    <item>
+      <title>Format code before saving in vim with Prettier</title>
+      <link>https://bitofbinary.com/format-code-before-saving-in-vim-with-prettier/</link>
+      <pubDate>Wed, 30 Aug 2023 01:36:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/format-code-before-saving-in-vim-with-prettier/</guid>
+      <description>To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.
+Adding the code below to config will automatically format files of type *.ts,*.js,*.jsx,*.tsx,*.css before saving.
+Here I am using Prettier, so Prettier has to be installed for this to work.
+function format_and_restore_cursor() local cursor_pos = vim.fn.getcurpos() vim.cmd(&amp;#34;silent! %!prettier --stdin-filepath % --single-quote&amp;#34;) vim.fn.setpos(&amp;#39;.&amp;#39;, cursor_pos) end function setup_external_formatter_autocmd() vim.</description>
+    </item>
+    
+    <item>
+      <title>Working with env files in Python</title>
+      <link>https://bitofbinary.com/working-with-env-files-in-python/</link>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/working-with-env-files-in-python/</guid>
+      <description>I use env files in most of my projects to store values which should not be committed to code. Env files are also an excellent way to manage multiple settings related to different environments.
+python-dotenv library makes working with .env files a breeze.
+pip install python-dotenv Given my .env file has these settings
+REGION=ap-southeast-2 PROFILE=dev SECRET_ARN=arn:aws:blahblah This code will get the values from .env file and put it in local variables</description>
+    </item>
+    
+    <item>
+      <title>Connect to AWS RDS instance using boto3 and Secret Manager</title>
+      <link>https://bitofbinary.com/connect-to-aws-rds-instance-using-boto3-and-secret-manager/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/connect-to-aws-rds-instance-using-boto3-and-secret-manager/</guid>
+      <description>Code to connect to an AWS RDS instance with boto3 and Secret Manager
+import boto3 import json import psycopg2 REGION = &amp;#39;&amp;lt;region&amp;gt;&amp;#39; PROFILE = &amp;#39;&amp;lt;profile-name&amp;gt;&amp;#39; SECRET_ARN = &amp;#39;&amp;lt;Secret-ARN-From-Secret-Manager&amp;gt;&amp;#39; def main(): session = boto3.Session(profile_name=PROFILE) client = session.client(&amp;#39;secretsmanager&amp;#39;, region_name=REGION) # Get secret from Secret Manager secret = client.get_secret_value(SecretId=SECRET_ARN) # Load secrets into a dictionary secret_dict = json.loads(secret[&amp;#39;SecretString&amp;#39;]) username = secret_dict[&amp;#39;username&amp;#39;] password = secret_dict[&amp;#39;password&amp;#39;] host = secret_dict[&amp;#39;host&amp;#39;] port = secret_dict[&amp;#39;port&amp;#39;] database = secret_dict[&amp;#39;dbname&amp;#39;] # Make a connection conn= psycopg2.</description>
+    </item>
+    
+    <item>
+      <title>Few thoughts on Blogging</title>
+      <link>https://bitofbinary.com/few-thoughts-on-blogging/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/few-thoughts-on-blogging/</guid>
+      <description>According to the History of Blogging, the first blog was created in 1994. The term weblog which eventually became blog was coined in 1997.
+For me blogging started around 2003 when Wordpress was launched. This was also the time when I was heavily invested in Microsoft ecosystem. After spending many years working with ASP and VB, I found .NET to be a relief. During this time I also got involved with the local Microsoft community</description>
+    </item>
+    
+    <item>
+      <title>Now</title>
+      <link>https://bitofbinary.com/now/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/now/</guid>
+      <description>This is my personalized version of a &amp;ldquo;now&amp;rdquo; page, structured in reverse chronological order.
+This arrangement appeals to me as it facilitates an overview of my activities and engagements during specific time frames.
+2024 Feb 13 Started Project Restore to restore all the silly posts I wrote in the past Getting more into Ruby on Rails and started using it for a side project 2024 Feb 6 Teaching Ruby to few junior programmers.</description>
+    </item>
+    
+    <item>
+      <title>React useReducer Hook Example</title>
+      <link>https://bitofbinary.com/react-usereducer-hook-example/</link>
+      <pubDate>Fri, 02 Aug 2019 01:30:35 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/react-usereducer-hook-example/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. In this post, we will look at useReducer hook in React. useReducer is not too different from useState hook which I wrote about in an earlier post. useReducer similar to useState provides a mechanism to work with state in React functional components.</description>
+    </item>
+    
+    <item>
+      <title>React useState Hook Example</title>
+      <link>https://bitofbinary.com/react-usestate-hook-example/</link>
+      <pubDate>Wed, 24 Jul 2019 03:21:37 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/react-usestate-hook-example/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&amp;rsquo;d like to show you how to use the useState hook to build a simple tabs component.</description>
+    </item>
+    
+    <item>
+      <title>Moving from iTerm to Alacritty</title>
+      <link>https://bitofbinary.com/moving-from-iterm-to-alacritty/</link>
+      <pubDate>Mon, 08 Jul 2019 04:07:58 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/moving-from-iterm-to-alacritty/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. A few years ago I decided to use Vim as my text editor. It has been a fantastic journey so far. I have learned a lot about Vim and I keep learning new things every day. This continuous learning makes the tool so interesting.</description>
+    </item>
+    
+    <item>
+      <title>My first Cloud Function on Google Cloud</title>
+      <link>https://bitofbinary.com/my-first-cloud-function-on-google-cloud/</link>
+      <pubDate>Tue, 18 Jun 2019 01:43:36 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-first-cloud-function-on-google-cloud/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Similar to AWS Lambda or Azure functions, Google Cloud has Cloud Functions. The idea behind Cloud Functions is to give users a serverless product which can be used for deploying functionality without worrying about servers. Functions can be invoked via HTTP or can be invoked in the background by another Google Cloud product.</description>
+    </item>
+    
+    <item>
+      <title>Rebooting My Blog</title>
+      <link>https://bitofbinary.com/rebooting-my-blog/</link>
+      <pubDate>Fri, 14 Jun 2019 08:48:43 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/rebooting-my-blog/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I am re-booting my blog under the new domain BitOfBinary.com A little bit of history. I started this blog in 2008 under the domain DeepakKapoor.Net. The early days (2008-2009) were very good. I was enjoying the newly found adventure.</description>
+    </item>
+    
+    <item>
+      <title>My Visual Studio Code Setup</title>
+      <link>https://bitofbinary.com/my-visual-studio-code-setup/</link>
+      <pubDate>Fri, 19 Oct 2018 01:48:25 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-visual-studio-code-setup/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code.</description>
+    </item>
+    
+    <item>
+      <title>Path Picker by Facebook</title>
+      <link>https://bitofbinary.com/path-picker-by-facebook/</link>
+      <pubDate>Fri, 08 May 2015 02:19:22 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/path-picker-by-facebook/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &amp;ndash; output from git commands, grep results, searches &amp;ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew.</description>
+    </item>
+    
+    <item>
+      <title>node.js EventEmitter example</title>
+      <link>https://bitofbinary.com/node.js-eventemitter-example/</link>
+      <pubDate>Tue, 05 May 2015 02:59:02 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/node.js-eventemitter-example/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. What is it? Node.js comes with a core module called events. And EventEmitter is a class on the events object. EventEmitter has stability of 4 which means that API is frozen. In other words things in events are unlikely to change.</description>
+    </item>
+    
+    <item>
+      <title>Express 4 routing guide</title>
+      <link>https://bitofbinary.com/express-4-routing-guide/</link>
+      <pubDate>Fri, 24 Apr 2015 05:11:29 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/express-4-routing-guide/</guid>
+      <description>Introduction In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.
+What is routing Routing is one of the fundamental building blocks for any web framework.</description>
+    </item>
+    
+    <item>
+      <title>Upgrade node.js on mac</title>
+      <link>https://bitofbinary.com/upgrade-node.js-on-mac/</link>
+      <pubDate>Tue, 21 Apr 2015 04:19:30 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/upgrade-node.js-on-mac/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. One way to upgrade node.js on your machine is to download the latest installer from node.js website. The other is to update node.js from CLI which is my preferred way. To upgrade node.js we should have n installed.</description>
+    </item>
+    
+    <item>
+      <title>Test REST APIs with Frisby</title>
+      <link>https://bitofbinary.com/test-rest-apis-with-frisby/</link>
+      <pubDate>Fri, 17 Apr 2015 00:22:02 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/test-rest-apis-with-frisby/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction As software developers we strive for exellence in our craft. This means writing software we and our clients are proud of. One way to ensure such exellence is to test everything. Even better is to write tests which can test our code for us commonly known as unit tests or end-to-end tests.</description>
+    </item>
+    
+    <item>
+      <title>List of node.js core modules</title>
+      <link>https://bitofbinary.com/list-of-node.js-core-modules/</link>
+      <pubDate>Tue, 14 Apr 2015 00:59:40 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/list-of-node.js-core-modules/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. node.js comes with many core modules which are compiled to binary when node.js is installed. This is a list of node.js core modules with links to documentation. I find it good to have a handy list of things, hence this post.</description>
+    </item>
+    
+    <item>
+      <title>5 npm commands recommended for node.js developers</title>
+      <link>https://bitofbinary.com/5-npm-commands-recommended-for-node.js-developers/</link>
+      <pubDate>Thu, 09 Apr 2015 06:59:41 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/5-npm-commands-recommended-for-node.js-developers/</guid>
+      <description>Search for packages npm allows you to search the npm registry from command line. When you execute the command for the first time it builds an index. If you are searching for package(s) which have something to do with png file you can run $ npm search png This will find all packages which have png in its metadata. Find owner of a package npm owner command can be used to find owner(s) of a package.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Debugging Techniques with Chrome</title>
+      <link>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</link>
+      <pubDate>Wed, 12 Nov 2014 02:59:49 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</guid>
+      <description>This is a must watch video to see how good chrome debugging tools are. https://www.youtube.com/watch?v=B63jNjSVEbQ</description>
+    </item>
+    
+    <item>
+      <title>5 Free CDNs for developers</title>
+      <link>https://bitofbinary.com/5-free-cdns-for-developers/</link>
+      <pubDate>Thu, 18 Sep 2014 03:09:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/5-free-cdns-for-developers/</guid>
+      <description>CDNs are a popular way to improve a website&amp;rsquo;s performance. The idea is that assets such as scripts, styles etc are loaded from domains other than your own domain. These endpoints are optimised to serve static assets and they do this well. It is common to use CDNs for popular JavaScript libraries and CSS frameworks such as bootstrap. This is a list of some popular CDNs which are available to you for free.</description>
+    </item>
+    
+    <item>
+      <title>Personal project for learning GitHub API</title>
+      <link>https://bitofbinary.com/personal-project-for-learning-github-api/</link>
+      <pubDate>Wed, 13 Aug 2014 02:11:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/personal-project-for-learning-github-api/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Couple of weeks ago on a rainy weekend I started hacking on a project to learn GitHub API. I decided to use AngularJS to interact with the API and within few hours it started to take some shape.</description>
+    </item>
+    
+    <item>
+      <title>Ruby - Calculate MD5 hash of a file</title>
+      <link>https://bitofbinary.com/ruby-calculate-md5-hash-of-a-file/</link>
+      <pubDate>Fri, 04 Jul 2014 10:44:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/ruby-calculate-md5-hash-of-a-file/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Ruby makes calculating MD5 hash easy peasy.
+Here I am calculating MD5 hash of a file I have.
+` require &amp;#39;digest/md5&amp;#39; md5 = Ditest::MD5.new digest = md5.hexdigest(File.read(&amp;#39;/Users/deepak/s3/coco.jpg&amp;#39;)) puts digest # =&amp;gt; &amp;#34;ed00890f2e661a94fdf046c503d0ce34&amp;#34; ` Code above can be shortened to this</description>
+    </item>
+    
+    <item>
+      <title>AWS - Download Upload file from S3 bucket using AWS SDK for Ruby</title>
+      <link>https://bitofbinary.com/aws-download-upload-file-from-s3-bucket-using-aws-sdk-for-ruby/</link>
+      <pubDate>Thu, 03 Jul 2014 10:25:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-download-upload-file-from-s3-bucket-using-aws-sdk-for-ruby/</guid>
+      <description>AWS SDK for Ruby can be used to copy files which are called objects in AWS terminology to and from S3 buckets. I feel like trying this out today. I already have the aws-sdk gem installed on my machine. Let&amp;rsquo;s write the script.
+Upload/Copy file to S3 bucket First thing I need in my script is
+` require &amp;#39;aws-sdk&amp;#39; ` After this I create an instance of S3 object and get the bucket I created earlier.</description>
+    </item>
+    
+    <item>
+      <title>AWS - SDK for Ruby Unable to find AWS credentials</title>
+      <link>https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/</link>
+      <pubDate>Wed, 02 Jul 2014 01:44:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/</guid>
+      <description>Today while working with AWS SDK for Ruby I came across this error
+(AWS::Errors::MissingCredentialsError) Missing Credentials.
+AWS SDK will go through different ways to get credentials. One of them is to look at environment variables and the other is to look for credentials file in .aws directory. While setting up AWS CLI on my machine I ran aws configure command which created .aws/config file. So what&amp;rsquo;s with this credentials file?</description>
+    </item>
+    
+    <item>
+      <title>AWS - Explore S3 with CLI</title>
+      <link>https://bitofbinary.com/aws-explore-s3-with-cli/</link>
+      <pubDate>Tue, 01 Jul 2014 05:47:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-explore-s3-with-cli/</guid>
+      <description>Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket.</description>
+    </item>
+    
+    <item>
+      <title>AWS - Getting Started with CLI</title>
+      <link>https://bitofbinary.com/aws-getting-started-with-cli/</link>
+      <pubDate>Tue, 01 Jul 2014 00:42:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-getting-started-with-cli/</guid>
+      <description>Today I created a new Amazon AWS account with the goal of learning this beast inside out. Over next few and hopefully many days I plan to write more about AWS. I am doing this for learning and not teaching. I will write these posts as I would write notes when learning a new technology. Come along if you wish and enjoy the ride.
+Account creation and verification process went without a hitch and the first thing I wanted to do was to access my account information from terminal.</description>
+    </item>
+    
+    <item>
+      <title>Run Google Chrome as non root user in Kali Linux</title>
+      <link>https://bitofbinary.com/run-google-chrome-as-non-root-user-in-kali-linux/</link>
+      <pubDate>Thu, 05 Jun 2014 02:04:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/run-google-chrome-as-non-root-user-in-kali-linux/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post is about running Google&amp;rsquo;s Chrome browser in Kali linux as a no-root user. Before I get into it, I would like to say that you can run Chrome as root and there are plenty of tutorials showing you how to do that.</description>
+    </item>
+    
+    <item>
+      <title>Connect to ssh server on Kali Linux</title>
+      <link>https://bitofbinary.com/connect-to-ssh-server-on-kali-linux/</link>
+      <pubDate>Tue, 03 Jun 2014 05:04:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/connect-to-ssh-server-on-kali-linux/</guid>
+      <description>For some of my work I run Kali in Virtual Box and I was getting a bit tired of switching between different windows on my mac host. So I thought I will ssh into my Kali box and enjoy the iTerm eye-candy. The version of Kali I have running which is 1.07 has openssh server installed but the service is not running by default. To run the service I ran this command</description>
+    </item>
+    
+    <item>
+      <title>How does RVM know my name?</title>
+      <link>https://bitofbinary.com/how-does-rvm-know-my-name/</link>
+      <pubDate>Fri, 30 May 2014 06:20:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/how-does-rvm-know-my-name/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Today while installing RVM on my newly minted Kali VM, I found something which caught my attention. After running curl -ssl https://get.rvm.io | bash -s stable --ruby I saw after few lines this
+It knows who I am.</description>
+    </item>
+    
+    <item>
+      <title>git log basic to advance</title>
+      <link>https://bitofbinary.com/git-log-basic-to-advance/</link>
+      <pubDate>Wed, 21 May 2014 03:33:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/git-log-basic-to-advance/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Git is just awesome and more awesome are the tools it comes with. Git log is one of those tools I use extensively throughout my day.
+I started using git log in its vanilla form and then slowly as my understanding of git increased, I started using fancier git log commands.</description>
+    </item>
+    
+    <item>
+      <title>Playing with Microsoft Azure CLI on mac</title>
+      <link>https://bitofbinary.com/playing-with-microsoft-azure-cli-on-mac/</link>
+      <pubDate>Tue, 20 May 2014 04:31:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/playing-with-microsoft-azure-cli-on-mac/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I&amp;rsquo;ve been a user of Azure for sometime now and I have always worked through the web based management portal. The portal has served me well but today I am in mood for command line. I will install the CLI for Azure and play with it.</description>
+    </item>
+    
+    <item>
+      <title>Vim update after using it for more than a month</title>
+      <link>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</link>
+      <pubDate>Fri, 09 May 2014 06:29:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. It has now been close to a month since I started using Vim as my main editor. This post is about my Vim adventures.
+Lately I have found watching videos to be an excellent source of learning new things.</description>
+    </item>
+    
+    <item>
+      <title>Starting Vim Journey Again</title>
+      <link>https://bitofbinary.com/starting-vim-journey-again/</link>
+      <pubDate>Fri, 11 Apr 2014 05:52:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/starting-vim-journey-again/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Every few months I talk myself into using Vim as my text editor. Mostly it happens after I have watched a presentation in which the presenter wows me with their code editing skills on Vim. I miss the main subject of the presentation because I get so wowed by their Vim ninja skills.</description>
+    </item>
+    
+    <item>
+      <title>Node.js - Make npm work behind proxy</title>
+      <link>https://bitofbinary.com/node.js-make-npm-work-behind-proxy/</link>
+      <pubDate>Wed, 08 Jan 2014 00:23:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/node.js-make-npm-work-behind-proxy/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Installing node.js modules in a corporate environment can be problematic if your connection to the world is via a proxy. I experienced this while setting up a node.js environment at one of my client&amp;rsquo;s office. I always use my personal machine which is a mac but often I have to work with folks who use Windows.</description>
+    </item>
+    
+    <item>
+      <title>Android - ListView Tutorial With Images and Text</title>
+      <link>https://bitofbinary.com/android-listview-tutorial-with-images-and-text/</link>
+      <pubDate>Tue, 07 Jan 2014 10:20:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-listview-tutorial-with-images-and-text/</guid>
+      <description>Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter.</description>
+    </item>
+    
+    <item>
+      <title>Android - Linear Layout Example</title>
+      <link>https://bitofbinary.com/android-linear-layout-example/</link>
+      <pubDate>Tue, 07 Jan 2014 10:19:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-linear-layout-example/</guid>
+      <description>In Android Layouts are containers in which you place your widgets like buttons, images, lists etc. Two of the most useful layouts are LinearLayout and RelativeLayout. In this post I will talk about LinearLayout. LinearLayout extends android.view.ViewGroup which extends android.view.View object. As the name suggests, LinearLayout is used to place widgets in a linear manner. By default widgets are stacked vertically as shown in the image below. Here is another example of an app running in the emulator.</description>
+    </item>
+    
+    <item>
+      <title>Capture XML in WCF Service</title>
+      <link>https://bitofbinary.com/capture-xml-in-wcf-service/</link>
+      <pubDate>Tue, 07 Jan 2014 10:16:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/capture-xml-in-wcf-service/</guid>
+      <description>Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service.</description>
+    </item>
+    
+    <item>
+      <title>Android - ExpandableListView Tutorial</title>
+      <link>https://bitofbinary.com/android-expandablelistview-tutorial/</link>
+      <pubDate>Wed, 31 Jul 2013 03:24:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-expandablelistview-tutorial/</guid>
+      <description>Introduction In this tutorial I will show you how to use ExpandableListView widget in your Android app. ExpandableListView widget is used to display hierarchical data which is two levels deep. If your hierarchy is more than two levels then you should look at options other than ExpandableListView. Now let’s get started.
+We will develop an app which displays a bunch of countries with some of their cities. When a user taps the name of a country, the widget expands to show cities.</description>
+    </item>
+    
+    <item>
+      <title>Linux - Setgid on Directory and Share Directory With Users</title>
+      <link>https://bitofbinary.com/linux-setgid-on-directory-and-share-directory-with-users/</link>
+      <pubDate>Thu, 25 Jul 2013 03:20:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linux-setgid-on-directory-and-share-directory-with-users/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I came across a scenario which warranted using setgid. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users.</description>
+    </item>
+    
+    <item>
+      <title>Linux - Number of Files in Directory</title>
+      <link>https://bitofbinary.com/linux-number-of-files-in-directory/</link>
+      <pubDate>Wed, 03 Jul 2013 03:18:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linux-number-of-files-in-directory/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. The command to get the number of files in a directory is.ls –l | grep ^- | wc –lIf you are here just to get the command then no need to read further. However if you’d like to understand a bit more then read on.</description>
+    </item>
+    
+    <item>
+      <title>Windows Azure - Create Linux Virtual Machine Through Management Portal</title>
+      <link>https://bitofbinary.com/windows-azure-create-linux-virtual-machine-through-management-portal/</link>
+      <pubDate>Thu, 30 May 2013 03:16:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/windows-azure-create-linux-virtual-machine-through-management-portal/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Windows Azure along with PaaS is also a full on IaaS cloud service. At the time of this writing you can create a variety of Windows VMs and Linux VMs. This post shows you how easy it is to create a Linux virtual machine on Windows Azure.</description>
+    </item>
+    
+    <item>
+      <title>My Windows Phone App Is Runner-up in Lifehacker and Microsoft’s Developer Challenge</title>
+      <link>https://bitofbinary.com/my-windows-phone-app-is-runner-up-in-lifehacker-and-microsofts-developer-challenge/</link>
+      <pubDate>Mon, 20 May 2013 03:14:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-windows-phone-app-is-runner-up-in-lifehacker-and-microsofts-developer-challenge/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Found an uplifting email today in my mailbox which informed me that my app for Windows Phone has been a runner-up in round 5 of Lifehacker and Microsoft’s developer challenge. I am very happy about this and I’d like to thank those who judged my app to be worthy of recognition.</description>
+    </item>
+    
+    <item>
+      <title>Could Not Create SSL/TSL Secure Channel Solution</title>
+      <link>https://bitofbinary.com/could-not-create-ssl/tsl-secure-channel-solution/</link>
+      <pubDate>Fri, 20 Aug 2010 01:35:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/could-not-create-ssl/tsl-secure-channel-solution/</guid>
+      <description>Could Not Create SSL/TLS Secure Channel is an error you my get when communicating with web services in a two way SSL scenario from ASP.NET application. Here is a guide which you can follow to resolve the issue. I spent fair bit of time on this and I am documenting my approach here for future reference. Make sure that you have proper certificates installed in the Local Machine certificate store. Because communication is two way SSL you will also have your private key installed.</description>
+    </item>
+    
+    <item>
+      <title>Output to Console in Windows Forms Application</title>
+      <link>https://bitofbinary.com/output-to-console-in-windows-forms-application/</link>
+      <pubDate>Tue, 01 Sep 2009 02:45:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/output-to-console-in-windows-forms-application/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console.</description>
+    </item>
+    
+    <item>
+      <title>Execute Stored Procedure With ADO.NET Data Services</title>
+      <link>https://bitofbinary.com/execute-stored-procedure-with-ado.net-data-services/</link>
+      <pubDate>Sun, 16 Aug 2009 02:42:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/execute-stored-procedure-with-ado.net-data-services/</guid>
+      <description>Introduction In an earlier article I looked at how DO.NET Data Services can be used with ASP.NET. In this post I will talk about using ADO.NET Data Services to retrieve data via SQL Server stored procedure. Doing this is simple and I will follow a similar approach to hook everything up as I did in my earlier post. I have created a stored procedure which retrieves data from Employees table in Northwind database based on city name.</description>
+    </item>
+    
+    <item>
+      <title>ADO.NET Data Services With ASP.NET</title>
+      <link>https://bitofbinary.com/ado.net-data-services-with-asp.net/</link>
+      <pubDate>Tue, 28 Jul 2009 02:39:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/ado.net-data-services-with-asp.net/</guid>
+      <description>Introduction In this tutorial we will look at how ADO.NET Data Services can be used to create services which are consumed by ASP.NET client. We will use Adventure works Lite database as an example to demonstrate the concepts. Code for this article can be downloaded at the bottom of the article. ADO.NET Data Services as the name says is a services layer between your application and an underlying data source. It uses REST principals to access and persist information to and from the data source.</description>
+    </item>
+    
+    <item>
+      <title>Insert Master Detail Data With LINQ to SQL</title>
+      <link>https://bitofbinary.com/insert-master-detail-data-with-linq-to-sql/</link>
+      <pubDate>Wed, 08 Jul 2009 02:36:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/insert-master-detail-data-with-linq-to-sql/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by Joey. To avoid loosing details in paraphrasing, here is the exact question asked by Joey.</description>
+    </item>
+    
+    <item>
+      <title>Request Error in ADO.NET Data Services</title>
+      <link>https://bitofbinary.com/request-error-in-ado.net-data-services/</link>
+      <pubDate>Tue, 16 Jun 2009 02:32:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/request-error-in-ado.net-data-services/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When creating a new ADO.NET Data Service you may find yourself with this error.
+Don’t call it quits on ADO.NET Data Services because of this error. It is very easy to fix. Have a close look at the code generated by Visual Studio for you.</description>
+    </item>
+    
+    <item>
+      <title>Upcoming Speaking Engagements</title>
+      <link>https://bitofbinary.com/upcoming-speaking-engagements/</link>
+      <pubDate>Tue, 12 May 2009 02:04:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/upcoming-speaking-engagements/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Just wanted to let readers of this blog know that I will be presenting Cloud Computing for .Net Developers at
+WDNUG (Wollongong .Net User Group) on 13th May 2009. ADNUG (Adelaide .Net User Group) on 10th June 2009.</description>
+    </item>
+    
+    <item>
+      <title>WPF Community Workshop – Learn WPF and Raise Money</title>
+      <link>https://bitofbinary.com/wpf-community-workshop-learn-wpf-and-raise-money/</link>
+      <pubDate>Mon, 16 Mar 2009 07:59:13 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/wpf-community-workshop-learn-wpf-and-raise-money/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. So you’ve seen Windows Presentation Foundation (WPF) and you think the technology looks interesting. You know your applications are starting to look dated, you understand WPF has matured, now in its 3rd release; but life gets in the way and you haven’t had the chance to get down and dirty with it yet.</description>
+    </item>
+    
+    <item>
+      <title>Programmatically Take Screenshot Using C#</title>
+      <link>https://bitofbinary.com/programmatically-take-screenshot-using-c/</link>
+      <pubDate>Thu, 26 Feb 2009 01:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/programmatically-take-screenshot-using-c/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. To do this you will need to add references to System.Drawing and System.Windows.Forms. Make sure that you have following using statements:using System; using System.Drawing; using System.Drawing.Imaging; using System.Windows.Forms;In your method add this code. It will take a screenshot of your primary screen and save it to a file.</description>
+    </item>
+    
+    <item>
+      <title>Var Keyword in C#</title>
+      <link>https://bitofbinary.com/var-keyword-in-c/</link>
+      <pubDate>Tue, 06 Jan 2009 00:58:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/var-keyword-in-c/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I have a confession to make. When I saw var keyword for the first time I did not like it at all. My first opinion was that var was so variant like. Call me a control freak but I like to clearly see what I am declaring.</description>
+    </item>
+    
+    <item>
+      <title>LINQ Equivalent Of Where IN With Int</title>
+      <link>https://bitofbinary.com/linq-equivalent-of-where-in-with-int/</link>
+      <pubDate>Mon, 05 Jan 2009 07:55:04 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-equivalent-of-where-in-with-int/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Earlier I wrote a post showing how to write a LINQ query which gets transformed into a T-SQL query with a &amp;ldquo;Where In&amp;rdquo; clause. I had a comment on the post by Steve saying that the approach only works with strings.</description>
+    </item>
+    
+    <item>
+      <title>Remove Duplicate Lines From A Text File Using LINQ</title>
+      <link>https://bitofbinary.com/remove-duplicate-lines-from-a-text-file-using-linq/</link>
+      <pubDate>Fri, 12 Dec 2008 07:47:14 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/remove-duplicate-lines-from-a-text-file-using-linq/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. A question was posted on c-sharpcorner forums asking how you would remove duplicate lines from a text file. It got me thinking about how this problem could be addressed using LINQ. Before I get into the solution, here is the problem statement.</description>
+    </item>
+    
+    <item>
+      <title>The Era of Cloud Computing Consultant</title>
+      <link>https://bitofbinary.com/the-era-of-cloud-computing-consultant/</link>
+      <pubDate>Thu, 04 Dec 2008 07:49:03 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/the-era-of-cloud-computing-consultant/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. CCC stands for Cloud Computing Consultant. There, I have said it. This is my contribution to acronyms-land. I have also cleverly designed it to minimize RSI which I am sure will be appreciated. You only have to use one key to type the acronym.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic Sort With LINQ to SQL</title>
+      <link>https://bitofbinary.com/dynamic-sort-with-linq-to-sql/</link>
+      <pubDate>Wed, 19 Nov 2008 00:50:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/dynamic-sort-with-linq-to-sql/</guid>
+      <description>Sometime ago I wrote a post showing how to do dynamic sort with LINQ. That approach worked well with LINQ To Objects. Today I spotted a question on the forums where Levi asked a question about doing dynamic sorts with LINQ To SQL. My earlier approach will work once all the data is retrieved on the client side. This of course is not an ideal way. A better option is to do sorting on database.</description>
+    </item>
+    
+    <item>
+      <title>Enum Support With LINQ to SQL and SqlMetal</title>
+      <link>https://bitofbinary.com/enum-support-with-linq-to-sql-and-sqlmetal/</link>
+      <pubDate>Tue, 18 Nov 2008 00:47:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/enum-support-with-linq-to-sql-and-sqlmetal/</guid>
+      <description>As a programmer I love my enums. I find code written using enums to be more readable than without them. However, there has been and there still is a disconnect between lookup tables in a database and enums in code. One has to restore to some creative trickery to get them working in harmony. Recently while working on a project which involves using LINQ To SQL, I came up with a process which gives me the best of both worlds i.</description>
+    </item>
+    
+    <item>
+      <title>Wi-Fi Not Working With Vodafone Software</title>
+      <link>https://bitofbinary.com/wi-fi-not-working-with-vodafone-software/</link>
+      <pubDate>Wed, 05 Nov 2008 00:46:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/wi-fi-not-working-with-vodafone-software/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. As a part of my job I often travel around Sydney so I use a Vodafone mobile Internet connection to keep myself connected. At home I connect to my wireless network. Recently I faced a problem with my new laptop.</description>
+    </item>
+    
+    <item>
+      <title>LINQ To SQL Training In Sydney</title>
+      <link>https://bitofbinary.com/linq-to-sql-training-in-sydney/</link>
+      <pubDate>Wed, 29 Oct 2008 07:45:04 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-to-sql-training-in-sydney/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I am running a LINQ To SQL Training day on Saturday November 8th at Microsoft Office in North Ryde. The course is FREE for anyone to attend but there are only 20 places available. So if have not yet jumped into the wonderful world of writing LINQ queries.</description>
+    </item>
+    
+    <item>
+      <title>How I Fixed Error 0×80070052 On SD Card</title>
+      <link>https://bitofbinary.com/how-i-fixed-error-080070052-on-sd-card/</link>
+      <pubDate>Sun, 28 Sep 2008 07:02:46 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/how-i-fixed-error-080070052-on-sd-card/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. My SD Card which I use between my PC and PDA was giving me Error 0x80070052. The error would occur when I created a new folder on the card. Initially I suspected this to be a virus but I also wanted to explore other options.</description>
+    </item>
+    
+    <item>
+      <title>View T-SQL Query Generated by LINQ to SQL Using Linqpad</title>
+      <link>https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql-using-linqpad/</link>
+      <pubDate>Tue, 23 Sep 2008 01:28:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql-using-linqpad/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. In my previous post I showed you three different ways to capture the T-SQL query generated by LINQ To SQL. A comment on the post reminded me that I forgot to mention a fourth way i.e. using Linqpad.</description>
+    </item>
+    
+    <item>
+      <title>View T-SQL Query Generated by LINQ to SQL</title>
+      <link>https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql/</link>
+      <pubDate>Mon, 22 Sep 2008 01:27:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. While working with LINQ To SQL there are times when you are interested in looking at the query which will be executed on the database. This post will cover different ways you can capture the query generated by LINQ To SQL.</description>
+    </item>
+    
+    <item>
+      <title>Code Sample: Programmatically Download File Using C#</title>
+      <link>https://bitofbinary.com/code-sample-programmatically-download-file-using-c/</link>
+      <pubDate>Wed, 17 Sep 2008 01:26:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/code-sample-programmatically-download-file-using-c/</guid>
+      <description>While browsing forums today I came across a question which asked for a solution to download a file from a web server programmatically. The solution is very simple and below is the code which achieves the goal. Here I am downloading a file asynchronously on Button Click.```
+private void buttonDownloadFile_Click(object sender, EventArgs e)
+{
+string url
+= @&amp;ldquo;https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/08/image35.png&amp;quot;;
+// Create an instance of WebClient WebClient client = new WebClient(); // Hookup DownloadFileCompleted Event client.</description>
+    </item>
+    
+    <item>
+      <title>LINQ To SQL Join On Multiple Conditions</title>
+      <link>https://bitofbinary.com/linq-to-sql-join-on-multiple-conditions/</link>
+      <pubDate>Tue, 16 Sep 2008 07:07:30 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-to-sql-join-on-multiple-conditions/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Two tables have PostCode and CouncilCode as common fields. Lets say that we want to retrieve all records from ShoppingMall where both PostCode and CouncilCode on House match. This requires us to do a join using two columns.</description>
+    </item>
+    
+    <item>
+      <title>Use SqlConnection With LINQ to SQL</title>
+      <link>https://bitofbinary.com/use-sqlconnection-with-linq-to-sql/</link>
+      <pubDate>Tue, 16 Sep 2008 01:25:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/use-sqlconnection-with-linq-to-sql/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. LINQ To SQL allows us to use a SqlConnection object to connect to a database. The way to use a SqlConnection is to pass it as a parameter to DataContext object. DataContext object has constructor which takes in a IDbConnection and SqlConnection implements this Interface.</description>
+    </item>
+    
+    <item>
+      <title>Deep Cloning In C#</title>
+      <link>https://bitofbinary.com/deep-cloning-in-c/</link>
+      <pubDate>Mon, 01 Sep 2008 07:08:23 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/deep-cloning-in-c/</guid>
+      <description>To make an object cloneable in .NET we should implement ICloneable interface. ICloneable is a simple interface with only one method Clone(). In this post I will show you how to make a deep clone of an object.``` class Program { static void Main(string[] args) { Customer c1 = new Customer { FirstName = &amp;ldquo;John&amp;rdquo;, LastName = &amp;ldquo;Smith&amp;rdquo;, Limit = new CreditLimit { AccountOverdue = false, ApprovedAmount = 1000 } };</description>
+    </item>
+    
+    <item>
+      <title>Get A List Of Installed Applications Using LINQ And C#</title>
+      <link>https://bitofbinary.com/get-a-list-of-installed-applications-using-linq-and-c/</link>
+      <pubDate>Fri, 29 Aug 2008 23:59:50 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/get-a-list-of-installed-applications-using-linq-and-c/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. To get a list of installed applications we need to look into registry. Microsoft.Win32 namespace contains objects which can be used to work with Windows Registry. In this post I will show you some code where I use the power of LINQ to retrieve and display a list of all applications installed on a machine.</description>
+    </item>
+    
+    <item>
+      <title>LINQ Equivalent Of Where IN</title>
+      <link>https://bitofbinary.com/linq-equivalent-of-where-in/</link>
+      <pubDate>Mon, 25 Aug 2008 00:05:01 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-equivalent-of-where-in/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Working with LINQ to SQL I came across a need of writing a LINQ query equivalent of T-SQL &amp;ldquo;Where IN&amp;rdquo; clause. This is what T-SQL query looks like.``` SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax FROM Customers WHERE (Country IN (&amp;lsquo;UK&amp;rsquo;, &amp;lsquo;USA&amp;rsquo;, &amp;lsquo;Australia&amp;rsquo;))</description>
+    </item>
+    
+    <item>
+      <title>Find Duplicates Using LINQ</title>
+      <link>https://bitofbinary.com/find-duplicates-using-linq/</link>
+      <pubDate>Sat, 16 Aug 2008 02:18:45 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/find-duplicates-using-linq/</guid>
+      <description>How can we find duplicate occurrences of values in a collection? I will demonstrate this here using a collection of cities. City class looks like this:public class City { public string Name { get; set; } public string Country { get; set; } }Cities collection is initialised with this code:``` List cities = new List { new City{ Name = &amp;ldquo;Sydney&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Sydney&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;New York&amp;rdquo;, Country = &amp;ldquo;USA&amp;rdquo; }, new City{ Name = &amp;ldquo;Paris&amp;rdquo;, Country = &amp;ldquo;France&amp;rdquo; }, new City{ Name = &amp;ldquo;Milan&amp;rdquo;, Country = &amp;ldquo;Spain&amp;rdquo; }, new City{ Name = &amp;ldquo;Melbourne&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Auckland&amp;rdquo;, Country = &amp;ldquo;New Zealand&amp;rdquo; }, new City{ Name = &amp;ldquo;Tokyo&amp;rdquo;, Country = &amp;ldquo;Japan&amp;rdquo; }, new City{ Name = &amp;ldquo;New Delhi&amp;rdquo;, Country = &amp;ldquo;India&amp;rdquo; }, new City{ Name = &amp;ldquo;Hobart&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Boston&amp;rdquo;, Country = &amp;ldquo;USA&amp;rdquo;} };</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Reading A Text File Using LINQ</title>
+      <link>https://bitofbinary.com/tutorial-reading-a-text-file-using-linq/</link>
+      <pubDate>Wed, 13 Aug 2008 05:00:14 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/tutorial-reading-a-text-file-using-linq/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction At times us developers have to deal with delimited text files in our applications. Such files have been around since yonks and I often come across data import/export tasks where delimited files are used. Till now the common way in .</description>
+    </item>
+    
+    <item>
+      <title>Write To Vista Event Log Using C#</title>
+      <link>https://bitofbinary.com/write-to-vista-event-log-using-c/</link>
+      <pubDate>Thu, 07 Aug 2008 05:37:20 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/write-to-vista-event-log-using-c/</guid>
+      <description>Event Log is a central place to log application events. These events can be errors, warnings or just information. Each event log entry in Windows Vista has a level of event, date and time the event occurred, source of event, an event Id and a task category. While event logs such as Application, System, Security exist by default, you can also create your own event log. You can also write to event log from your own application using System.</description>
+    </item>
+    
+    <item>
+      <title>StyleCop tutorial</title>
+      <link>https://bitofbinary.com/stylecop-tutorial/</link>
+      <pubDate>Thu, 07 Aug 2008 01:08:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/stylecop-tutorial/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. StyleCop is a source analysis tool for C#. It can be used for analysing source code as opposed to compiled assemblies which is the area for FxCop. StyleCop is currently in version 4.2 and can be downloaded here.</description>
+    </item>
+    
+    <item>
+      <title>Free Icons And Images With Visual Studio 2008</title>
+      <link>https://bitofbinary.com/free-icons-and-images-with-visual-studio-2008/</link>
+      <pubDate>Wed, 06 Aug 2008 05:33:19 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/free-icons-and-images-with-visual-studio-2008/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Visual Studio 2008 comes with an Image Library which contains thousands of icons, animations and images which you can use in your applications. You can find the Image Library at C:Program FilesMicrosoft Visual Studio 9.0Common7VS2008ImageLibrary1033 Just unzip VS2008ImageLibrary.</description>
+    </item>
+    
+    <item>
+      <title>Dynamic sort with LINQ</title>
+      <link>https://bitofbinary.com/dynamic-sort-with-linq/</link>
+      <pubDate>Mon, 04 Aug 2008 01:05:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/dynamic-sort-with-linq/</guid>
+      <description>In this post I will show you how to perform dynamic sorting with LINQ. I will work with a simple collection of City class. City class is defined below.
+public class City { public string Name { get; set; } public string Country { get; set; } } The collection is initialised using this code
+List cities = new List { new City{ Name = &amp;#34;Sydney&amp;#34;, Country = &amp;#34;Australia&amp;#34; }, new City{ Name = &amp;#34;New York&amp;#34;, Country = &amp;#34;USA&amp;#34; }, new City{ Name = &amp;#34;Paris&amp;#34;, Country = &amp;#34;France&amp;#34; }, new City{ Name = &amp;#34;Milan&amp;#34;, Country = &amp;#34;Spain&amp;#34; }, new City{ Name = &amp;#34;Melbourne&amp;#34;, Country = &amp;#34;Australia&amp;#34; }, new City{ Name = &amp;#34;Auckland&amp;#34;, Country = &amp;#34;New Zealand&amp;#34; }, new City{ Name = &amp;#34;Tokyo&amp;#34;, Country = &amp;#34;Japan&amp;#34; }, new City{ Name = &amp;#34;New Delhi&amp;#34;, Country = &amp;#34;India&amp;#34; }, new City{ Name = &amp;#34;Hobart&amp;#34;, Country = &amp;#34;Australia&amp;#34; } }; A typical example of applying a sort will be to write such a query.</description>
+    </item>
+    
+    <item>
+      <title>LINQ To SQL Tutorial</title>
+      <link>https://bitofbinary.com/linq-to-sql-tutorial/</link>
+      <pubDate>Thu, 31 Jul 2008 05:27:04 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-to-sql-tutorial/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc.</description>
+    </item>
+    
+    <item>
+      <title>Menus in Avalon</title>
+      <link>https://bitofbinary.com/menus-in-avalon/</link>
+      <pubDate>Sat, 05 Feb 2005 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/menus-in-avalon/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction In this article I will show you how to create menus in Avalon using. This article is for beginners who are getting started with Avalon. I will show you how to write the menus in XAML and how to add Access keys to your menus.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://bitofbinary.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/about/</guid>
+      <description>I’m on a lifelong journey of progressively trying to be less wrong.
+I write software for fun and profit. I have been doing this for more than twenty years and it has been a wonderful journey.
+Other than programming, my interests are reading books, holidaying with my family and cooking.
+According to 16personalities, my personality type is Logician INTP-A
+Take what you will from this. All I can say is that it is not completely wrong.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://bitofbinary.com/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/contact/</guid>
+      <description>Contact Your Name: Your email: Your message: Send </description>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://bitofbinary.com/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/setup/</guid>
+      <description>Operating System and hardware MacOS on Macbook air with M2 chip.
+Editors Neovim Nothing comes close to the power of VIM once you have learned how to exit out of it. You don&amp;rsquo;t change VIM, VIM changes you VSCode Everyone is using it so it must be good. Remember that saying about millions of flies? Shell Z shell with Oh my Zsh and a bunch of useful plugins. Oh my! Terminal Kitty Fast and furious iTerm2 Scrolling is better Multiplexer Tmux is like an addiction Colorscheme Catppuccin everywhere (mostly) Nord when I fantasize about travelling to Norway </description>
+    </item>
+    
+    <item>
+      <title>Sites I like</title>
+      <link>https://bitofbinary.com/sites-i-like/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/sites-i-like/</guid>
+      <description>Sites I like One Ruby Question Exceptional Creatures </description>
+    </item>
+    
+  </channel>
+</rss>

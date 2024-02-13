@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/web/</link>
+    <description>Recent content in Web on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Wed, 12 Nov 2014 02:59:49 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Debugging Techniques with Chrome</title>
+      <link>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</link>
+      <pubDate>Wed, 12 Nov 2014 02:59:49 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</guid>
+      <description>This is a must watch video to see how good chrome debugging tools are. https://www.youtube.com/watch?v=B63jNjSVEbQ</description>
+    </item>
+    
+    <item>
+      <title>5 Free CDNs for developers</title>
+      <link>https://bitofbinary.com/5-free-cdns-for-developers/</link>
+      <pubDate>Thu, 18 Sep 2014 03:09:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/5-free-cdns-for-developers/</guid>
+      <description>CDNs are a popular way to improve a website&amp;rsquo;s performance. The idea is that assets such as scripts, styles etc are loaded from domains other than your own domain. These endpoints are optimised to serve static assets and they do this well. It is common to use CDNs for popular JavaScript libraries and CSS frameworks such as bootstrap. This is a list of some popular CDNs which are available to you for free.</description>
+    </item>
+    
+  </channel>
+</rss>

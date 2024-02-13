@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Android - ListView Tutorial With Images and Text | :bit :of :binary</title>
+<meta name="title" content="Android - ListView Tutorial With Images and Text" />
+<meta name="description" content="Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter." />
+<meta name="keywords" content="Android," />
+
+
+<meta property="og:title" content="Android - ListView Tutorial With Images and Text" />
+<meta property="og:description" content="Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/android-listview-tutorial-with-images-and-text/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-01-07T10:20:00+00:00" />
+<meta property="article:modified_time" content="2014-01-07T10:20:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Android - ListView Tutorial With Images and Text"/>
+<meta name="twitter:description" content="Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter."/>
+
+
+
+<meta itemprop="name" content="Android - ListView Tutorial With Images and Text">
+<meta itemprop="description" content="Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter."><meta itemprop="datePublished" content="2014-01-07T10:20:00+00:00" />
+<meta itemprop="dateModified" content="2014-01-07T10:20:00+00:00" />
+<meta itemprop="wordCount" content="963"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Android," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Android - ListView Tutorial With Images and Text</h1>
+<p>
+  <i>
+    <time datetime='2014-01-07' pubdate>
+      07 Jan, 2014
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/android/">#Android</a>
+  
+</p>
+
+<content>
+  <h3 id="introduction">Introduction</h3>
+<p>In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit <a href="http://www.debugrelease.com/2013/06/19/android-listview-tutorial/">this link</a>. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter. Here is a screenshot of what we will build. <img src="http://kapoor.io/wp-content/uploads/2014/01/image7-190x300.png" alt="image" title="image"></p>
+<h3 id="project-structure">Project structure</h3>
+<p>First we will create an Android Application Module in IntelliJ or an Android application if you are using Eclipse. I use <a href="http://www.jetbrains.com/idea/free_java_ide.html">IntelliJ Community Edition</a> for my Android development and I suggest that you should also have a look. I will name the package com.debugrelease.android.listviewwithimagesandtext <img src="http://kapoor.io/wp-content/uploads/2014/01/SNAGHTML5aec1f5-300x96.png" alt="SNAGHTML5aec1f5" title="SNAGHTML5aec1f5"> Other than the name of package and activity name I have not made any changes.</p>
+<h3 id="items">Items</h3>
+<p>We need some items which we will display in the ListView. As we are also displaying images along with text, we will need some images. A good place to get some icons is <a href="http://www.androidicons.com/">www.androidicons.com</a>. They also have some icons available for free and those will be enough for this tutorial. Of course you can also use any other images you like. We will copy these images into the assets folder. You can also find the images in the <a href="https://github.com/deepak-kapoor/debug-release-android-samples">Github repository</a>. The project is located in ListViewWithImagesAndText folder. <img src="http://kapoor.io/wp-content/uploads/2014/01/image8-300x168.png" alt="image" title="image"></p>
+<h3 id="model">Model</h3>
+<p>We will create a new class which will act as the model for our list items. Let’s call this class Item. Here is the code.```
+package com.debugrelease.android.listviewwithimagesandtext;</p>
+<p>public class Item {</p>
+<pre><code>public int Id;  
+public String IconFile;  
+public String Name;  
+
+public Item(int id, String iconFile, String name) {  
+
+    Id = id;  
+    IconFile = iconFile;  
+    Name = name;  
+
+}  
+</code></pre>
+<p>}</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#babbf1">We</span> <span style="color:#babbf1">will</span> <span style="color:#babbf1">also</span> <span style="color:#babbf1">create</span> <span style="color:#babbf1">a</span> <span style="color:#babbf1">Model</span> <span style="color:#babbf1">class</span> <span style="color:#babbf1">which</span> <span style="color:#babbf1">will</span> <span style="color:#babbf1">provide</span> <span style="color:#babbf1">us</span> <span style="color:#babbf1">with</span> <span style="color:#babbf1">an</span> <span style="color:#babbf1">ArrayList</span> <span style="color:#babbf1">of</span> <span style="color:#babbf1">our</span> <span style="color:#babbf1">items</span><span style="color:#c6d0f5">.</span> <span style="color:#babbf1">Model</span> <span style="color:#babbf1">class</span> <span style="color:#babbf1">also</span> <span style="color:#babbf1">has</span> <span style="color:#babbf1">a</span> <span style="color:#babbf1">method</span> <span style="color:#babbf1">GetById</span> <span style="color:#babbf1">which</span> <span style="color:#babbf1">is</span> <span style="color:#babbf1">used</span> <span style="color:#babbf1">by</span> <span style="color:#babbf1">the</span> <span style="color:#babbf1">adapter</span><span style="color:#c6d0f5">.</span> <span style="color:#babbf1">Here</span> <span style="color:#babbf1">is</span> <span style="color:#babbf1">the</span> <span style="color:#babbf1">code</span> <span style="color:#ca9ee6">for</span> <span style="color:#babbf1">Model</span> <span style="color:#babbf1">class</span><span style="color:#c6d0f5">.</span><span style="color:#a6d189">``</span><span style="color:#e78284">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">package</span> <span style="color:#babbf1">com</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">debugrelease</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">android</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">listviewwithimagesandtext</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#babbf1">java</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">util</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ArrayList</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">public</span> <span style="color:#babbf1">class</span> <span style="color:#babbf1">Model</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">public</span> <span style="color:#babbf1">static</span> <span style="color:#babbf1">ArrayList</span><span style="color:#c6d0f5">&lt;</span><span style="color:#babbf1">Item</span><span style="color:#c6d0f5">&gt;</span> <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">public</span> <span style="color:#babbf1">static</span> <span style="color:#babbf1">void</span> <span style="color:#99d1db">LoadModel</span><span style="color:#c6d0f5">()</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">new</span> <span style="color:#babbf1">ArrayList</span><span style="color:#c6d0f5">&lt;</span><span style="color:#babbf1">Item</span><span style="color:#c6d0f5">&gt;();</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>1<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_alarm\_2.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Alarm&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>2<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_calculator.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Calculator&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>3<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_google\_play.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Play&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>4<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_line\_chart.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Line Chart&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>5<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_location\_2.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Location&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>6<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_news.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;News&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span> <span style="color:#99d1db">Item</span><span style="color:#c6d0f5">(</span>7<span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;ic\_action\_stamp.png&#34;</span><span style="color:#c6d0f5">,</span> <span style="color:#a6d189">&#34;Stamp&#34;</span><span style="color:#c6d0f5">));</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">public</span> <span style="color:#babbf1">static</span> <span style="color:#babbf1">Item</span> <span style="color:#99d1db">GetbyId</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">int</span> <span style="color:#babbf1">id</span><span style="color:#c6d0f5">){</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">for</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Item</span> <span style="color:#babbf1">item</span> <span style="color:#c6d0f5">:</span> <span style="color:#babbf1">Items</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#ca9ee6">if</span> <span style="color:#c6d0f5">(</span><span style="color:#babbf1">item</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Id</span> <span style="color:#99d1db">==</span> <span style="color:#babbf1">id</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>                <span style="color:#ca9ee6">return</span> <span style="color:#babbf1">item</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">return</span> <span style="color:#babbf1">null</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><h3 id="layouts">Layouts</h3>
+<p>In the main.xml which is the layout used by MainActivity, we will place a ListView widget and set it’s layout_width and layout_height to wrap_content. ListView will also have a id set because we’ll need to reference it in code. Here are contents of main.xml```</p>
+<?xml version="1.0" encoding="utf-8"?>  
+<p>&lt;LinearLayout xmlns:android=&ldquo;<a href="http://schemas.android.com/apk/res/android%22">http://schemas.android.com/apk/res/android&quot;</a><br>
+android:orientation=&ldquo;vertical&rdquo;<br>
+android:layout_width=&ldquo;fill_parent&rdquo;<br>
+android:layout_height=&ldquo;fill_parent&rdquo;&gt;</p>
+<pre><code>&lt;ListView  
+        android:layout\_width=&quot;wrap\_content&quot;  
+        android:layout\_height=&quot;wrap\_content&quot;  
+        android:id=&quot;@+id/listView&quot; /&gt;  
+</code></pre>
+</LinearLayout>  
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Now this is important. If we were just displaying text then there would be no need to create a custom layout, we could just use one from sdk resources. But since we are displaying more than text, we need to create a new layout which will be the template for each item. Let’s call it row.xml```
+</span></span><span style="display:flex;"><span>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>&lt;RelativeLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;  
+</span></span><span style="display:flex;"><span>                android:layout\_width=&#34;match\_parent&#34;  
+</span></span><span style="display:flex;"><span>                android:layout\_height=&#34;match\_parent&#34;  
+</span></span><span style="display:flex;"><span>                android:gravity=&#34;center\_vertical&#34;  
+</span></span><span style="display:flex;"><span>                android:minHeight=&#34;64dp&#34;&gt;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    &lt;ImageView  
+</span></span><span style="display:flex;"><span>            android:id=&#34;@+id/imageView&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_width=&#34;32dp&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_height=&#34;32dp&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_alignParentLeft=&#34;true&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_marginLeft=&#34;9dp&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_alignParentTop=&#34;true&#34;/&gt;  
+</span></span><span style="display:flex;"><span>    &lt;TextView  
+</span></span><span style="display:flex;"><span>            android:layout\_alignBottom=&#34;@+id/imageView&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_width=&#34;97dp&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_height=&#34;32dp&#34;  
+</span></span><span style="display:flex;"><span>            android:id=&#34;@+id/textView&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_alignParentLeft=&#34;true&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_marginLeft=&#34;66dp&#34;  
+</span></span><span style="display:flex;"><span>            android:layout\_alignParentRight=&#34;true&#34;  
+</span></span><span style="display:flex;"><span>            android:gravity=&#34;center\_vertical&#34;/&gt;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>&lt;/RelativeLayout&gt;
+</span></span></code></pre></div><p>See how I have placed an ImageView and a TextView within RelativeLayout. For each item one of these will be used.</p>
+<h3 id="adapter">Adapter</h3>
+<p>A ListView needs an adapter to display items. And because of our slightly custom requriement of displaying images and text, we will create our own custom adapter. This can be done by creating a class which extends ArrayAdatpter<String>. In this class <strong>getView</strong> method is of interest to us. Within this method we will inflate the row layout we created earlier. We will then write some code to populate both ImageView and TextView. Below is the full code for our adapter.```
+package com.debugrelease.android.listviewwithimagesandtext;</p>
+<p>import android.content.Context;<br>
+import android.graphics.drawable.Drawable;<br>
+import android.view.LayoutInflater;<br>
+import android.view.View;<br>
+import android.view.ViewGroup;<br>
+import android.widget.ArrayAdapter;<br>
+import android.widget.ImageView;<br>
+import android.widget.TextView;</p>
+<p>import java.io.IOException;<br>
+import java.io.InputStream;</p>
+<p>public class ItemAdapter extends ArrayAdapter<String> {</p>
+<pre><code>private final Context context;  
+private final String\[\] Ids;  
+private final int rowResourceId;  
+
+public ItemAdapter(Context context, int textViewResourceId, String\[\] objects) {  
+
+    super(context, textViewResourceId, objects);  
+
+    this.context = context;  
+    this.Ids = objects;  
+    this.rowResourceId = textViewResourceId;  
+
+}  
+
+@Override  
+public View getView(int position, View convertView, ViewGroup parent) {  
+
+    LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT\_INFLATER\_SERVICE);  
+
+    View rowView = inflater.inflate(rowResourceId, parent, false);  
+    ImageView imageView = (ImageView) rowView.findViewById(R.id.imageView);  
+    TextView textView = (TextView) rowView.findViewById(R.id.textView);  
+
+    int id = Integer.parseInt(Ids\[position\]);  
+    String imageFile = Model.GetbyId(id).IconFile;  
+
+    textView.setText(Model.GetbyId(id).Name);  
+    // get input stream  
+    InputStream ims = null;  
+    try {  
+        ims = context.getAssets().open(imageFile);  
+    } catch (IOException e) {  
+        e.printStackTrace();  
+    }  
+    // load image as Drawable  
+    Drawable d = Drawable.createFromStream(ims, null);  
+    // set image to ImageView  
+    imageView.setImageDrawable(d);  
+    return rowView;  
+
+}  
+</code></pre>
+<p>}</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#babbf1">What</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span> <span style="color:#babbf1">left</span> <span style="color:#babbf1">now</span> <span style="color:#babbf1">is</span> <span style="color:#babbf1">to</span> <span style="color:#babbf1">load</span> <span style="color:#babbf1">the</span> <span style="color:#babbf1">Model</span> <span style="color:#babbf1">by</span> <span style="color:#babbf1">calling</span> <span style="color:#babbf1">Model</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">LoadModel</span> <span style="color:#babbf1">static</span> <span style="color:#babbf1">method</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">finding</span> <span style="color:#babbf1">the</span> <span style="color:#babbf1">ListView</span> <span style="color:#babbf1">and</span> <span style="color:#babbf1">assigning</span> <span style="color:#babbf1">it</span> <span style="color:#babbf1">the</span> <span style="color:#babbf1">adapter</span><span style="color:#c6d0f5">.</span> <span style="color:#babbf1">This</span> <span style="color:#babbf1">is</span> <span style="color:#babbf1">done</span> <span style="color:#babbf1">in</span> <span style="color:#babbf1">MainActivity</span> <span style="color:#babbf1">class</span> <span style="color:#babbf1">within</span> <span style="color:#babbf1">overridden</span> <span style="color:#babbf1">onCreate</span> <span style="color:#babbf1">method</span><span style="color:#c6d0f5">.</span><span style="color:#a6d189">``</span><span style="color:#e78284">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">package</span> <span style="color:#babbf1">com</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">debugrelease</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">android</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">listviewwithimagesandtext</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#babbf1">android</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Activity</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#babbf1">android</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">os</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Bundle</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">import</span> <span style="color:#babbf1">android</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">widget</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ListView</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#babbf1">public</span> <span style="color:#babbf1">class</span> <span style="color:#babbf1">MainActivity</span> <span style="color:#babbf1">extends</span> <span style="color:#babbf1">Activity</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">ListView</span> <span style="color:#babbf1">listView</span><span style="color:#c6d0f5">;</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#e78284">@</span><span style="color:#babbf1">Override</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">public</span> <span style="color:#babbf1">void</span> <span style="color:#99d1db">onCreate</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Bundle</span> <span style="color:#babbf1">savedInstanceState</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">super</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">onCreate</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">savedInstanceState</span><span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#99d1db">setContentView</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">R</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">layout</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">main</span><span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Model</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">LoadModel</span><span style="color:#c6d0f5">();</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">listView</span> <span style="color:#c6d0f5">=</span> <span style="color:#c6d0f5">(</span><span style="color:#babbf1">ListView</span><span style="color:#c6d0f5">)</span> <span style="color:#99d1db">findViewById</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">R</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">id</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">listView</span><span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">String</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">[</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">]</span> <span style="color:#babbf1">ids</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">new</span> <span style="color:#babbf1">String</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">[</span><span style="color:#babbf1">Model</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Items</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">size</span><span style="color:#c6d0f5">()</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">];</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#ca9ee6">for</span> <span style="color:#c6d0f5">(</span><span style="color:#e5c890">int</span> <span style="color:#babbf1">i</span><span style="color:#c6d0f5">=</span> 0<span style="color:#c6d0f5">;</span> <span style="color:#babbf1">i</span> <span style="color:#c6d0f5">&lt;</span> <span style="color:#babbf1">ids</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">length</span><span style="color:#c6d0f5">;</span> <span style="color:#babbf1">i</span><span style="color:#99d1db">++</span><span style="color:#c6d0f5">){</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>            <span style="color:#babbf1">ids</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">[</span><span style="color:#babbf1">i</span><span style="color:#e78284">\</span><span style="color:#c6d0f5">]</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">Integer</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">toString</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">i</span><span style="color:#99d1db">+</span>1<span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">ItemAdapter</span> <span style="color:#babbf1">adapter</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">new</span> <span style="color:#99d1db">ItemAdapter</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">,</span><span style="color:#babbf1">R</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">layout</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">row</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">ids</span><span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">listView</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">setAdapter</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">adapter</span><span style="color:#c6d0f5">);</span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>  
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>In conclusion, displaying image and text in each cell of ListView is pretty simple. All you need to do is define your preferred layout for each cell, and create an adapter which will load that view for each position.<br>
+The code for this post and all my Android related posts is in a <a href="https://github.com/deepak-kapoor/debug-release-android-samples">Github repository</a>. For this tutorial look for ListViewWithImagesAndText folder within the repository.<br>
+Icons used in this post and the code are from <a href="http://www.androidicons.com/">androidicons.com</a></p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/android-linear-layout-example/?ref=footer">Android - Linear Layout Example</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/node.js-make-npm-work-behind-proxy/?ref=footer">Node.js - Make npm work behind proxy</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

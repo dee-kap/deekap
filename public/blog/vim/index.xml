@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/vim/</link>
+    <description>Recent content in Vim on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Wed, 30 Aug 2023 01:36:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Format code before saving in vim with Prettier</title>
+      <link>https://bitofbinary.com/format-code-before-saving-in-vim-with-prettier/</link>
+      <pubDate>Wed, 30 Aug 2023 01:36:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/format-code-before-saving-in-vim-with-prettier/</guid>
+      <description>To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.
+Adding the code below to config will automatically format files of type *.ts,*.js,*.jsx,*.tsx,*.css before saving.
+Here I am using Prettier, so Prettier has to be installed for this to work.
+function format_and_restore_cursor() local cursor_pos = vim.fn.getcurpos() vim.cmd(&amp;#34;silent! %!prettier --stdin-filepath % --single-quote&amp;#34;) vim.fn.setpos(&amp;#39;.&amp;#39;, cursor_pos) end function setup_external_formatter_autocmd() vim.</description>
+    </item>
+    
+    <item>
+      <title>Vim update after using it for more than a month</title>
+      <link>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</link>
+      <pubDate>Fri, 09 May 2014 06:29:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. It has now been close to a month since I started using Vim as my main editor. This post is about my Vim adventures.
+Lately I have found watching videos to be an excellent source of learning new things.</description>
+    </item>
+    
+    <item>
+      <title>Starting Vim Journey Again</title>
+      <link>https://bitofbinary.com/starting-vim-journey-again/</link>
+      <pubDate>Fri, 11 Apr 2014 05:52:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/starting-vim-journey-again/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Every few months I talk myself into using Vim as my text editor. Mostly it happens after I have watched a presentation in which the presenter wows me with their code editing skills on Vim. I miss the main subject of the presentation because I get so wowed by their Vim ninja skills.</description>
+    </item>
+    
+  </channel>
+</rss>

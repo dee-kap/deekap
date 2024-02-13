@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/tools/</link>
+    <description>Recent content in Tools on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Mon, 08 Jul 2019 04:07:58 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Moving from iTerm to Alacritty</title>
+      <link>https://bitofbinary.com/moving-from-iterm-to-alacritty/</link>
+      <pubDate>Mon, 08 Jul 2019 04:07:58 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/moving-from-iterm-to-alacritty/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. A few years ago I decided to use Vim as my text editor. It has been a fantastic journey so far. I have learned a lot about Vim and I keep learning new things every day. This continuous learning makes the tool so interesting.</description>
+    </item>
+    
+    <item>
+      <title>My Visual Studio Code Setup</title>
+      <link>https://bitofbinary.com/my-visual-studio-code-setup/</link>
+      <pubDate>Fri, 19 Oct 2018 01:48:25 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-visual-studio-code-setup/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. When Microsoft announced Visual Studio Code in 2015, I did not have good things to say about it. However, times have changed and Visual Studio Code is my preferred code editor these days. The editor has come a long way and it is commendable that Microsoft is serious about maintaining VS Code.</description>
+    </item>
+    
+    <item>
+      <title>Path Picker by Facebook</title>
+      <link>https://bitofbinary.com/path-picker-by-facebook/</link>
+      <pubDate>Fri, 08 May 2015 02:19:22 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/path-picker-by-facebook/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Path Picker is a little utility brought to us by Facebook. According to the official website
+PathPicker accepts a wide range of input &amp;ndash; output from git commands, grep results, searches &amp;ndash; pretty much anything.
+On a mac Path Picker can be installed by using brew.</description>
+    </item>
+    
+    <item>
+      <title>Advanced Debugging Techniques with Chrome</title>
+      <link>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</link>
+      <pubDate>Wed, 12 Nov 2014 02:59:49 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/advanced-debugging-techniques-with-chrome/</guid>
+      <description>This is a must watch video to see how good chrome debugging tools are. https://www.youtube.com/watch?v=B63jNjSVEbQ</description>
+    </item>
+    
+    <item>
+      <title>git log basic to advance</title>
+      <link>https://bitofbinary.com/git-log-basic-to-advance/</link>
+      <pubDate>Wed, 21 May 2014 03:33:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/git-log-basic-to-advance/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Git is just awesome and more awesome are the tools it comes with. Git log is one of those tools I use extensively throughout my day.
+I started using git log in its vanilla form and then slowly as my understanding of git increased, I started using fancier git log commands.</description>
+    </item>
+    
+    <item>
+      <title>Vim update after using it for more than a month</title>
+      <link>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</link>
+      <pubDate>Fri, 09 May 2014 06:29:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. It has now been close to a month since I started using Vim as my main editor. This post is about my Vim adventures.
+Lately I have found watching videos to be an excellent source of learning new things.</description>
+    </item>
+    
+    <item>
+      <title>Starting Vim Journey Again</title>
+      <link>https://bitofbinary.com/starting-vim-journey-again/</link>
+      <pubDate>Fri, 11 Apr 2014 05:52:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/starting-vim-journey-again/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Every few months I talk myself into using Vim as my text editor. Mostly it happens after I have watched a presentation in which the presenter wows me with their code editing skills on Vim. I miss the main subject of the presentation because I get so wowed by their Vim ninja skills.</description>
+    </item>
+    
+    <item>
+      <title>Free Icons And Images With Visual Studio 2008</title>
+      <link>https://bitofbinary.com/free-icons-and-images-with-visual-studio-2008/</link>
+      <pubDate>Wed, 06 Aug 2008 05:33:19 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/free-icons-and-images-with-visual-studio-2008/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Visual Studio 2008 comes with an Image Library which contains thousands of icons, animations and images which you can use in your applications. You can find the Image Library at C:Program FilesMicrosoft Visual Studio 9.0Common7VS2008ImageLibrary1033 Just unzip VS2008ImageLibrary.</description>
+    </item>
+    
+  </channel>
+</rss>

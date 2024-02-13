@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Linux - Setgid on Directory and Share Directory With Users | :bit :of :binary</title>
+<meta name="title" content="Linux - Setgid on Directory and Share Directory With Users" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I came across a scenario which warranted using setgid. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users." />
+<meta name="keywords" content="Linux," />
+
+
+<meta property="og:title" content="Linux - Setgid on Directory and Share Directory With Users" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I came across a scenario which warranted using setgid. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/linux-setgid-on-directory-and-share-directory-with-users/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2013-07-25T03:20:00+00:00" />
+<meta property="article:modified_time" content="2013-07-25T03:20:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Linux - Setgid on Directory and Share Directory With Users"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I came across a scenario which warranted using setgid. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users."/>
+
+
+
+<meta itemprop="name" content="Linux - Setgid on Directory and Share Directory With Users">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I came across a scenario which warranted using setgid. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users."><meta itemprop="datePublished" content="2013-07-25T03:20:00+00:00" />
+<meta itemprop="dateModified" content="2013-07-25T03:20:00+00:00" />
+<meta itemprop="wordCount" content="669"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Linux," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Linux - Setgid on Directory and Share Directory With Users</h1>
+<p>
+  <i>
+    <time datetime='2013-07-25' pubdate>
+      25 Jul, 2013
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/linux/">#Linux</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>I came across a scenario which warranted using <code>setgid</code>. The requirement was to allow multiple users to create files and read files in a directory. I also wanted to ensure that this requirement can be easily met for any future users. I will explain what I did with a simple example. To make it simple we will work with two users and one directory. The directory will be called <strong>shareddocs</strong>. As there are multiple users involved, it is not a good idea to create it in home but some place like <strong>/usr/share</strong>. Only a user with superuser privileges can create a directory in /usr/share, so we will need to use <code>sudo</code>. On my machine I am the master of unixverse and I have permissions to sudo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">mkdir</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Two</span><span style="color:#414559"> </span><span style="color:#babbf1">users</span><span style="color:#414559"> </span><span style="color:#ca9ee6">in</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">example</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#99d1db">**</span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">**</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#99d1db">**</span><span style="color:#babbf1">chewbacca</span><span style="color:#99d1db">**</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559"> </span><span style="color:#babbf1">already</span><span style="color:#414559"> </span><span style="color:#ca9ee6">exists</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#ca9ee6">If</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">trying</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">at</span><span style="color:#414559"> </span><span style="color:#babbf1">home</span><span style="color:#414559"> </span><span style="color:#ca9ee6">then</span><span style="color:#414559"> </span><span style="color:#ca9ee6">replace</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559"> </span><span style="color:#ca9ee6">with</span><span style="color:#414559"> </span><span style="color:#babbf1">whatever</span><span style="color:#414559"> </span><span style="color:#babbf1">your</span><span style="color:#414559"> </span><span style="color:#babbf1">username</span><span style="color:#414559"> </span><span style="color:#ca9ee6">is</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Just</span><span style="color:#414559"> </span><span style="color:#babbf1">remember</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#ca9ee6">use</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#ca9ee6">for</span><span style="color:#414559"> </span><span style="color:#babbf1">some</span><span style="color:#414559"> </span><span style="color:#babbf1">commands</span><span style="color:#414559"> </span><span style="color:#babbf1">so</span><span style="color:#414559"> </span><span style="color:#babbf1">make</span><span style="color:#414559"> </span><span style="color:#babbf1">sure</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">account</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#ca9ee6">using</span><span style="color:#414559"> </span><span style="color:#babbf1">has</span><span style="color:#414559"> </span><span style="color:#babbf1">appropriate</span><span style="color:#414559"> </span><span style="color:#babbf1">permissions</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Let</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#e5c890">set</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#babbf1">password</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">useradd</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">passwd</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Let</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#babbf1">also</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">called</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">groupadd</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Next</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">make</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">members</span><span style="color:#414559"> </span><span style="color:#babbf1">of</span><span style="color:#414559"> </span><span style="color:#babbf1">warrirors</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">usermod</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">G</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">usermod</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">G</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#ca9ee6">To</span><span style="color:#414559"> </span><span style="color:#babbf1">see</span><span style="color:#414559"> </span><span style="color:#babbf1">groups</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#ca9ee6">user</span><span style="color:#414559"> </span><span style="color:#babbf1">belongs</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">run</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">command</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">groups</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#ca9ee6">And</span><span style="color:#414559"> </span><span style="color:#babbf1">now</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">fun</span><span style="color:#414559"> </span><span style="color:#babbf1">starts</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Logged</span><span style="color:#414559"> </span><span style="color:#ca9ee6">in</span><span style="color:#414559"> </span><span style="color:#ca9ee6">as</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">let</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">file</span><span style="color:#414559"> </span><span style="color:#ca9ee6">in</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#babbf1">story1</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">txt</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">View</span><span style="color:#414559"> </span><span style="color:#babbf1">permissions</span><span style="color:#414559"> </span><span style="color:#ca9ee6">for</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">ls</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">ld</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">drwxr</span><span style="color:#99d1db">-</span><span style="color:#babbf1">xr</span><span style="color:#99d1db">-</span><span style="color:#babbf1">x</span><span style="color:#414559"> </span>2<span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span>4096<span style="color:#414559"> </span><span style="color:#babbf1">Jul</span><span style="color:#414559"> </span>24<span style="color:#414559"> </span>22<span style="color:#c6d0f5">:</span>43<span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Notice</span><span style="color:#414559"> </span><span style="color:#babbf1">how</span><span style="color:#414559"> </span><span style="color:#ca9ee6">both</span><span style="color:#414559"> </span><span style="color:#babbf1">owner</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span><span style="color:#ca9ee6">for</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">sharedocs</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Now</span><span style="color:#414559"> </span><span style="color:#ca9ee6">if</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">try</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">file</span><span style="color:#414559"> </span><span style="color:#ca9ee6">as</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">get</span><span style="color:#414559"> </span><span style="color:#babbf1">an</span><span style="color:#414559"> </span><span style="color:#babbf1">error</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">chewbacca</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#babbf1">story2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">txt</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">touch</span><span style="color:#c6d0f5">:</span><span style="color:#414559"> </span><span style="color:#babbf1">cannot</span><span style="color:#414559"> </span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#a6d189">&#39;story2.txt&#39;</span><span style="color:#c6d0f5">:</span><span style="color:#414559"> </span><span style="color:#babbf1">Permission</span><span style="color:#414559"> </span><span style="color:#babbf1">denied</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#ca9ee6">is</span><span style="color:#414559"> </span><span style="color:#babbf1">because</span><span style="color:#414559"> </span><span style="color:#babbf1">only</span><span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span><span style="color:#babbf1">has</span><span style="color:#414559"> </span><span style="color:#ca9ee6">read</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#ca9ee6">write</span><span style="color:#414559"> </span><span style="color:#babbf1">permissions</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">We</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">fix</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">situation</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">first</span><span style="color:#414559"> </span><span style="color:#babbf1">giving</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">ownership</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">earlier</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">chown</span><span style="color:#414559"> </span><span style="color:#c6d0f5">:</span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Now</span><span style="color:#414559"> </span><span style="color:#ca9ee6">if</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">look</span><span style="color:#414559"> </span><span style="color:#babbf1">at</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">permissions</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">see</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#414559"> </span><span style="color:#ca9ee6">is</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">ls</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">ld</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">drwxr</span><span style="color:#99d1db">-</span><span style="color:#babbf1">xr</span><span style="color:#99d1db">-</span><span style="color:#babbf1">x</span><span style="color:#414559"> </span>2<span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span>4096<span style="color:#414559"> </span><span style="color:#babbf1">Jul</span><span style="color:#414559"> </span>24<span style="color:#414559"> </span>22<span style="color:#c6d0f5">:</span>43<span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">So</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">file</span><span style="color:#414559"> </span><span style="color:#babbf1">now</span><span style="color:#99d1db">?</span><span style="color:#414559"> </span><span style="color:#babbf1">Well</span><span style="color:#414559"> </span><span style="color:#ca9ee6">not</span><span style="color:#414559"> </span><span style="color:#babbf1">yet</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">We</span><span style="color:#414559"> </span><span style="color:#babbf1">still</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">enable</span><span style="color:#414559"> </span><span style="color:#ca9ee6">write</span><span style="color:#414559"> </span><span style="color:#babbf1">permission</span><span style="color:#414559"> </span><span style="color:#ca9ee6">for</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">chmod</span><span style="color:#414559"> </span>775<span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#ca9ee6">By</span><span style="color:#414559"> </span><span style="color:#babbf1">executing</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">above</span><span style="color:#414559"> </span><span style="color:#babbf1">command</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">have</span><span style="color:#414559"> </span><span style="color:#babbf1">given</span><span style="color:#414559"> </span><span style="color:#ca9ee6">read</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#ca9ee6">write</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">execute</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">owner</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">ls</span><span style="color:#414559"> </span><span style="color:#99d1db">-</span><span style="color:#babbf1">ld</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">drwxrwxr</span><span style="color:#99d1db">-</span><span style="color:#babbf1">x</span><span style="color:#414559"> </span>2<span style="color:#414559"> </span><span style="color:#babbf1">root</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span>4096<span style="color:#414559"> </span><span style="color:#babbf1">Jul</span><span style="color:#414559"> </span>24<span style="color:#414559"> </span>22<span style="color:#c6d0f5">:</span>43<span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">now</span><span style="color:#414559"> </span><span style="color:#ca9ee6">create</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#ca9ee6">in</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#99d1db">/```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">chewbacca</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#babbf1">story2</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">txt</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">One</span><span style="color:#414559"> </span><span style="color:#babbf1">problem</span><span style="color:#414559"> </span><span style="color:#babbf1">still</span><span style="color:#414559"> </span><span style="color:#babbf1">remains</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Files</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">We</span><span style="color:#414559"> </span><span style="color:#babbf1">want</span><span style="color:#414559"> </span><span style="color:#ca9ee6">all</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#babbf1">within</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#414559"> </span><span style="color:#ca9ee6">to</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#99d1db">**</span><span style="color:#babbf1">warriors</span><span style="color:#99d1db">**</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#ca9ee6">is</span><span style="color:#414559"> </span><span style="color:#ca9ee6">where</span><span style="color:#414559"> </span><span style="color:#99d1db">`</span><span style="color:#babbf1">setgid</span><span style="color:#99d1db">`</span><span style="color:#414559"> </span><span style="color:#babbf1">comes</span><span style="color:#414559"> </span><span style="color:#ca9ee6">in</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Finally</span><span style="color:#99d1db">!</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">say</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Let</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#babbf1">run</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">following</span><span style="color:#414559"> </span><span style="color:#babbf1">command</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">deepak</span><span style="color:#99d1db">@</span><span style="color:#babbf1">ubuntu</span><span style="color:#c6d0f5">:</span><span style="color:#99d1db">~</span><span style="color:#e78284">$</span><span style="color:#414559"> </span><span style="color:#babbf1">sudo</span><span style="color:#414559"> </span><span style="color:#babbf1">chmod</span><span style="color:#414559"> </span><span style="color:#babbf1">g</span><span style="color:#99d1db">+</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">usr</span><span style="color:#99d1db">/</span><span style="color:#babbf1">share</span><span style="color:#99d1db">/</span><span style="color:#babbf1">shareddocs</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">```</span><span style="color:#ca9ee6">From</span><span style="color:#414559"> </span><span style="color:#babbf1">here</span><span style="color:#414559"> </span><span style="color:#ca9ee6">on</span><span style="color:#414559"> </span><span style="color:#babbf1">any</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">either</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559"> </span><span style="color:#ca9ee6">or</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Now</span><span style="color:#414559"> </span><span style="color:#ca9ee6">if</span><span style="color:#414559"> </span><span style="color:#babbf1">deepak</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">story3</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">txt</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">chewbacca</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">story4</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">txt</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">they</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#ca9ee6">both</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#c6d0f5">.</span><span style="color:#99d1db">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">\</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">r</span><span style="color:#99d1db">--</span><span style="color:#babbf1">r</span><span style="color:#626880;font-style:italic">-- 1 root root 16 Jul 25 15:26 story1.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#e78284">\</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">r</span><span style="color:#626880;font-style:italic">-- 1 chewbacca chewbacca 0 Jul 25 15:36 story2.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#e78284">\</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">r</span><span style="color:#626880;font-style:italic">-- 1 deepak warriors 0 Jul 25 15:42 story3.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#e78284">\</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">rw</span><span style="color:#99d1db">-</span><span style="color:#babbf1">r</span><span style="color:#626880;font-style:italic">-- 1 chewbacca warriors 0 Jul 25 15:44 story4.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#99d1db">```</span><span style="color:#babbf1">Note</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">two</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">earlier</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">still</span><span style="color:#414559"> </span><span style="color:#ca9ee6">not</span><span style="color:#414559"> </span><span style="color:#babbf1">owned</span><span style="color:#414559"> </span><span style="color:#ca9ee6">by</span><span style="color:#414559"> </span><span style="color:#babbf1">warriors</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">They</span><span style="color:#414559"> </span><span style="color:#babbf1">cannot</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">shared</span><span style="color:#414559"> </span><span style="color:#ca9ee6">and</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">should</span><span style="color:#414559"> </span><span style="color:#babbf1">just</span><span style="color:#414559"> </span><span style="color:#ca9ee6">delete</span><span style="color:#414559"> </span><span style="color:#babbf1">them</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Let</span><span style="color:#e78284">’</span><span style="color:#babbf1">s</span><span style="color:#414559"> </span><span style="color:#babbf1">talk</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#e5c890">bit</span><span style="color:#414559"> </span><span style="color:#babbf1">more</span><span style="color:#414559"> </span><span style="color:#babbf1">about</span><span style="color:#414559"> </span><span style="color:#99d1db">`</span><span style="color:#babbf1">setgid</span><span style="color:#99d1db">`</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">The</span><span style="color:#414559"> </span><span style="color:#babbf1">command</span><span style="color:#414559"> </span><span style="color:#babbf1">sets</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">id</span><span style="color:#414559"> </span><span style="color:#babbf1">bits</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#babbf1">means</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">any</span><span style="color:#414559"> </span><span style="color:#babbf1">new</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#ca9ee6">or</span><span style="color:#414559"> </span><span style="color:#babbf1">directories</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">within</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">inherit</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">same</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#ca9ee6">as</span><span style="color:#414559"> </span><span style="color:#babbf1">containing</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#ca9ee6">To</span><span style="color:#414559"> </span><span style="color:#babbf1">remove</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#ca9ee6">group</span><span style="color:#414559"> </span><span style="color:#babbf1">id</span><span style="color:#414559"> </span><span style="color:#e5c890">bit</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#ca9ee6">use</span><span style="color:#414559"> </span><span style="color:#99d1db">`</span><span style="color:#babbf1">g</span><span style="color:#99d1db">-</span><span style="color:#babbf1">s</span><span style="color:#99d1db">`</span><span style="color:#c6d0f5">.</span><span style="color:#414559">
+</span></span></span></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/linux-number-of-files-in-directory/?ref=footer">Linux - Number of Files in Directory</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/android-expandablelistview-tutorial/?ref=footer">Android - ExpandableListView Tutorial</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Express 4 routing guide | :bit :of :binary</title>
+<meta name="title" content="Express 4 routing guide" />
+<meta name="description" content="Introduction In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.
+What is routing Routing is one of the fundamental building blocks for any web framework." />
+<meta name="keywords" content="Node.js," />
+
+
+<meta property="og:title" content="Express 4 routing guide" />
+<meta property="og:description" content="Introduction In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.
+What is routing Routing is one of the fundamental building blocks for any web framework." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/express-4-routing-guide/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-04-24T05:11:29+00:00" />
+<meta property="article:modified_time" content="2015-04-24T05:11:29+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Express 4 routing guide"/>
+<meta name="twitter:description" content="Introduction In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.
+What is routing Routing is one of the fundamental building blocks for any web framework."/>
+
+
+
+<meta itemprop="name" content="Express 4 routing guide">
+<meta itemprop="description" content="Introduction In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.
+What is routing Routing is one of the fundamental building blocks for any web framework."><meta itemprop="datePublished" content="2015-04-24T05:11:29+00:00" />
+<meta itemprop="dateModified" content="2015-04-24T05:11:29+00:00" />
+<meta itemprop="wordCount" content="974"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Node.js," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Express 4 routing guide</h1>
+<p>
+  <i>
+    <time datetime='2015-04-24' pubdate>
+      24 Apr, 2015
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/node.js/">#Node.js</a>
+  
+</p>
+
+<content>
+  <h2 id="introduction">Introduction</h2>
+<p>In this article we will look at routing with Express. Express is the most popular web framework built on node.js. Popularity of Express can be judged by looking at the number of downloads from npm registry which tells us that Express was downloaded more than 2.5 miliion times last month. Other than websites, Express also makes it easy to develop RESTFul services.</p>
+<h2 id="what-is-routing">What is routing</h2>
+<p>Routing is one of the fundamental building blocks for any web framework. It is the mechanism which describes how a particular request will be served. For example when we go to <a href="http://kapoor.io">http://kapoor.io</a> we expect the home page to be displayed. There is some code which runs and gets data from a database, it then stiches the markup which is then sent to the client. Or it could simply say &ldquo;Hello from HTTP&rdquo; like this```
+app.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Hello from HTTP&rsquo;);
+})</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zed" data-lang="zed"><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">Setup</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">-----</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">If</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">d</span><span style="color:#414559"> </span><span style="color:#babbf1">like</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">work</span><span style="color:#414559"> </span><span style="color:#babbf1">along</span><span style="color:#414559"> </span><span style="color:#babbf1">with</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">code</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">article</span><span style="color:#414559"> </span><span style="color:#babbf1">then</span><span style="color:#414559"> </span><span style="color:#babbf1">I</span><span style="color:#414559"> </span><span style="color:#babbf1">suggest</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">directory</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">put</span><span style="color:#414559"> </span><span style="color:#babbf1">some</span><span style="color:#414559"> </span><span style="color:#babbf1">files</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">it</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">You</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">still</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">able</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">follow</span><span style="color:#414559"> </span><span style="color:#babbf1">along</span><span style="color:#414559"> </span><span style="color:#babbf1">if</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">do</span><span style="color:#414559"> </span><span style="color:#babbf1">not</span><span style="color:#414559"> </span><span style="color:#babbf1">do</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">The</span><span style="color:#414559"> </span><span style="color:#babbf1">script</span><span style="color:#414559"> </span><span style="color:#babbf1">below</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">set</span><span style="color:#414559"> </span><span style="color:#babbf1">things</span><span style="color:#414559"> </span><span style="color:#babbf1">up</span><span style="color:#414559"> </span><span style="color:#babbf1">for</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">mkdir</span><span style="color:#414559"> </span><span style="color:#babbf1">route</span><span style="color:#99d1db">-</span><span style="color:#babbf1">demo</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">cd</span><span style="color:#414559"> </span><span style="color:#babbf1">route</span><span style="color:#99d1db">-</span><span style="color:#babbf1">demo</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">js</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">touch</span><span style="color:#414559"> </span><span style="color:#babbf1">package</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">json</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">Open</span><span style="color:#414559"> </span><span style="color:#babbf1">package</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">json</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">your</span><span style="color:#414559"> </span><span style="color:#babbf1">favourite</span><span style="color:#414559"> </span><span style="color:#babbf1">text</span><span style="color:#414559"> </span><span style="color:#babbf1">editor</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">paste</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">code</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#e78284">&#34;</span><span style="color:#babbf1">name</span><span style="color:#e78284">&#34;</span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#e78284">&#34;</span><span style="color:#babbf1">routing</span><span style="color:#99d1db">-</span><span style="color:#babbf1">demo</span><span style="color:#e78284">&#34;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">Next</span><span style="color:#414559"> </span><span style="color:#babbf1">run</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">command</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">install</span><span style="color:#414559"> </span><span style="color:#babbf1">Express</span><span style="color:#414559"> </span><span style="color:#babbf1">as</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">dependency</span><span style="color:#414559"> </span><span style="color:#e78284">`</span><span style="color:#babbf1">npm</span><span style="color:#414559"> </span><span style="color:#babbf1">install</span><span style="color:#414559"> </span><span style="color:#babbf1">express</span><span style="color:#414559"> </span><span style="color:#99d1db">--</span><span style="color:#babbf1">save</span><span style="color:#e78284">`</span><span style="color:#414559"> </span><span style="color:#babbf1">I</span><span style="color:#414559"> </span><span style="color:#babbf1">also</span><span style="color:#414559"> </span><span style="color:#babbf1">like</span><span style="color:#414559"> </span><span style="color:#babbf1">using</span><span style="color:#414559"> </span><span style="color:#babbf1">colors</span><span style="color:#414559"> </span><span style="color:#babbf1">for</span><span style="color:#414559"> </span><span style="color:#babbf1">colorful</span><span style="color:#414559"> </span><span style="color:#babbf1">console</span><span style="color:#414559"> </span><span style="color:#babbf1">logs</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">so</span><span style="color:#414559"> </span><span style="color:#babbf1">you</span><span style="color:#414559"> </span><span style="color:#babbf1">may</span><span style="color:#414559"> </span><span style="color:#babbf1">want</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">install</span><span style="color:#414559"> </span><span style="color:#babbf1">colors</span><span style="color:#414559"> </span><span style="color:#e78284">`</span><span style="color:#babbf1">npm</span><span style="color:#414559"> </span><span style="color:#babbf1">install</span><span style="color:#414559"> </span><span style="color:#babbf1">colors</span><span style="color:#414559"> </span><span style="color:#99d1db">--</span><span style="color:#babbf1">save</span><span style="color:#e78284">`</span><span style="color:#414559"> </span><span style="color:#babbf1">Open</span><span style="color:#414559"> </span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">js</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">paste</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">code</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">var</span><span style="color:#414559"> </span><span style="color:#babbf1">express</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">require</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">express</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">var</span><span style="color:#414559"> </span><span style="color:#babbf1">colors</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">require</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">colors</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">var</span><span style="color:#414559"> </span><span style="color:#babbf1">port</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">process</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">env</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">PORT</span><span style="color:#414559"> </span><span style="color:#99d1db">||</span><span style="color:#414559"> </span><span style="color:#e78284">8080</span><span style="color:#c6d0f5">;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">var</span><span style="color:#414559"> </span><span style="color:#babbf1">app</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">express</span><span style="color:#c6d0f5">();</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#99d1db">/</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">function</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">req</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">send</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">Hello</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">How</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">things</span><span style="color:#414559"> </span><span style="color:#babbf1">today</span><span style="color:#99d1db">?</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">});</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">listen</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">8080</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">console</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">log</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">colors</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">rainbow</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">Server</span><span style="color:#414559"> </span><span style="color:#babbf1">listening</span><span style="color:#414559"> </span><span style="color:#babbf1">on</span><span style="color:#414559"> </span><span style="color:#babbf1">port</span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#e78284">&#39;</span><span style="color:#414559"> </span><span style="color:#99d1db">+</span><span style="color:#414559"> </span><span style="color:#babbf1">port</span><span style="color:#c6d0f5">));</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">give</span><span style="color:#414559"> </span><span style="color:#babbf1">us</span><span style="color:#414559"> </span><span style="color:#babbf1">enough</span><span style="color:#414559"> </span><span style="color:#babbf1">code</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">start</span><span style="color:#414559"> </span><span style="color:#babbf1">expanding</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">knowledge</span><span style="color:#414559"> </span><span style="color:#babbf1">of</span><span style="color:#414559"> </span><span style="color:#babbf1">routing</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">Express</span><span style="color:#c6d0f5">.</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">Diving</span><span style="color:#414559"> </span><span style="color:#babbf1">into</span><span style="color:#414559"> </span><span style="color:#babbf1">routing</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#99d1db">-------------------</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">###</span><span style="color:#414559"> </span><span style="color:#babbf1">Simple</span><span style="color:#414559"> </span><span style="color:#babbf1">routes</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">In</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">code</span><span style="color:#414559"> </span><span style="color:#babbf1">above</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">have</span><span style="color:#414559"> </span><span style="color:#babbf1">used</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">simple</span><span style="color:#414559"> </span><span style="color:#babbf1">route</span><span style="color:#414559"> </span><span style="color:#e5c890">definition</span><span style="color:#414559"> </span><span style="color:#babbf1">which</span><span style="color:#414559"> </span><span style="color:#babbf1">says</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">for</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">HTTP</span><span style="color:#414559"> </span><span style="color:#babbf1">GET</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#414559"> </span><span style="color:#babbf1">at</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#414559"> </span><span style="color:#babbf1">send</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">response</span><span style="color:#414559"> </span><span style="color:#babbf1">as</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#e78284">&#34;</span><span style="color:#babbf1">Hello</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">How</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">things</span><span style="color:#414559"> </span><span style="color:#babbf1">today</span><span style="color:#99d1db">?</span><span style="color:#e78284">&#34;</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#99d1db">/</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">function</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">req</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">send</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">Hello</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">How</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">things</span><span style="color:#414559"> </span><span style="color:#babbf1">today</span><span style="color:#99d1db">?</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">});</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">We</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">add</span><span style="color:#414559"> </span><span style="color:#babbf1">more</span><span style="color:#414559"> </span><span style="color:#babbf1">routes</span><span style="color:#414559"> </span><span style="color:#babbf1">for</span><span style="color:#414559"> </span><span style="color:#babbf1">example</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">HTTP</span><span style="color:#414559"> </span><span style="color:#babbf1">GET</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#414559"> </span><span style="color:#babbf1">at</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">morning</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">produce</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">response</span><span style="color:#414559"> </span><span style="color:#e78284">&#34;</span><span style="color:#babbf1">Good</span><span style="color:#414559"> </span><span style="color:#babbf1">morning</span><span style="color:#e78284">&#34;</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#99d1db">/</span><span style="color:#babbf1">morning</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">function</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">req</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">send</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">Good</span><span style="color:#414559"> </span><span style="color:#babbf1">morning</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">});</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#babbf1">way</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">create</span><span style="color:#414559"> </span><span style="color:#babbf1">many</span><span style="color:#414559"> </span><span style="color:#babbf1">routes</span><span style="color:#414559"> </span><span style="color:#babbf1">for</span><span style="color:#414559"> </span><span style="color:#babbf1">GET</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">POST</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">PUT</span><span style="color:#414559"> </span><span style="color:#babbf1">etc</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">These</span><span style="color:#414559"> </span><span style="color:#babbf1">routes</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">also</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">parameterized</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">For</span><span style="color:#414559"> </span><span style="color:#babbf1">example</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">use</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">name</span><span style="color:#414559"> </span><span style="color:#babbf1">parameter</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#99d1db">/</span><span style="color:#babbf1">morning</span><span style="color:#414559"> </span><span style="color:#babbf1">route</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">display</span><span style="color:#414559"> </span><span style="color:#e78284">&#34;</span><span style="color:#babbf1">Good</span><span style="color:#414559"> </span><span style="color:#babbf1">morning</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#e78284">&#34;</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">app</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#99d1db">/</span><span style="color:#e5c890">morning/</span><span style="color:#99d1db">:</span><span style="color:#e5c890">name/</span><span style="color:#e78284">&#39;</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">function</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">req</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">res</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">send</span><span style="color:#c6d0f5">(</span><span style="color:#e78284">&#39;</span><span style="color:#babbf1">Good</span><span style="color:#414559"> </span><span style="color:#babbf1">morning</span><span style="color:#414559"> </span><span style="color:#e78284">&#39;</span><span style="color:#414559"> </span><span style="color:#99d1db">+</span><span style="color:#414559"> </span><span style="color:#babbf1">req</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">params</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">name</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">});</span><span style="color:#414559"> 
+</span></span></span></code></pre></div><h3 id="using-router">Using Router</h3>
+<p>The approach above will work even for the most complex routing requirements. Express however provides a much cleaner way with express.Router(). Let&rsquo;s look at setting up a basic route with Router.```
+var express = require(&rsquo;express&rsquo;);
+var colors = require(&lsquo;colors&rsquo;);</p>
+<p>var port = process.env.PORT || 8080;</p>
+<p>var app = express();</p>
+<p>var router = express.Router();</p>
+<p>router.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;I feel best at home&rsquo;);
+})</p>
+<p>app.use(&rsquo;/&rsquo;, router);</p>
+<p>app.listen(8080);</p>
+<p>console.log(colors.rainbow(&lsquo;Server listening on port: &rsquo; + port));
+<code>In the code above we are setting up the router to send a response when the home location is accessed. We then tell our app to use this router for all paths `app.use('/', router)` Multiple routes can be setup like this</code>
+var router = express.Router();</p>
+<p>router.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;I feel best at home&rsquo;);
+})</p>
+<p>router.get(&rsquo;/help&rsquo;, function(req, res) {
+res.send(&lsquo;Help me Help you&rsquo;);
+})</p>
+<p>app.use(&rsquo;/&rsquo;, router);
+<code>We can also parameterize our routes. This route accepts a name.</code>
+router.get(&rsquo;/city/:name&rsquo;, function(req, res) {
+res.send(req.params.name + &rsquo; is the best city&rsquo;);
+})
+<code>Calling the above route with a parameter will produce the correct response. For example</code>
+$ curl http://localhost:8080/city/Sydney
+$ Sydney is the best city</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### Route Middleware
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Rotues can also include middleware which is code which gets executed before a request is processed. In the example below, the middleware will print a message before any request is served.```
+</span></span><span style="display:flex;"><span>var router = express.Router();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.use(function(req, res, next) {
+</span></span><span style="display:flex;"><span>  console.log(colors.green(&#39;About to process your request&#39; + req.url));
+</span></span><span style="display:flex;"><span>  next();
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.get(&#39;/&#39;, function(req, res) {
+</span></span><span style="display:flex;"><span>  res.send(&#39;I feel best at home&#39;);
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.get(&#39;/help&#39;, function(req, res) {
+</span></span><span style="display:flex;"><span>  res.send(&#39;Help me Help you&#39;);
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.get(&#39;/city/:name&#39;, function(req, res) {
+</span></span><span style="display:flex;"><span>  res.send(req.params.name + &#39; is the best city&#39;);
+</span></span><span style="display:flex;"><span>}) 
+</span></span><span style="display:flex;"><span>```Router also has middleware for parameters which can be used to deal with parameters before a request is processed. For example a parameter can be validated by this middleware. In the example below, we can validate a city&#39;s name.```
+</span></span><span style="display:flex;"><span>router.use(function(req, res, next) {
+</span></span><span style="display:flex;"><span>  console.log(colors.green(&#39;About to process your request&#39; + req.url));
+</span></span><span style="display:flex;"><span>  next();
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.param(&#39;name&#39;, function(req, res, next, name) {
+</span></span><span style="display:flex;"><span>  console.log(colors.blue(&#39;Validating city name&#39;));
+</span></span><span style="display:flex;"><span>  next();
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>router.get(&#39;/city/:name&#39;, function(req, res) {
+</span></span><span style="display:flex;"><span>  res.send(req.params.name + &#39; is the best city&#39;);
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app.use(&#39;/&#39;, router); 
+</span></span></code></pre></div><h3 id="structuring-routes">Structuring routes</h3>
+<p>Let&rsquo;s say we are developing a API for customers and pets. We can structure our routes like this```
+var customerRouter = express.Router();</p>
+<p>customerRouter.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Get a customer&rsquo;);
+})</p>
+<p>customerRouter.post(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Create a customer&rsquo;);
+})</p>
+<p>app.use(&rsquo;/customer&rsquo;, customerRouter);
+<code>Now requests to http://localhost:8080/customer will be handled by cutomerRouter. Similarly requests to http://localhost:8080/pet will be handled by petRouter.</code>
+var petRouter = express.Router();</p>
+<p>petRouter.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Get a pet&rsquo;);
+})</p>
+<p>petRouter.post(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Create a pet&rsquo;);
+})</p>
+<p>app.use(&rsquo;/pet&rsquo;, petRouter)
+<code>Here is the full code</code>
+var express = require(&rsquo;express&rsquo;);
+var colors = require(&lsquo;colors&rsquo;);</p>
+<p>var port = process.env.PORT || 8080;</p>
+<p>var app = express();</p>
+<p>var customerRouter = express.Router();</p>
+<p>customerRouter.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Get a customer&rsquo;);
+})</p>
+<p>customerRouter.post(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Create a customer&rsquo;);
+})</p>
+<p>var petRouter = express.Router();</p>
+<p>petRouter.get(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Get a pet&rsquo;);
+})</p>
+<p>petRouter.post(&rsquo;/&rsquo;, function(req, res) {
+res.send(&lsquo;Create a pet&rsquo;);
+})</p>
+<p>app.use(&rsquo;/customer&rsquo;, customerRouter);
+app.use(&rsquo;/pet&rsquo;, petRouter)</p>
+<p>app.listen(8080);</p>
+<p>console.log(colors.rainbow(&lsquo;Server listening on port: &rsquo; + port));</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### Conclusion
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Routing is a basic capability a web framework must provide. Express 4 provides this capability with `express.Router()`. It can be uses to write basic routes and parameterized routes. Routes can also be structured in a cleaner way.
+</span></span></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/upgrade-node.js-on-mac/?ref=footer">Upgrade node.js on mac</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/node.js-eventemitter-example/?ref=footer">node.js EventEmitter example</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

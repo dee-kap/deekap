@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Output to Console in Windows Forms Application | :bit :of :binary</title>
+<meta name="title" content="Output to Console in Windows Forms Application" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console." />
+<meta name="keywords" content=".NET," />
+
+
+<meta property="og:title" content="Output to Console in Windows Forms Application" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/output-to-console-in-windows-forms-application/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2009-09-01T02:45:00+00:00" />
+<meta property="article:modified_time" content="2009-09-01T02:45:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Output to Console in Windows Forms Application"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console."/>
+
+
+
+<meta itemprop="name" content="Output to Console in Windows Forms Application">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console."><meta itemprop="datePublished" content="2009-09-01T02:45:00+00:00" />
+<meta itemprop="dateModified" content="2009-09-01T02:45:00+00:00" />
+<meta itemprop="wordCount" content="292"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content=".NET," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Output to Console in Windows Forms Application</h1>
+<p>
+  <i>
+    <time datetime='2009-09-01' pubdate>
+      01 Sep, 2009
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/.net/">#.NET</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>This post shows you how to output data to a Console in a Windows Forms Application. I use this technique religiously when developing Windows Forms applications. Debugging is much simpler when you can see information on what your application is doing in a Console. Of course the onus is on you as developer to output data which will help you. In this post I will use a simple Windows Forms application which adds two numbers.</p>
+<p><img src="http://kapoor.io/wp-content/uploads/2009/09/image.png" alt="Windows Forms" title="Windows Forms"></p>
+<p>By default a Windows Forms application does not output to a Console even if you write a Console.Write() or Console.WriteLine(). This shortcoming can be addressed by using Win32 API. In your Windows Forms application you can declare a class which provides a wrapper around Win32 functions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>public class Win32
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  /// &lt;summary&gt;
+</span></span><span style="display:flex;"><span>  /// Allocates a new console for current process.
+</span></span><span style="display:flex;"><span>  /// &lt;/summary&gt;
+</span></span><span style="display:flex;"><span>  \[DllImport(&#34;kernel32.dll&#34;)\]
+</span></span><span style="display:flex;"><span>  public static extern Boolean AllocConsole();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  /// &lt;summary&gt;
+</span></span><span style="display:flex;"><span>  /// Frees the console.
+</span></span><span style="display:flex;"><span>  /// &lt;/summary&gt;
+</span></span><span style="display:flex;"><span>  \[DllImport(&#34;kernel32.dll&#34;)\]
+</span></span><span style="display:flex;"><span>  public static extern Boolean FreeConsole();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A Console must be started to accept input and display our messages. This can be done by calling Win32.AllocConsole() function. For my example I will start the console in my form’s constructor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>public Form1()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  InitializeComponent();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Win32.AllocConsole();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now when I write to Console, I will see data appear in the console window which was started in my constructor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>private void Add(int num1, int num2)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  int result = num1 + num2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Console.WriteLine(
+</span></span><span style="display:flex;"><span>    string.Format(&#34;{0} + {1} = {2}&#34;, num1, num2, result));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="http://kapoor.io/wp-content/uploads/2009/09/image1-300x135.png" alt="Console" title="Console"></p>
+<p>As a good practice you should also close the console window by calling Win32.FreeConsole() method before your application exits.</p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/execute-stored-procedure-with-ado.net-data-services/?ref=footer">Execute Stored Procedure With ADO.NET Data...</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/could-not-create-ssl/tsl-secure-channel-solution/?ref=footer">Could Not Create SSL/TSL Secure Channel Solution</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

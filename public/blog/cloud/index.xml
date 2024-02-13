@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/cloud/</link>
+    <description>Recent content in Cloud on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Tue, 18 Jun 2019 01:43:36 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My first Cloud Function on Google Cloud</title>
+      <link>https://bitofbinary.com/my-first-cloud-function-on-google-cloud/</link>
+      <pubDate>Tue, 18 Jun 2019 01:43:36 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/my-first-cloud-function-on-google-cloud/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Similar to AWS Lambda or Azure functions, Google Cloud has Cloud Functions. The idea behind Cloud Functions is to give users a serverless product which can be used for deploying functionality without worrying about servers. Functions can be invoked via HTTP or can be invoked in the background by another Google Cloud product.</description>
+    </item>
+    
+    <item>
+      <title>AWS - Download Upload file from S3 bucket using AWS SDK for Ruby</title>
+      <link>https://bitofbinary.com/aws-download-upload-file-from-s3-bucket-using-aws-sdk-for-ruby/</link>
+      <pubDate>Thu, 03 Jul 2014 10:25:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-download-upload-file-from-s3-bucket-using-aws-sdk-for-ruby/</guid>
+      <description>AWS SDK for Ruby can be used to copy files which are called objects in AWS terminology to and from S3 buckets. I feel like trying this out today. I already have the aws-sdk gem installed on my machine. Let&amp;rsquo;s write the script.
+Upload/Copy file to S3 bucket First thing I need in my script is
+` require &amp;#39;aws-sdk&amp;#39; ` After this I create an instance of S3 object and get the bucket I created earlier.</description>
+    </item>
+    
+    <item>
+      <title>AWS - SDK for Ruby Unable to find AWS credentials</title>
+      <link>https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/</link>
+      <pubDate>Wed, 02 Jul 2014 01:44:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/</guid>
+      <description>Today while working with AWS SDK for Ruby I came across this error
+(AWS::Errors::MissingCredentialsError) Missing Credentials.
+AWS SDK will go through different ways to get credentials. One of them is to look at environment variables and the other is to look for credentials file in .aws directory. While setting up AWS CLI on my machine I ran aws configure command which created .aws/config file. So what&amp;rsquo;s with this credentials file?</description>
+    </item>
+    
+    <item>
+      <title>AWS - Explore S3 with CLI</title>
+      <link>https://bitofbinary.com/aws-explore-s3-with-cli/</link>
+      <pubDate>Tue, 01 Jul 2014 05:47:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-explore-s3-with-cli/</guid>
+      <description>Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket.</description>
+    </item>
+    
+    <item>
+      <title>AWS - Getting Started with CLI</title>
+      <link>https://bitofbinary.com/aws-getting-started-with-cli/</link>
+      <pubDate>Tue, 01 Jul 2014 00:42:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/aws-getting-started-with-cli/</guid>
+      <description>Today I created a new Amazon AWS account with the goal of learning this beast inside out. Over next few and hopefully many days I plan to write more about AWS. I am doing this for learning and not teaching. I will write these posts as I would write notes when learning a new technology. Come along if you wish and enjoy the ride.
+Account creation and verification process went without a hitch and the first thing I wanted to do was to access my account information from terminal.</description>
+    </item>
+    
+    <item>
+      <title>Playing with Microsoft Azure CLI on mac</title>
+      <link>https://bitofbinary.com/playing-with-microsoft-azure-cli-on-mac/</link>
+      <pubDate>Tue, 20 May 2014 04:31:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/playing-with-microsoft-azure-cli-on-mac/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I&amp;rsquo;ve been a user of Azure for sometime now and I have always worked through the web based management portal. The portal has served me well but today I am in mood for command line. I will install the CLI for Azure and play with it.</description>
+    </item>
+    
+  </channel>
+</rss>

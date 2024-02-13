@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/microsoft/</link>
+    <description>Recent content in Microsoft on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Mon, 16 Mar 2009 07:59:13 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WPF Community Workshop – Learn WPF and Raise Money</title>
+      <link>https://bitofbinary.com/wpf-community-workshop-learn-wpf-and-raise-money/</link>
+      <pubDate>Mon, 16 Mar 2009 07:59:13 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/wpf-community-workshop-learn-wpf-and-raise-money/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. So you’ve seen Windows Presentation Foundation (WPF) and you think the technology looks interesting. You know your applications are starting to look dated, you understand WPF has matured, now in its 3rd release; but life gets in the way and you haven’t had the chance to get down and dirty with it yet.</description>
+    </item>
+    
+    <item>
+      <title>LINQ Equivalent Of Where IN With Int</title>
+      <link>https://bitofbinary.com/linq-equivalent-of-where-in-with-int/</link>
+      <pubDate>Mon, 05 Jan 2009 07:55:04 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-equivalent-of-where-in-with-int/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Earlier I wrote a post showing how to write a LINQ query which gets transformed into a T-SQL query with a &amp;ldquo;Where In&amp;rdquo; clause. I had a comment on the post by Steve saying that the approach only works with strings.</description>
+    </item>
+    
+    <item>
+      <title>Remove Duplicate Lines From A Text File Using LINQ</title>
+      <link>https://bitofbinary.com/remove-duplicate-lines-from-a-text-file-using-linq/</link>
+      <pubDate>Fri, 12 Dec 2008 07:47:14 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/remove-duplicate-lines-from-a-text-file-using-linq/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. A question was posted on c-sharpcorner forums asking how you would remove duplicate lines from a text file. It got me thinking about how this problem could be addressed using LINQ. Before I get into the solution, here is the problem statement.</description>
+    </item>
+    
+    <item>
+      <title>LINQ To SQL Join On Multiple Conditions</title>
+      <link>https://bitofbinary.com/linq-to-sql-join-on-multiple-conditions/</link>
+      <pubDate>Tue, 16 Sep 2008 07:07:30 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-to-sql-join-on-multiple-conditions/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Two tables have PostCode and CouncilCode as common fields. Lets say that we want to retrieve all records from ShoppingMall where both PostCode and CouncilCode on House match. This requires us to do a join using two columns.</description>
+    </item>
+    
+    <item>
+      <title>Get A List Of Installed Applications Using LINQ And C#</title>
+      <link>https://bitofbinary.com/get-a-list-of-installed-applications-using-linq-and-c/</link>
+      <pubDate>Fri, 29 Aug 2008 23:59:50 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/get-a-list-of-installed-applications-using-linq-and-c/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. To get a list of installed applications we need to look into registry. Microsoft.Win32 namespace contains objects which can be used to work with Windows Registry. In this post I will show you some code where I use the power of LINQ to retrieve and display a list of all applications installed on a machine.</description>
+    </item>
+    
+    <item>
+      <title>LINQ Equivalent Of Where IN</title>
+      <link>https://bitofbinary.com/linq-equivalent-of-where-in/</link>
+      <pubDate>Mon, 25 Aug 2008 00:05:01 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-equivalent-of-where-in/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Working with LINQ to SQL I came across a need of writing a LINQ query equivalent of T-SQL &amp;ldquo;Where IN&amp;rdquo; clause. This is what T-SQL query looks like.``` SELECT CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax FROM Customers WHERE (Country IN (&amp;lsquo;UK&amp;rsquo;, &amp;lsquo;USA&amp;rsquo;, &amp;lsquo;Australia&amp;rsquo;))</description>
+    </item>
+    
+    <item>
+      <title>Find Duplicates Using LINQ</title>
+      <link>https://bitofbinary.com/find-duplicates-using-linq/</link>
+      <pubDate>Sat, 16 Aug 2008 02:18:45 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/find-duplicates-using-linq/</guid>
+      <description>How can we find duplicate occurrences of values in a collection? I will demonstrate this here using a collection of cities. City class looks like this:public class City { public string Name { get; set; } public string Country { get; set; } }Cities collection is initialised with this code:``` List cities = new List { new City{ Name = &amp;ldquo;Sydney&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Sydney&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;New York&amp;rdquo;, Country = &amp;ldquo;USA&amp;rdquo; }, new City{ Name = &amp;ldquo;Paris&amp;rdquo;, Country = &amp;ldquo;France&amp;rdquo; }, new City{ Name = &amp;ldquo;Milan&amp;rdquo;, Country = &amp;ldquo;Spain&amp;rdquo; }, new City{ Name = &amp;ldquo;Melbourne&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Auckland&amp;rdquo;, Country = &amp;ldquo;New Zealand&amp;rdquo; }, new City{ Name = &amp;ldquo;Tokyo&amp;rdquo;, Country = &amp;ldquo;Japan&amp;rdquo; }, new City{ Name = &amp;ldquo;New Delhi&amp;rdquo;, Country = &amp;ldquo;India&amp;rdquo; }, new City{ Name = &amp;ldquo;Hobart&amp;rdquo;, Country = &amp;ldquo;Australia&amp;rdquo; }, new City{ Name = &amp;ldquo;Boston&amp;rdquo;, Country = &amp;ldquo;USA&amp;rdquo;} };</description>
+    </item>
+    
+    <item>
+      <title>Tutorial Reading A Text File Using LINQ</title>
+      <link>https://bitofbinary.com/tutorial-reading-a-text-file-using-linq/</link>
+      <pubDate>Wed, 13 Aug 2008 05:00:14 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/tutorial-reading-a-text-file-using-linq/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction At times us developers have to deal with delimited text files in our applications. Such files have been around since yonks and I often come across data import/export tasks where delimited files are used. Till now the common way in .</description>
+    </item>
+    
+  </channel>
+</rss>

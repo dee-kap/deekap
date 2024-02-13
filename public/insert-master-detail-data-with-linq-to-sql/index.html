@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Insert Master Detail Data With LINQ to SQL | :bit :of :binary</title>
+<meta name="title" content="Insert Master Detail Data With LINQ to SQL" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by Joey. To avoid loosing details in paraphrasing, here is the exact question asked by Joey." />
+<meta name="keywords" content=".NET," />
+
+
+<meta property="og:title" content="Insert Master Detail Data With LINQ to SQL" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by Joey. To avoid loosing details in paraphrasing, here is the exact question asked by Joey." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/insert-master-detail-data-with-linq-to-sql/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2009-07-08T02:36:00+00:00" />
+<meta property="article:modified_time" content="2009-07-08T02:36:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Insert Master Detail Data With LINQ to SQL"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by Joey. To avoid loosing details in paraphrasing, here is the exact question asked by Joey."/>
+
+
+
+<meta itemprop="name" content="Insert Master Detail Data With LINQ to SQL">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by Joey. To avoid loosing details in paraphrasing, here is the exact question asked by Joey."><meta itemprop="datePublished" content="2009-07-08T02:36:00+00:00" />
+<meta itemprop="dateModified" content="2009-07-08T02:36:00+00:00" />
+<meta itemprop="wordCount" content="376"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content=".NET," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Insert Master Detail Data With LINQ to SQL</h1>
+<p>
+  <i>
+    <time datetime='2009-07-08' pubdate>
+      08 Jul, 2009
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/.net/">#.NET</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>Best thing about writing a blog is interaction with members of developer community. I thoroughly enjoy answering questions which come my way through this site. Early in the morning today I saw a question by <a href="http://www.joeyesq.com/">Joey</a>. To avoid loosing details in paraphrasing, here is the exact question asked by Joey.</p>
+<blockquote>
+<p>I’m new to LINQ. If I had two tables “Customer” and “CustomerDetails”, how (using LINQ) can I insert to both of these tables? Do I need to create a “Customer” object as well as a “CustomerDetails” object?</p>
+</blockquote>
+<p>In short the answer is yes. LINQ can insert to both tables, you will need to populate both Customer and CustomerDetails objects with data. I will now present an example to support my answer. What we have here is a one to many scenario which involves two tables linked through a Foreign Key. To serve as an example, I have modelled the tables like this. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2009/07/image12.png" alt="image" title="image"> Each customer can have many nick names which are stored in CustomerDetails table. Let’s go ahead and generate LINQ To SQL entities. Please refer to <a href="http://www.debugrelease.com/linq-to-sql-tutorial/">LINQ To SQL tutorial</a> if you want a refresher on how to generate LINQ To SQL entities. After dragging our tables to designer we can see that designer has recognised relationship we have between our tables. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2009/07/image13.png" alt="image" title="image"> A quick glance over generated code confirms that we have a property of Type EntitySet<CustomerDetails> in our Customer class. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2009/07/image14.png" alt="image" title="image"> Now let’s insert some data. The following code will insert one Customer record and two CustomerDetails records.<code>private void InsertData() { string firstName = &quot;LINQ&quot;; string lastName = &quot;Dude&quot;; string nickName1 = &quot;Cool&quot;; string nickName2 = &quot;DataBuster&quot;;</code>using (CustomerDatabaseDataContext context = new CustomerDatabaseDataContext()) { // Create a Customer object Customer customer = new Customer { FirstName = firstName, LastName = lastName, // Create two CustomerDetails objects CustomerDetails = new System.Data.Linq.EntitySet<CustomerDetail>() { new CustomerDetail{NickName = nickName1}, new CustomerDetail{NickName = nickName2} } }; // We&rsquo;d like to Insert our changes as new context.Customers.InsertOnSubmit(customer); // Submit changes to database context.SubmitChanges(); } } Code above produces following T-SQL```
+exec sp_executesql N&rsquo;INSERT INTO [dbo].[Customer]([FirstName], [LastName])
+VALUES (@p0, @p1)</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/request-error-in-ado.net-data-services/?ref=footer">Request Error in ADO.NET Data Services</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/ado.net-data-services-with-asp.net/?ref=footer">ADO.NET Data Services With ASP.NET</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

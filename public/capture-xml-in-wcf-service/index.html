@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Capture XML in WCF Service | :bit :of :binary</title>
+<meta name="title" content="Capture XML in WCF Service" />
+<meta name="description" content="Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service." />
+<meta name="keywords" content=".NET," />
+
+
+<meta property="og:title" content="Capture XML in WCF Service" />
+<meta property="og:description" content="Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/capture-xml-in-wcf-service/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-01-07T10:16:00+00:00" />
+<meta property="article:modified_time" content="2014-01-07T10:16:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Capture XML in WCF Service"/>
+<meta name="twitter:description" content="Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service."/>
+
+
+
+<meta itemprop="name" content="Capture XML in WCF Service">
+<meta itemprop="description" content="Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service."><meta itemprop="datePublished" content="2014-01-07T10:16:00+00:00" />
+<meta itemprop="dateModified" content="2014-01-07T10:16:00+00:00" />
+<meta itemprop="wordCount" content="1277"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content=".NET," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>Capture XML in WCF Service</h1>
+<p>
+  <i>
+    <time datetime='2014-01-07' pubdate>
+      07 Jan, 2014
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/.net/">#.NET</a>
+  
+</p>
+
+<content>
+  <p>Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service. As an example we will create a simple service which implements one operation called SayHello. Our service contract will look like this.<code>[ServiceContract] public interface IHelloService {  [OperationContract]  string SayHello(string name); } </code>In the operation “SayHello” we will return a string. Here is the implementation of IHelloService contract.```
+public class HelloService : IHelloService
+{<br>
+public string SayHello(string name)
+{
+return string.Concat(&ldquo;Hello &ldquo;, name);
+}
+}</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zed" data-lang="zed"><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">###</span><span style="color:#414559"> </span><span style="color:#babbf1">Capturing</span><span style="color:#414559"> </span><span style="color:#babbf1">XML</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">To</span><span style="color:#414559"> </span><span style="color:#babbf1">capture</span><span style="color:#414559"> </span><span style="color:#babbf1">XML</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">implement</span><span style="color:#414559"> </span><span style="color:#babbf1">two</span><span style="color:#414559"> </span><span style="color:#babbf1">interfaces</span><span style="color:#414559"> </span><span style="color:#babbf1">IDispatchMessageInspector</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">IServiceBehavior</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">The</span><span style="color:#414559"> </span><span style="color:#babbf1">way</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">solution</span><span style="color:#414559"> </span><span style="color:#babbf1">works</span><span style="color:#414559"> </span><span style="color:#babbf1">is</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">add</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">implementation</span><span style="color:#414559"> </span><span style="color:#babbf1">of</span><span style="color:#414559"> </span><span style="color:#babbf1">IDispatchMessageInspector</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">MessageInspectors</span><span style="color:#414559"> </span><span style="color:#babbf1">collection</span><span style="color:#414559"> </span><span style="color:#babbf1">on</span><span style="color:#414559"> </span><span style="color:#babbf1">endpoints</span><span style="color:#414559"> </span><span style="color:#babbf1">used</span><span style="color:#414559"> </span><span style="color:#babbf1">by</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">ServiceHost</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">We</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">first</span><span style="color:#414559"> </span><span style="color:#babbf1">implement</span><span style="color:#414559"> </span><span style="color:#babbf1">IDispatchMessaageInspector</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">called</span><span style="color:#414559"> </span><span style="color:#babbf1">Inspector</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"> </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">Inspector</span><span style="color:#414559"> </span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#babbf1">IDispatchMessageInspector</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Stores contents of Request message 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// passed to the service. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// The request XML. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">Request</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> </span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#babbf1">set</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Stores contents of Response messge 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// which is sent back to the client. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// The response XML. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">Response</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> </span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#babbf1">set</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">#region</span><span style="color:#414559"> </span><span style="color:#babbf1">IDispatchMessageInspector</span><span style="color:#414559"> </span><span style="color:#babbf1">Members</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Called after an inbound message has been received but 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// before the message is dispatched to the intended operation. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The request message. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The incoming channel. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The current service instance. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  /// The object used to correlate state. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">object</span><span style="color:#414559"> </span><span style="color:#babbf1">AfterReceiveRequest</span><span style="color:#c6d0f5">(</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">ref</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Channels</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">IClientChannel</span><span style="color:#414559"> </span><span style="color:#babbf1">channel</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">InstanceContext</span><span style="color:#414559"> </span><span style="color:#babbf1">instanceContext</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">      </span><span style="color:#babbf1">Request</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToString</span><span style="color:#c6d0f5">();</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">      </span><span style="color:#babbf1">return</span><span style="color:#414559"> </span><span style="color:#babbf1">null</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Called after the operation has returned but before the reply message is sent. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The reply message. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// This value is null if the operation is one way.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The correlation object returned from the 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// AfterReceiveRequest method. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">BeforeSendReply</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ref</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Channels</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#babbf1">reply</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">object</span><span style="color:#414559"> </span><span style="color:#babbf1">correlationState</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">      </span><span style="color:#babbf1">Response</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">reply</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToString</span><span style="color:#c6d0f5">();</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">#endregion</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">Next</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">create</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">custom</span><span style="color:#414559"> </span><span style="color:#babbf1">behaviour</span><span style="color:#414559"> </span><span style="color:#babbf1">by</span><span style="color:#414559"> </span><span style="color:#babbf1">implementing</span><span style="color:#414559"> </span><span style="color:#babbf1">IServiceBehavior</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">The</span><span style="color:#414559"> </span><span style="color:#babbf1">only</span><span style="color:#414559"> </span><span style="color:#babbf1">method</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">interested</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">interface</span><span style="color:#414559"> </span><span style="color:#babbf1">is</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">ApplyDispatchBehavior</span><span style="color:#414559"> </span><span style="color:#babbf1">method</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">Here</span><span style="color:#414559"> </span><span style="color:#babbf1">is</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">implementation</span><span style="color:#414559"> </span><span style="color:#babbf1">of</span><span style="color:#414559"> </span><span style="color:#babbf1">IServiceBehavior</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"> </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">CustomBehavior</span><span style="color:#414559"> </span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#babbf1">IServiceBehavior</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">#region</span><span style="color:#414559"> </span><span style="color:#babbf1">IServiceBehavior</span><span style="color:#414559"> </span><span style="color:#babbf1">Members</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Provides the ability to pass custom data to binding elements 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// to support the contract implementation. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The service description of the service. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The host of the service. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The service endpoints. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///Custom objects to which binding elements have access. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">AddBindingParameters</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ServiceDescription</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceDescription</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceHostBase</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceHostBase</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Collections</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ObjectModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Collection</span><span style="color:#414559"> </span><span style="color:#babbf1">endpoints</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Channels</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">BindingParameterCollection</span><span style="color:#414559"> </span><span style="color:#babbf1">bindingParameters</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">return</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Provides the ability to change run-time property values or 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// insert custom extension objects such as error handlers, 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// message or parameter interceptors, 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// security extensions, and other custom extension objects. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The service description. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The host that is currently being built. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">ApplyDispatchBehavior</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ServiceDescription</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceDescription</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceHostBase</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceHostBase</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">foreach</span><span style="color:#414559"> </span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ChannelDispatcher</span><span style="color:#414559"> </span><span style="color:#babbf1">dispatcher</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceHostBase</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ChannelDispatchers</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">      </span><span style="color:#babbf1">dispatcher</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Endpoints</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">        </span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToList</span><span style="color:#c6d0f5">()</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">        </span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ForEach</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">x</span><span style="color:#414559"> </span><span style="color:#99d1db">=&gt;</span><span style="color:#414559"> </span><span style="color:#babbf1">x</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DispatchRuntime</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">MessageInspectors</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Add</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">new</span><span style="color:#414559"> </span><span style="color:#babbf1">Inspector</span><span style="color:#c6d0f5">()));</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// Provides the ability to inspect the service host and 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// the service description to confirm that the service 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">/// can run successfully. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The service description. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///The service host that is currently being constructed. 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#626880;font-style:italic">///  
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">Validate</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ServiceDescription</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceDescription</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceHostBase</span><span style="color:#414559"> </span><span style="color:#babbf1">serviceHostBase</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">return</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">#endregion</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">As</span><span style="color:#414559"> </span><span style="color:#babbf1">said</span><span style="color:#414559"> </span><span style="color:#babbf1">earlier</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">host</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">service</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">Windows</span><span style="color:#414559"> </span><span style="color:#babbf1">Forms</span><span style="color:#414559"> </span><span style="color:#babbf1">application</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">would</span><span style="color:#414559"> </span><span style="color:#babbf1">like</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">display</span><span style="color:#414559"> </span><span style="color:#babbf1">messages</span><span style="color:#414559"> </span><span style="color:#babbf1">in</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">UI</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">For</span><span style="color:#414559"> </span><span style="color:#babbf1">this</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">need</span><span style="color:#414559"> </span><span style="color:#babbf1">access</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">messages</span><span style="color:#414559"> </span><span style="color:#babbf1">outside</span><span style="color:#414559"> </span><span style="color:#babbf1">the</span><span style="color:#414559"> </span><span style="color:#babbf1">Inspector</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">created</span><span style="color:#414559"> </span><span style="color:#babbf1">above</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">This</span><span style="color:#414559"> </span><span style="color:#babbf1">can</span><span style="color:#414559"> </span><span style="color:#babbf1">be</span><span style="color:#414559"> </span><span style="color:#babbf1">done</span><span style="color:#414559"> </span><span style="color:#babbf1">by</span><span style="color:#414559"> </span><span style="color:#babbf1">raising</span><span style="color:#414559"> </span><span style="color:#babbf1">events</span><span style="color:#414559"> </span><span style="color:#babbf1">when</span><span style="color:#414559"> </span><span style="color:#babbf1">messages</span><span style="color:#414559"> </span><span style="color:#babbf1">are</span><span style="color:#414559"> </span><span style="color:#babbf1">captured</span><span style="color:#c6d0f5">.</span><span style="color:#414559"> </span><span style="color:#babbf1">To</span><span style="color:#414559"> </span><span style="color:#babbf1">do</span><span style="color:#414559"> </span><span style="color:#babbf1">just</span><span style="color:#414559"> </span><span style="color:#babbf1">that</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">extend</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">Inspector</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">with</span><span style="color:#414559"> </span><span style="color:#babbf1">two</span><span style="color:#414559"> </span><span style="color:#babbf1">events</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">raise</span><span style="color:#414559"> </span><span style="color:#babbf1">them</span><span style="color:#414559"> </span><span style="color:#babbf1">from</span><span style="color:#414559"> </span><span style="color:#babbf1">AfterReceiveRequest</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">BeforeSendReply</span><span style="color:#414559"> </span><span style="color:#babbf1">methods</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"> </span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// Triggered from AfterReceiveRequest method.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">event</span><span style="color:#414559"> </span><span style="color:#babbf1">EventHandler</span><span style="color:#414559"> </span><span style="color:#babbf1">RaiseRequestReceived</span><span style="color:#c6d0f5">;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// Triggered from BeforeSendReply method.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">event</span><span style="color:#414559"> </span><span style="color:#babbf1">EventHandler</span><span style="color:#414559"> </span><span style="color:#babbf1">RaiseSendingReply</span><span style="color:#c6d0f5">;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">protected</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">OnRaiseRequestReceived</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">)</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">EventHandler</span><span style="color:#414559"> </span><span style="color:#babbf1">handler</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">RaiseRequestReceived</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">if</span><span style="color:#414559"> </span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">handler</span><span style="color:#414559"> </span><span style="color:#99d1db">!=</span><span style="color:#414559"> </span><span style="color:#babbf1">null</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">handler</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">new</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">));</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">protected</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">OnRaiseSendingReply</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">)</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">EventHandler</span><span style="color:#414559"> </span><span style="color:#babbf1">handler</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">RaiseSendingReply</span><span style="color:#c6d0f5">;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">if</span><span style="color:#414559"> </span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">handler</span><span style="color:#414559"> </span><span style="color:#99d1db">!=</span><span style="color:#414559"> </span><span style="color:#babbf1">null</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">handler</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">new</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">));</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">And</span><span style="color:#414559"> </span><span style="color:#babbf1">we</span><span style="color:#414559"> </span><span style="color:#babbf1">will</span><span style="color:#414559"> </span><span style="color:#babbf1">also</span><span style="color:#414559"> </span><span style="color:#babbf1">modify</span><span style="color:#414559"> </span><span style="color:#babbf1">AfterReceiveRequest</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">BeforeSendReply</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">raise</span><span style="color:#414559"> </span><span style="color:#babbf1">these</span><span style="color:#414559"> </span><span style="color:#babbf1">events</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"> </span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// Called after an inbound message has been received but
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// before the message is dispatched to the intended operation.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// This method will also raise RaiseRequestReceived event.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///The request message.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///The incoming channel.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///The current service instance.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// The object used to correlate state.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">object</span><span style="color:#414559"> </span><span style="color:#babbf1">AfterReceiveRequest</span><span style="color:#c6d0f5">(</span><span style="color:#414559"> </span><span style="color:#babbf1">ref</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Channels</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">IClientChannel</span><span style="color:#414559"> </span><span style="color:#babbf1">channel</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">InstanceContext</span><span style="color:#414559"> </span><span style="color:#babbf1">instanceContext</span><span style="color:#c6d0f5">)</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">Request</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">request</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToString</span><span style="color:#c6d0f5">();</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">OnRaiseRequestReceived</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Request</span><span style="color:#c6d0f5">);</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">return</span><span style="color:#414559"> </span><span style="color:#babbf1">null</span><span style="color:#c6d0f5">;</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// Called after the operation has returned but before the reply message is sent.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// This method will also raise RaiseSendReply event.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// 
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///The reply message.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// This value is null if the operation is one way.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">///The correlation object returned from the
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic">/// AfterReceiveRequest method.
+</span></span></span><span style="display:flex;"><span><span style="color:#626880;font-style:italic"></span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">void</span><span style="color:#414559"> </span><span style="color:#babbf1">BeforeSendReply</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">ref</span><span style="color:#414559"> </span><span style="color:#babbf1">System</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ServiceModel</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Channels</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#babbf1">reply</span><span style="color:#c6d0f5">,</span><span style="color:#414559"> </span><span style="color:#babbf1">object</span><span style="color:#414559"> </span><span style="color:#babbf1">correlationState</span><span style="color:#c6d0f5">)</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">Response</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">reply</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ToString</span><span style="color:#c6d0f5">();</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">OnRaiseSendingReply</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">Response</span><span style="color:#c6d0f5">);</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#414559"> </span><span style="color:#babbf1">is</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">simple</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">used</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">store</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">pass</span><span style="color:#414559"> </span><span style="color:#babbf1">information</span><span style="color:#414559"> </span><span style="color:#babbf1">with</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">events</span><span style="color:#c6d0f5">.</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#414559"> </span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#babbf1">EventArgs</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> </span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#babbf1">set</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#e78284">```</span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#414559"> </span><span style="color:#babbf1">is</span><span style="color:#414559"> </span><span style="color:#babbf1">a</span><span style="color:#414559"> </span><span style="color:#babbf1">simple</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">used</span><span style="color:#414559"> </span><span style="color:#babbf1">to</span><span style="color:#414559"> </span><span style="color:#babbf1">store</span><span style="color:#414559"> </span><span style="color:#babbf1">and</span><span style="color:#414559"> </span><span style="color:#babbf1">pass</span><span style="color:#414559"> </span><span style="color:#babbf1">information</span><span style="color:#414559"> </span><span style="color:#babbf1">with</span><span style="color:#414559"> </span><span style="color:#babbf1">our</span><span style="color:#414559"> </span><span style="color:#babbf1">events</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">```</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"> </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">class</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#414559"> </span><span style="color:#99d1db">:</span><span style="color:#414559"> </span><span style="color:#babbf1">EventArgs</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">InspectorEventArgs</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">)</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">    </span><span style="color:#babbf1">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#99d1db">=</span><span style="color:#414559"> </span><span style="color:#babbf1">message</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559">  </span><span style="color:#babbf1">public</span><span style="color:#414559"> </span><span style="color:#babbf1">string</span><span style="color:#414559"> </span><span style="color:#babbf1">Message</span><span style="color:#414559"> </span><span style="color:#c6d0f5">{</span><span style="color:#414559"> </span><span style="color:#babbf1">get</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#babbf1">set</span><span style="color:#c6d0f5">;</span><span style="color:#414559"> </span><span style="color:#c6d0f5">}</span><span style="color:#414559">
+</span></span></span><span style="display:flex;"><span><span style="color:#414559"></span><span style="color:#c6d0f5">}</span><span style="color:#414559"> 
+</span></span></span></code></pre></div><h3 id="hosting-the-service-and-using-inspector">Hosting The Service And Using Inspector</h3>
+<p>Now we are at the point where we can use our behaviour to capture request and response messages. First of all we need to put in some code to host our service. This code will go in the click event handler for our button. There are two main things do here. First we add our custom behaviour to the Behaviors collection of our host and second we hook up the events that are raised by our Inspector class.```
+private void buttonStartService_Click(object sender, EventArgs e)
+{
+// Add our Custom Behaviour to the list of behaviours
+host.Description.Behaviors.Add(behavior);</p>
+<p>// start the service
+host.Open();</p>
+<p>// add event handlers
+foreach (ChannelDispatcher dispatcher in host.ChannelDispatchers)
+{
+foreach (var endPoint in dispatcher.Endpoints)
+{</p>
+<pre><code>  // get a list of MessageInspectors that are of type Inspector 
+  var query = (from ex in endPoint.DispatchRuntime.MessageInspectors 
+    where ex.GetType() == typeof(Inspector) 
+    select ex).Cast(); 
+
+  // hook up the events 
+  foreach (var item in query) 
+  { 
+    item.RaiseRequestReceived += 
+      new EventHandler(Form1_RaiseRequestReceived); 
+
+    item.RaiseSendingReply += 
+      new EventHandler(Form1_RaiseSendingReply); 
+  } 
+} 
+</code></pre>
+<p>}
+}
+<code>Now when HelloService is called we will see request and response xml in our Windows Forms application which is also a host for HelloService. We will use WebBrowser controls to display XML. Displaying XML in the WebBrowser control is not just setting a property. There is little but not too much work involved. I picked up a nice technique from this [link](http://www.c-sharpcorner.com/Forums/ShowMessages.aspx?ThreadID=51473).</code>
+///
+/// Writes xml to browser.
+/// WebBrowser control does render xml properly and to get around
+/// I am using this handy tip from this link.
+/// <a href="http://www.c-sharpcorner.com/Forums/ShowMessages.aspx?ThreadID=51473">http://www.c-sharpcorner.com/Forums/ShowMessages.aspx?ThreadID=51473</a>
+///
+///The browser.
+///The message.
+private void WriteToBrowser(WebBrowser browser, string message)
+{
+XslCompiledTransform xTrans = new XslCompiledTransform();
+xTrans.Load(&ldquo;default.xslt&rdquo;);
+StringReader sr = new StringReader(message);
+XmlReader xReader = XmlReader.Create(sr);
+System.IO.MemoryStream ms = new MemoryStream();
+xTrans.Transform(xReader, null, ms);
+ms.Position = 0;
+browser.DocumentStream = ms;
+}</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### Creating The Client
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Client for HelloService is a simple Windows Forms application with a text box, button and a label. You can download the code at the end of this article and see it for yourself.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>### The Output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Here are screenshots of both client and host showing request and response XML. ![WCF Request](http://kapoor.io/wp-content/uploads/2014/01/image11-300x180.png &#34;WCF Request&#34;) ![WCF Response](http://kapoor.io/wp-content/uploads/2014/01/image21-300x180.png &#34;WCF Response&#34;) ![WCF Client](http://kapoor.io/wp-content/uploads/2014/01/image31-300x133.png &#34;WCF Client&#34;) [Code on GitHub](http://bit.ly/debug-release-wcf-capture-xml)
+</span></span></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/android-expandablelistview-tutorial/?ref=footer">Android - ExpandableListView Tutorial</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/android-linear-layout-example/?ref=footer">Android - Linear Layout Example</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

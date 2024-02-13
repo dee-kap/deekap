@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/rails/</link>
+    <description>Recent content in Rails on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Mon, 05 Feb 2024 00:00:04 -0700</lastBuildDate><atom:link href="https://bitofbinary.com/blog/rails/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handling Single Record Queries in Rails with Grace</title>
+      <link>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</guid>
+      <description>In Ruby on Rails, when dealing with database queries, there are instances where we anticipate a query to return a single record. This expectation arises in scenarios where the uniqueness of a record is integral to the application&amp;rsquo;s logic. However, databases can sometimes contain duplicates or multiple records that meet the query criteria, leading to potential conflicts or unexpected behavior in our application. To ensure robust and error-free application behavior, it&amp;rsquo;s essential to handle these cases effectively.</description>
+    </item>
+    
+  </channel>
+</rss>

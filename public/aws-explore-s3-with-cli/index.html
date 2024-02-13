@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>AWS - Explore S3 with CLI | :bit :of :binary</title>
+<meta name="title" content="AWS - Explore S3 with CLI" />
+<meta name="description" content="Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket." />
+<meta name="keywords" content="Cloud," />
+
+
+<meta property="og:title" content="AWS - Explore S3 with CLI" />
+<meta property="og:description" content="Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/aws-explore-s3-with-cli/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-07-01T05:47:00+00:00" />
+<meta property="article:modified_time" content="2014-07-01T05:47:00+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="AWS - Explore S3 with CLI"/>
+<meta name="twitter:description" content="Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket."/>
+
+
+
+<meta itemprop="name" content="AWS - Explore S3 with CLI">
+<meta itemprop="description" content="Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.
+Create a bucket
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket."><meta itemprop="datePublished" content="2014-07-01T05:47:00+00:00" />
+<meta itemprop="dateModified" content="2014-07-01T05:47:00+00:00" />
+<meta itemprop="wordCount" content="666"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="Cloud," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>AWS - Explore S3 with CLI</h1>
+<p>
+  <i>
+    <time datetime='2014-07-01' pubdate>
+      01 Jul, 2014
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/cloud/">#Cloud</a>
+  
+</p>
+
+<content>
+  <p>Today I feel like getting myself into one of the basic but very powerful storage service offered by Amazon called S3. S3 is a storage service which can store data. Data is stored in buckets and is accessible by end points. Each file is represented as an object which has an object id.</p>
+<p>Create a bucket<br>
+Files or objects in S3 are stored in buckets. First thing I should do is create a bucket. A bucket can be created by this command. I will create a bucket named deebucket</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 mb s3://deebucket  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>Now bucket names are unique across S3. Not just my account but across all Amazon accounts. Let&rsquo;s see what happens if I create a bucket with existing name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 mb s3://deebucket  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>make_bucket failed: s3://deebucket/ A client error (BucketAlreadyOwnedByYou) occurred when calling the CreateBucket operation: Your previous request to create the named bucket succeeded and you already own it.  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>The error I get tells me that I already own a bucket with that name.</p>
+<p>What happens if I create a bucket with a name that I do not own. I will try to create a bucket with the name aws-cli. I know that a bucket with that name already exists and it was not created by me. Let&rsquo;s see what happens.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 mb s3://aws-cli  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>make_bucket failed: s3://aws-cli/ A client error (BucketAlreadyExists) occurred when calling the CreateBucket operation: The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>That is what I was expecting. Bucket names are unique across entire S3.</p>
+<p>To get a list of my buckets I can run the ls sub-command like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 ls  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>2014-07-01 13:54:02 deebucket  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>So I have only one bucket. I should try to put some files into that bucket by copying a locally stored file to my AWS S3 bucket. This can be done by aptly named cp command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 cp coco.jpg s3://deebucket  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>upload: ./coco.jpg to s3://deebucket/coco.jpg  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>The command above copies a file called coco.jpg from my current directory into my S3 bucket. Options I give in this command are source and destination. The file I have copied is a cute cat photo and the cat looks like this.</p>
+<p><img src="http://kapoor.io/wp-content/uploads/2014/07/coco-300x225.jpg" alt="Coco" title="coco.jpg"></p>
+<p>What happens if I copy the same file again? The file in my bucket gets overwritten with the new one.</p>
+<p>I should copy few more files. In my local directory I have two more files sunset1.jpg and sunset2.jpg. I would like to copy the files that start with characters <strong>sun</strong> into my bucket using the wildcard technique but it turns out that <strong>cp</strong> is a single file operation. To get all my file across I can use the <strong>sync</strong> command which will sync the bucket with my local directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 sync . s3://deebucket  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>upload: ./sunset2.jpg to s3://deebucket/sunset2.jpg  
+</span></span><span style="display:flex;"><span>upload: ./sunset1.jpg to s3://deebucket/sunset1.jpg  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>Now I have all my files from my local directory copied over to my S3 bucket.</p>
+<p>To get a listing of all files in my bucket I can run this command</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>`  
+</span></span><span style="display:flex;"><span>$ aws s3 ls s3://deebucket  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>2014-07-01 14:06:52      46674 coco.jpg  
+</span></span><span style="display:flex;"><span>2014-07-01 14:16:15     105607 sunset1.jpg  
+</span></span><span style="display:flex;"><span>2014-07-01 14:16:15      13214 sunset2.jpg  
+</span></span><span style="display:flex;"><span>`  
+</span></span></code></pre></div><p>This is the same command which was used to get a list of buckets. If I pass in a bucket name then it gives me a listing of files within that bucket. Neat!</p>
+<p>Next, I want to make my cute cat photo accessible to everyone. I could not find a way to do this from CLI so I will use the management console to grant permissions to my object.</p>
+<p>After granting open/download to everyone, my cute cat is accessible at <a href="https://s3-ap-southeast-2.amazonaws.com/deebucket/coco.jpg">https://s3-ap-southeast-2.amazonaws.com/deebucket/coco.jpg</a></p>
+<p>So today I was able to create S3 buckets and add files to that bucket. I also found out that bucket names are unique and there are certain operations which are single file operations for example cp.</p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/aws-getting-started-with-cli/?ref=footer">AWS - Getting Started with CLI</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/?ref=footer">AWS - SDK for Ruby Unable to find AWS credentials</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>Blog | :bit :of :binary</title>
+<meta name="title" content="Blog" />
+<meta name="description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby" />
+<meta name="keywords" content=".net,activerecord,android,aws,blogging,cloud,community,docker,fastapi,google,hardware,javascript,kali,linq,linux,mac,microsoft,node.js,python,rails,react,ruby,til,tools,typescript,uncategorized,vim,vs-code,web," />
+
+
+<meta property="og:title" content="Blog" />
+<meta property="og:description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bitofbinary.com/blog/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="Blog"/>
+<meta name="twitter:description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby"/>
+
+
+
+<meta itemprop="name" content="Blog">
+<meta itemprop="description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <link rel="alternate" type="application/rss+xml" href="https://bitofbinary.com/blog/index.xml" title=":bit :of :binary" />
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+<content>
+  
+  <ul class="blog-posts">
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/project-restore/" style="font-size: 1em;">Project Restore</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-02-11' pubdate>
+                11 Feb, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/python.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/get-indexes-of-negative-numbers-from-a-list-in-python/" style="font-size: 1em;">Get Indexes of Negative Numbers from a List in Python</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-02-07' pubdate>
+                07 Feb, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/ruby.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/teaching-ruby-one-post-at-a-time/" style="font-size: 1em;">Teaching Ruby One Post at a Time</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-02-06' pubdate>
+                06 Feb, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/typescript.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/7-essentials-for-learning-typescript/" style="font-size: 1em;">7 Essentials for Learning TypeScript</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-02-05' pubdate>
+                05 Feb, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/ruby.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/" style="font-size: 1em;">Handling Single Record Queries in Rails with Grace</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-02-05' pubdate>
+                05 Feb, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/ruby.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/understanding-symbols-in-ruby-programming-language/" style="font-size: 1em;">Understanding Symbols in Ruby Programming Language</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-01-23' pubdate>
+                23 Jan, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/ruby.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/mastering-ruby-blocks-a-comprehensive-guide/" style="font-size: 1em;">Mastering Ruby Blocks: A Comprehensive Guide</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-01-15' pubdate>
+                15 Jan, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/writing.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/codecamp-oz-a-nostalgic-dive-into-the-archives-of-the-web/" style="font-size: 1em;">Codecamp OZ: A Nostalgic Dive Into The Archives of the Web</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-01-14' pubdate>
+                14 Jan, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/react.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/simplifying-your-react-forms-with-the-magic-of-usestate/" style="font-size: 1em;">Simplifying Your React Forms with the Magic of useState</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2024-01-11' pubdate>
+                11 Jan, 2024
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/apple-m2.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/my-new-mac-m2/" style="font-size: 1em;">My New Mac M2</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2023-09-19' pubdate>
+                19 Sep, 2023
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/python.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/run-fastapi-inside-a-docker-container/" style="font-size: 1em;">Run FastAPI inside a docker container</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2023-09-06' pubdate>
+                06 Sep, 2023
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/vim.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/format-code-before-saving-in-vim-with-prettier/" style="font-size: 1em;">Format code before saving in vim with Prettier</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2023-08-30' pubdate>
+                30 Aug, 2023
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/python.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/working-with-env-files-in-python/" style="font-size: 1em;">Working with env files in Python</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2023-08-21' pubdate>
+                21 Aug, 2023
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/aws.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/connect-to-aws-rds-instance-using-boto3-and-secret-manager/" style="font-size: 1em;">Connect to AWS RDS instance using boto3 and Secret Manager</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2023-03-02' pubdate>
+                02 Mar, 2023
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/few-thoughts-on-blogging/" style="font-size: 1em;">Few thoughts on Blogging</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2022-05-01' pubdate>
+                01 May, 2022
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/react-usereducer-hook-example/" style="font-size: 1em;">React useReducer Hook Example</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2019-08-02' pubdate>
+                02 Aug, 2019
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/react-usestate-hook-example/" style="font-size: 1em;">React useState Hook Example</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2019-07-24' pubdate>
+                24 Jul, 2019
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/moving-from-iterm-to-alacritty/" style="font-size: 1em;">Moving from iTerm to Alacritty</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2019-07-08' pubdate>
+                08 Jul, 2019
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/my-first-cloud-function-on-google-cloud/" style="font-size: 1em;">My first Cloud Function on Google Cloud</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2019-06-18' pubdate>
+                18 Jun, 2019
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/rebooting-my-blog/" style="font-size: 1em;">Rebooting My Blog</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2019-06-14' pubdate>
+                14 Jun, 2019
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/my-visual-studio-code-setup/" style="font-size: 1em;">My Visual Studio Code Setup</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2018-10-19' pubdate>
+                19 Oct, 2018
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/path-picker-by-facebook/" style="font-size: 1em;">Path Picker by Facebook</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-05-08' pubdate>
+                08 May, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/node.js-eventemitter-example/" style="font-size: 1em;">node.js EventEmitter example</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-05-05' pubdate>
+                05 May, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/express-4-routing-guide/" style="font-size: 1em;">Express 4 routing guide</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-04-24' pubdate>
+                24 Apr, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/upgrade-node.js-on-mac/" style="font-size: 1em;">Upgrade node.js on mac</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-04-21' pubdate>
+                21 Apr, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/test-rest-apis-with-frisby/" style="font-size: 1em;">Test REST APIs with Frisby</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-04-17' pubdate>
+                17 Apr, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/list-of-node.js-core-modules/" style="font-size: 1em;">List of node.js core modules</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-04-14' pubdate>
+                14 Apr, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/nodejs.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/5-npm-commands-recommended-for-node.js-developers/" style="font-size: 1em;">5 npm commands recommended for node.js developers</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2015-04-09' pubdate>
+                09 Apr, 2015
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/advanced-debugging-techniques-with-chrome/" style="font-size: 1em;">Advanced Debugging Techniques with Chrome</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-11-12' pubdate>
+                12 Nov, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/5-free-cdns-for-developers/" style="font-size: 1em;">5 Free CDNs for developers</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-09-18' pubdate>
+                18 Sep, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/personal-project-for-learning-github-api/" style="font-size: 1em;">Personal project for learning GitHub API</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-08-13' pubdate>
+                13 Aug, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/ruby-calculate-md5-hash-of-a-file/" style="font-size: 1em;">Ruby - Calculate MD5 hash of a file</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-07-04' pubdate>
+                04 Jul, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/aws-download-upload-file-from-s3-bucket-using-aws-sdk-for-ruby/" style="font-size: 1em;">AWS - Download Upload file from S3 bucket using AWS SDK for Ruby</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-07-03' pubdate>
+                03 Jul, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/aws-sdk-for-ruby-unable-to-find-aws-credentials/" style="font-size: 1em;">AWS - SDK for Ruby Unable to find AWS credentials</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-07-02' pubdate>
+                02 Jul, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/aws-explore-s3-with-cli/" style="font-size: 1em;">AWS - Explore S3 with CLI</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-07-01' pubdate>
+                01 Jul, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/aws-getting-started-with-cli/" style="font-size: 1em;">AWS - Getting Started with CLI</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-07-01' pubdate>
+                01 Jul, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/run-google-chrome-as-non-root-user-in-kali-linux/" style="font-size: 1em;">Run Google Chrome as non root user in Kali Linux</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-06-05' pubdate>
+                05 Jun, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/connect-to-ssh-server-on-kali-linux/" style="font-size: 1em;">Connect to ssh server on Kali Linux</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-06-03' pubdate>
+                03 Jun, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/how-does-rvm-know-my-name/" style="font-size: 1em;">How does RVM know my name?</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-05-30' pubdate>
+                30 May, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/git-log-basic-to-advance/" style="font-size: 1em;">git log basic to advance</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-05-21' pubdate>
+                21 May, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/playing-with-microsoft-azure-cli-on-mac/" style="font-size: 1em;">Playing with Microsoft Azure CLI on mac</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-05-20' pubdate>
+                20 May, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/vim-update-after-using-it-for-more-than-a-month/" style="font-size: 1em;">Vim update after using it for more than a month</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-05-09' pubdate>
+                09 May, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/starting-vim-journey-again/" style="font-size: 1em;">Starting Vim Journey Again</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-04-11' pubdate>
+                11 Apr, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/node.js-make-npm-work-behind-proxy/" style="font-size: 1em;">Node.js - Make npm work behind proxy</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-01-08' pubdate>
+                08 Jan, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/android-listview-tutorial-with-images-and-text/" style="font-size: 1em;">Android - ListView Tutorial With Images and Text</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-01-07' pubdate>
+                07 Jan, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/android-linear-layout-example/" style="font-size: 1em;">Android - Linear Layout Example</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-01-07' pubdate>
+                07 Jan, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/capture-xml-in-wcf-service/" style="font-size: 1em;">Capture XML in WCF Service</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2014-01-07' pubdate>
+                07 Jan, 2014
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/android-expandablelistview-tutorial/" style="font-size: 1em;">Android - ExpandableListView Tutorial</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2013-07-31' pubdate>
+                31 Jul, 2013
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linux-setgid-on-directory-and-share-directory-with-users/" style="font-size: 1em;">Linux - Setgid on Directory and Share Directory With Users</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2013-07-25' pubdate>
+                25 Jul, 2013
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linux-number-of-files-in-directory/" style="font-size: 1em;">Linux - Number of Files in Directory</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2013-07-03' pubdate>
+                03 Jul, 2013
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/windows-azure-create-linux-virtual-machine-through-management-portal/" style="font-size: 1em;">Windows Azure - Create Linux Virtual Machine Through Management Portal</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2013-05-30' pubdate>
+                30 May, 2013
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/my-windows-phone-app-is-runner-up-in-lifehacker-and-microsofts-developer-challenge/" style="font-size: 1em;">My Windows Phone App Is Runner-up in Lifehacker and Microsoft’s Developer Challenge</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2013-05-20' pubdate>
+                20 May, 2013
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/could-not-create-ssl/tsl-secure-channel-solution/" style="font-size: 1em;">Could Not Create SSL/TSL Secure Channel Solution</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2010-08-20' pubdate>
+                20 Aug, 2010
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/output-to-console-in-windows-forms-application/" style="font-size: 1em;">Output to Console in Windows Forms Application</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-09-01' pubdate>
+                01 Sep, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/execute-stored-procedure-with-ado.net-data-services/" style="font-size: 1em;">Execute Stored Procedure With ADO.NET Data Services</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-08-16' pubdate>
+                16 Aug, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/ado.net-data-services-with-asp.net/" style="font-size: 1em;">ADO.NET Data Services With ASP.NET</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-07-28' pubdate>
+                28 Jul, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/insert-master-detail-data-with-linq-to-sql/" style="font-size: 1em;">Insert Master Detail Data With LINQ to SQL</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-07-08' pubdate>
+                08 Jul, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/request-error-in-ado.net-data-services/" style="font-size: 1em;">Request Error in ADO.NET Data Services</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-06-16' pubdate>
+                16 Jun, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/upcoming-speaking-engagements/" style="font-size: 1em;">Upcoming Speaking Engagements</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-05-12' pubdate>
+                12 May, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/wpf-community-workshop-learn-wpf-and-raise-money/" style="font-size: 1em;">WPF Community Workshop – Learn WPF and Raise Money</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-03-16' pubdate>
+                16 Mar, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/programmatically-take-screenshot-using-c/" style="font-size: 1em;">Programmatically Take Screenshot Using C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-02-26' pubdate>
+                26 Feb, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/var-keyword-in-c/" style="font-size: 1em;">Var Keyword in C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-01-06' pubdate>
+                06 Jan, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linq-equivalent-of-where-in-with-int/" style="font-size: 1em;">LINQ Equivalent Of Where IN With Int</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2009-01-05' pubdate>
+                05 Jan, 2009
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/remove-duplicate-lines-from-a-text-file-using-linq/" style="font-size: 1em;">Remove Duplicate Lines From A Text File Using LINQ</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-12-12' pubdate>
+                12 Dec, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/the-era-of-cloud-computing-consultant/" style="font-size: 1em;">The Era of Cloud Computing Consultant</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-12-04' pubdate>
+                04 Dec, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/dynamic-sort-with-linq-to-sql/" style="font-size: 1em;">Dynamic Sort With LINQ to SQL</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-11-19' pubdate>
+                19 Nov, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/enum-support-with-linq-to-sql-and-sqlmetal/" style="font-size: 1em;">Enum Support With LINQ to SQL and SqlMetal</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-11-18' pubdate>
+                18 Nov, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/wi-fi-not-working-with-vodafone-software/" style="font-size: 1em;">Wi-Fi Not Working With Vodafone Software</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-11-05' pubdate>
+                05 Nov, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linq-to-sql-training-in-sydney/" style="font-size: 1em;">LINQ To SQL Training In Sydney</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-10-29' pubdate>
+                29 Oct, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/how-i-fixed-error-080070052-on-sd-card/" style="font-size: 1em;">How I Fixed Error 0×80070052 On SD Card</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-28' pubdate>
+                28 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql-using-linqpad/" style="font-size: 1em;">View T-SQL Query Generated by LINQ to SQL Using Linqpad</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-23' pubdate>
+                23 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/view-t-sql-query-generated-by-linq-to-sql/" style="font-size: 1em;">View T-SQL Query Generated by LINQ to SQL</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-22' pubdate>
+                22 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/code-sample-programmatically-download-file-using-c/" style="font-size: 1em;">Code Sample: Programmatically Download File Using C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-17' pubdate>
+                17 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linq-to-sql-join-on-multiple-conditions/" style="font-size: 1em;">LINQ To SQL Join On Multiple Conditions</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-16' pubdate>
+                16 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/use-sqlconnection-with-linq-to-sql/" style="font-size: 1em;">Use SqlConnection With LINQ to SQL</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-16' pubdate>
+                16 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/deep-cloning-in-c/" style="font-size: 1em;">Deep Cloning In C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-09-01' pubdate>
+                01 Sep, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/get-a-list-of-installed-applications-using-linq-and-c/" style="font-size: 1em;">Get A List Of Installed Applications Using LINQ And C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-29' pubdate>
+                29 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linq-equivalent-of-where-in/" style="font-size: 1em;">LINQ Equivalent Of Where IN</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-25' pubdate>
+                25 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/find-duplicates-using-linq/" style="font-size: 1em;">Find Duplicates Using LINQ</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-16' pubdate>
+                16 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/tutorial-reading-a-text-file-using-linq/" style="font-size: 1em;">Tutorial Reading A Text File Using LINQ</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-13' pubdate>
+                13 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/write-to-vista-event-log-using-c/" style="font-size: 1em;">Write To Vista Event Log Using C#</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-07' pubdate>
+                07 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/bob.png" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/stylecop-tutorial/" style="font-size: 1em;">StyleCop tutorial</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-07' pubdate>
+                07 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/visualstudio.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/free-icons-and-images-with-visual-studio-2008/" style="font-size: 1em;">Free Icons And Images With Visual Studio 2008</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-06' pubdate>
+                06 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/dotnet.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/dynamic-sort-with-linq/" style="font-size: 1em;">Dynamic sort with LINQ</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-08-04' pubdate>
+                04 Aug, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/dotnet.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/linq-to-sql-tutorial/" style="font-size: 1em;">LINQ To SQL Tutorial</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2008-07-31' pubdate>
+                31 Jul, 2008
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div style="display: flex; align-items: center;">
+        
+          <img src="/images/featured/dotnet.svg" class="post-featured-image" />
+        
+
+        <div>
+          <a href="https://bitofbinary.com/menus-in-avalon/" style="font-size: 1em;">Menus in Avalon</a>
+          <div>
+            <i>
+              <time style="font-size: .85em; color:#747474" datetime='2005-02-05' pubdate>
+                05 Feb, 2005
+              </time>
+            </i>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+  
+    <hr/>
+    <h3>Tags</h3>
+    
+    <div>
+      
+        
+        
+        
+        
+        
+        
+        
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/.net/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.492475028030697rem;">
+                #.NET
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/activerecord/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #ActiveRecord
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/android/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+                #Android
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/aws/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #AWS
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/blogging/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+                #Blogging
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/cloud/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2898309383103697rem;">
+                #Cloud
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/community/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Community
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/docker/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Docker
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/fastapi/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #FastAPI
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/google/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Google
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/hardware/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Hardware
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/javascript/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #JavaScript
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/kali/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.1121219121087877rem;">
+                #Kali
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/linq/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #LINQ
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/linux/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2242438242175755rem;">
+                #Linux
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/mac/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Mac
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/microsoft/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3363657363263632rem;">
+                #Microsoft
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/node.js/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3147660018291152rem;">
+                #Node.js
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/python/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2242438242175755rem;">
+                #Python
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/rails/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #Rails
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/react/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+                #React
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/ruby/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2898309383103697rem;">
+                #Ruby
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/til/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+                #TIL
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/tools/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3363657363263632rem;">
+                #Tools
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/typescript/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #TypeScript
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/uncategorized/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3554180524031638rem;">
+                #Uncategorized
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/vim/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+                #Vim
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/vs-code/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+                #VS Code
+              </a>
+          
+            
+            
+            
+            
+              <a href="https://bitofbinary.com/blog/web/" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: 1.1121219121087877rem;">
+                #Web
+              </a>
+          
+      
+    </div>
+  
+    
+</content>
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

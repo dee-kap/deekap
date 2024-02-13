@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/android/</link>
+    <description>Recent content in Android on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Tue, 07 Jan 2014 10:20:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android - ListView Tutorial With Images and Text</title>
+      <link>https://bitofbinary.com/android-listview-tutorial-with-images-and-text/</link>
+      <pubDate>Tue, 07 Jan 2014 10:20:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-listview-tutorial-with-images-and-text/</guid>
+      <description>Introduction In this post I will show you how to use a ListView widget to display both images and text. This is a common pattern used by many apps. If you are not familiar with ListView and would like a basic tutorial then please visit this link. For this tutorial, we will build an app which displays a bunch of items along with an image. I will walk you through the process which will involve creating custom layouts for each item in ListView and creating a custom adapter.</description>
+    </item>
+    
+    <item>
+      <title>Android - Linear Layout Example</title>
+      <link>https://bitofbinary.com/android-linear-layout-example/</link>
+      <pubDate>Tue, 07 Jan 2014 10:19:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-linear-layout-example/</guid>
+      <description>In Android Layouts are containers in which you place your widgets like buttons, images, lists etc. Two of the most useful layouts are LinearLayout and RelativeLayout. In this post I will talk about LinearLayout. LinearLayout extends android.view.ViewGroup which extends android.view.View object. As the name suggests, LinearLayout is used to place widgets in a linear manner. By default widgets are stacked vertically as shown in the image below. Here is another example of an app running in the emulator.</description>
+    </item>
+    
+    <item>
+      <title>Android - ExpandableListView Tutorial</title>
+      <link>https://bitofbinary.com/android-expandablelistview-tutorial/</link>
+      <pubDate>Wed, 31 Jul 2013 03:24:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/android-expandablelistview-tutorial/</guid>
+      <description>Introduction In this tutorial I will show you how to use ExpandableListView widget in your Android app. ExpandableListView widget is used to display hierarchical data which is two levels deep. If your hierarchy is more than two levels then you should look at options other than ExpandableListView. Now let’s get started.
+We will develop an app which displays a bunch of countries with some of their cities. When a user taps the name of a country, the widget expands to show cities.</description>
+    </item>
+    
+  </channel>
+</rss>

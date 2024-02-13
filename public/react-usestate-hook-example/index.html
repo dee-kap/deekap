@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>React useState Hook Example | :bit :of :binary</title>
+<meta name="title" content="React useState Hook Example" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&rsquo;d like to show you how to use the useState hook to build a simple tabs component." />
+<meta name="keywords" content="React," />
+
+
+<meta property="og:title" content="React useState Hook Example" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&rsquo;d like to show you how to use the useState hook to build a simple tabs component." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/react-usestate-hook-example/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-07-24T03:21:37+00:00" />
+<meta property="article:modified_time" content="2019-07-24T03:21:37+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="React useState Hook Example"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&rsquo;d like to show you how to use the useState hook to build a simple tabs component."/>
+
+
+
+<meta itemprop="name" content="React useState Hook Example">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&rsquo;d like to show you how to use the useState hook to build a simple tabs component."><meta itemprop="datePublished" content="2019-07-24T03:21:37+00:00" />
+<meta itemprop="dateModified" content="2019-07-24T03:21:37+00:00" />
+<meta itemprop="wordCount" content="387"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content="React," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>React useState Hook Example</h1>
+<p>
+  <i>
+    <time datetime='2019-07-24' pubdate>
+      24 Jul, 2019
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/react/">#React</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<p>React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&rsquo;d like to show you how to use the <strong>useState</strong> hook to build a simple tabs component. In our component, we will use the state to keep track of the active tab. If you have worked with React and state, you would have done it using classes. We will not use a class but instead, our component will be purely functional. Our component implements features of a simple tab control. When a user clicks on a tab item, it is expected that the clicked item will be visually highlighted. This is what it will look like.   <img src="https://bitofbinary.com/wp-content/uploads/2019/07/usestate-tabs.gif" alt=""> The first thing we need to do within our component is to call <strong>useState</strong> method like this.<code>const [activeTab, setActiveTab] = React.useState(&quot;fruits&quot;); </code>This line needs an explanation. What we are looking at here is an elegant use of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring">array destructuring</a>. We are executing the <strong>useState</strong> function which is part of React. The function returns us an array of two items. The first one holds our state variable which we are calling activeTab. The second is a function which we will use to update this state. Another thing to notice is that we are passing an argument to the <strong>useState</strong> function. This is our initial state. It can be an object, an array or anything we like. In this example, it happens to be a string. We are telling React to create a state variable and call it activeTab and tell it the function you will use to change the state. <strong>activeTab</strong> is the variable which will store the state and <strong>setActiveTab</strong> will be used to change it. Another important bit is that when using the useState hook, we give it the initial state. In this case, it is the string <em>fruits</em>. What we are saying is that for this component the initial state value for activeTab will be <em>fruits.</em> Next, we use the state in our render function to render a list of tab items```</p>
+<ul>
+  <li
+    onClick={() => setActiveTab("fruits")}
+    className={activeTab === "fruits" ? "active" : ""}
+  >
+    Fruits
+  </li>
+  <li
+    onClick={() => setActiveTab("vegetables")}
+    className={activeTab === "vegetables" ? "active" : ""}
+  >
+    Vegetables
+  </li>
+  <li
+    onClick={() => setActiveTab("junk")}
+    className={activeTab === "junk" ? "active" : ""}
+  >
+    Junk
+  </li>
+</ul>
+```The **onClick** on the list handler calls the **setActiveTab** to change the state to whichever tab is clicked. We also use the **activeTab** state variable to assign the active CSS class on the item. This is to give it the visual appearance of a selected tab. There is some repetition here which I don't like, the code can be simplified to look less DRY```
+<ul>
+  {TabItem("fruits", "Fruits")}
+  {TabItem("vegetables", "Vegetables")}
+  {TabItem("junk", "Junk")}
+</ul>;
+```
+<p>The <strong>TabItem function</strong> will return us the list item as we want</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>function TabItem(tab, label) {
+</span></span><span style="display:flex;"><span>  return (
+</span></span><span style="display:flex;"><span>    &lt;li
+</span></span><span style="display:flex;"><span>      onClick={() =&gt; setActiveTab(tab)}
+</span></span><span style="display:flex;"><span>      className={activeTab === tab ? &#34;active&#34; : &#34;&#34;}
+</span></span><span style="display:flex;"><span>    &gt;
+</span></span><span style="display:flex;"><span>      {label}
+</span></span><span style="display:flex;"><span>    &lt;/li&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here is the full code for the component</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>import React from &#34;react&#34;;
+</span></span><span style="display:flex;"><span>import ReactDOM from &#34;react-dom&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import &#34;./styles.css&#34;;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>function App() {
+</span></span><span style="display:flex;"><span>  const [activeTab, setActiveTab] = React.useState(&#34;fruits&#34;);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  function TabItem(tab, label) {
+</span></span><span style="display:flex;"><span>    return (
+</span></span><span style="display:flex;"><span>      &lt;li
+</span></span><span style="display:flex;"><span>        onClick={() =&gt; setActiveTab(tab)}
+</span></span><span style="display:flex;"><span>        className={activeTab === tab ? &#34;active&#34; : &#34;&#34;}
+</span></span><span style="display:flex;"><span>      &gt;
+</span></span><span style="display:flex;"><span>        {label}
+</span></span><span style="display:flex;"><span>      &lt;/li&gt;
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  return (
+</span></span><span style="display:flex;"><span>    &lt;div className=&#34;App&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;ul&gt;
+</span></span><span style="display:flex;"><span>        {TabItem(&#34;fruits&#34;, &#34;Fruits&#34;)}
+</span></span><span style="display:flex;"><span>        {TabItem(&#34;vegetables&#34;, &#34;Vegetables&#34;)}
+</span></span><span style="display:flex;"><span>        {TabItem(&#34;junk&#34;, &#34;Junk&#34;)}
+</span></span><span style="display:flex;"><span>      &lt;/ul&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>const rootElement = document.getElementById(&#34;root&#34;);
+</span></span><span style="display:flex;"><span>ReactDOM.render(&lt;App /&gt;, rootElement);
+</span></span><span style="display:flex;"><span>```This is the CSS used```
+</span></span><span style="display:flex;"><span>.App {
+</span></span><span style="display:flex;"><span>  font-family: sans-serif;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ul {
+</span></span><span style="display:flex;"><span>  display: flex;
+</span></span><span style="display:flex;"><span>  list-style: none;
+</span></span><span style="display:flex;"><span>  margin: 0;
+</span></span><span style="display:flex;"><span>  padding: 0;
+</span></span><span style="display:flex;"><span>  justify-content: center;
+</span></span><span style="display:flex;"><span>  border-bottom: 2px solid rgb(0, 104, 22);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>li {
+</span></span><span style="display:flex;"><span>  padding: 1rem;
+</span></span><span style="display:flex;"><span>  font-size: 120%;
+</span></span><span style="display:flex;"><span>  color: rgb(78, 77, 77);
+</span></span><span style="display:flex;"><span>  cursor: pointer;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.active {
+</span></span><span style="display:flex;"><span>  font-weight: bold;
+</span></span><span style="display:flex;"><span>  border-top: 2px solid rgb(0, 104, 22);
+</span></span><span style="display:flex;"><span>  border-left: 2px solid rgb(0, 104, 22);
+</span></span><span style="display:flex;"><span>  border-right: 2px solid rgb(0, 104, 22);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>```We can see that by using **useState** hook, we have eliminated the need to write a class when working with the state in React. The code looks much cleaner and a little bit more JavaScript-y Happy coding.
+</span></span></code></pre></div>
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/moving-from-iterm-to-alacritty/?ref=footer">Moving from iTerm to Alacritty</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/react-usereducer-hook-example/?ref=footer">React useReducer Hook Example</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

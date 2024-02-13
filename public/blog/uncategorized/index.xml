@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/uncategorized/</link>
+    <description>Recent content in Uncategorized on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Wed, 13 Aug 2014 02:11:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Personal project for learning GitHub API</title>
+      <link>https://bitofbinary.com/personal-project-for-learning-github-api/</link>
+      <pubDate>Wed, 13 Aug 2014 02:11:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/personal-project-for-learning-github-api/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Couple of weeks ago on a rainy weekend I started hacking on a project to learn GitHub API. I decided to use AngularJS to interact with the API and within few hours it started to take some shape.</description>
+    </item>
+    
+    <item>
+      <title>Windows Azure - Create Linux Virtual Machine Through Management Portal</title>
+      <link>https://bitofbinary.com/windows-azure-create-linux-virtual-machine-through-management-portal/</link>
+      <pubDate>Thu, 30 May 2013 03:16:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/windows-azure-create-linux-virtual-machine-through-management-portal/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Windows Azure along with PaaS is also a full on IaaS cloud service. At the time of this writing you can create a variety of Windows VMs and Linux VMs. This post shows you how easy it is to create a Linux virtual machine on Windows Azure.</description>
+    </item>
+    
+    <item>
+      <title>Upcoming Speaking Engagements</title>
+      <link>https://bitofbinary.com/upcoming-speaking-engagements/</link>
+      <pubDate>Tue, 12 May 2009 02:04:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/upcoming-speaking-engagements/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Just wanted to let readers of this blog know that I will be presenting Cloud Computing for .Net Developers at
+WDNUG (Wollongong .Net User Group) on 13th May 2009. ADNUG (Adelaide .Net User Group) on 10th June 2009.</description>
+    </item>
+    
+    <item>
+      <title>The Era of Cloud Computing Consultant</title>
+      <link>https://bitofbinary.com/the-era-of-cloud-computing-consultant/</link>
+      <pubDate>Thu, 04 Dec 2008 07:49:03 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/the-era-of-cloud-computing-consultant/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. CCC stands for Cloud Computing Consultant. There, I have said it. This is my contribution to acronyms-land. I have also cleverly designed it to minimize RSI which I am sure will be appreciated. You only have to use one key to type the acronym.</description>
+    </item>
+    
+    <item>
+      <title>Wi-Fi Not Working With Vodafone Software</title>
+      <link>https://bitofbinary.com/wi-fi-not-working-with-vodafone-software/</link>
+      <pubDate>Wed, 05 Nov 2008 00:46:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/wi-fi-not-working-with-vodafone-software/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. As a part of my job I often travel around Sydney so I use a Vodafone mobile Internet connection to keep myself connected. At home I connect to my wireless network. Recently I faced a problem with my new laptop.</description>
+    </item>
+    
+    <item>
+      <title>LINQ To SQL Training In Sydney</title>
+      <link>https://bitofbinary.com/linq-to-sql-training-in-sydney/</link>
+      <pubDate>Wed, 29 Oct 2008 07:45:04 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/linq-to-sql-training-in-sydney/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I am running a LINQ To SQL Training day on Saturday November 8th at Microsoft Office in North Ryde. The course is FREE for anyone to attend but there are only 20 places available. So if have not yet jumped into the wonderful world of writing LINQ queries.</description>
+    </item>
+    
+    <item>
+      <title>How I Fixed Error 0×80070052 On SD Card</title>
+      <link>https://bitofbinary.com/how-i-fixed-error-080070052-on-sd-card/</link>
+      <pubDate>Sun, 28 Sep 2008 07:02:46 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/how-i-fixed-error-080070052-on-sd-card/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. My SD Card which I use between my PC and PDA was giving me Error 0x80070052. The error would occur when I created a new folder on the card. Initially I suspected this to be a virus but I also wanted to explore other options.</description>
+    </item>
+    
+    <item>
+      <title>Deep Cloning In C#</title>
+      <link>https://bitofbinary.com/deep-cloning-in-c/</link>
+      <pubDate>Mon, 01 Sep 2008 07:08:23 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/deep-cloning-in-c/</guid>
+      <description>To make an object cloneable in .NET we should implement ICloneable interface. ICloneable is a simple interface with only one method Clone(). In this post I will show you how to make a deep clone of an object.``` class Program { static void Main(string[] args) { Customer c1 = new Customer { FirstName = &amp;ldquo;John&amp;rdquo;, LastName = &amp;ldquo;Smith&amp;rdquo;, Limit = new CreditLimit { AccountOverdue = false, ApprovedAmount = 1000 } };</description>
+    </item>
+    
+    <item>
+      <title>Write To Vista Event Log Using C#</title>
+      <link>https://bitofbinary.com/write-to-vista-event-log-using-c/</link>
+      <pubDate>Thu, 07 Aug 2008 05:37:20 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/write-to-vista-event-log-using-c/</guid>
+      <description>Event Log is a central place to log application events. These events can be errors, warnings or just information. Each event log entry in Windows Vista has a level of event, date and time the event occurred, source of event, an event Id and a task category. While event logs such as Application, System, Security exist by default, you can also create your own event log. You can also write to event log from your own application using System.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>LINQ To SQL Tutorial | :bit :of :binary</title>
+<meta name="title" content="LINQ To SQL Tutorial" />
+<meta name="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc." />
+<meta name="keywords" content=".NET,LINQ," />
+
+
+<meta property="og:title" content="LINQ To SQL Tutorial" />
+<meta property="og:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://bitofbinary.com/linq-to-sql-tutorial/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2008-07-31T05:27:04+00:00" />
+<meta property="article:modified_time" content="2008-07-31T05:27:04+00:00" /><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content="LINQ To SQL Tutorial"/>
+<meta name="twitter:description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc."/>
+
+
+
+<meta itemprop="name" content="LINQ To SQL Tutorial">
+<meta itemprop="description" content="This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Introduction With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc."><meta itemprop="datePublished" content="2008-07-31T05:27:04+00:00" />
+<meta itemprop="dateModified" content="2008-07-31T05:27:04+00:00" />
+<meta itemprop="wordCount" content="1047"><meta itemprop="image" content="https://bitofbinary.com/images/share.png"/>
+<meta itemprop="keywords" content=".NET,LINQ," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main>
+
+<h1>LINQ To SQL Tutorial</h1>
+<p>
+  <i>
+    <time datetime='2008-07-31' pubdate>
+      31 Jul, 2008
+    </time>
+  </i>
+</p>
+<div itemscope itemtype="http://schema.org/Person" style="display: flex; padding: .5em; margin-bottom: 2em; border: solid 1px #c6c9ce" >
+    <img src="/images/profile-photo.png" alt="Deepak " itemprop="image" style="width: 50px; height: 50px; border-radius: 50%;">
+    <div style="display: flex; flex-direction: column; padding-left: .8em">
+        <span itemprop="name" style="font-weight: 700; font-size: .9em;"><a href="/about">Deepak</a></span>
+        <small itemprop="description" style="color: #767a80;">Software Engineer - TypeScript, React, Node.js, Python, Ruby </small>
+    </div>
+</div>
+
+<p>
+  
+  <a href="https://bitofbinary.com/blog/.net/">#.NET</a>
+  
+  <a href="https://bitofbinary.com/blog/linq/">#LINQ</a>
+  
+</p>
+
+<content>
+  <div class="restore">
+This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
+</div>
+<h3 id="introduction">Introduction</h3>
+<p>With .NET Framework 3.5 Microsoft released Language Integrated Query aka LINQ. LINQ enables developers to query data sources using a query like syntax with both C# and VB.NET. These data sources can be collections, SQL Server databases, XML, DataSets etc. Other than what is supplied by Microsoft, LINQ is also extensible. This means that you can query data sources beyond what Microsoft ships. Examples of such implementations are LINQ To Flickr, LINQ To Amazon, LINQ to Google etc. In this article I will show you how you can use LINQ To SQL to perform CRUD operations on a SQL Server database. I will use Northwind database and build an ASP.NET application to demonstrated the capabilities of LINQ To SQL. You can download Northwind database <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=06616212-0356-46A0-8DA2-EEBC53A68034&amp;displaylang=en">here</a>.</p>
+<h3 id="toolset-for-this-article">Toolset for this article</h3>
+<ol>
+<li>Visual Studio 2008</li>
+<li>.NET Framework 3.5 (This is already installed if you have Visual Studio 2008)</li>
+<li>SQL Server 2005 (You can also work with SQL Server Express)</li>
+</ol>
+<h3 id="solution-structure">Solution Structure</h3>
+<p>For this article we will need two projects. One is a data layer (created as a Class Library)which we will generate and the other is an ASP.NET Web Application. The solutions structure looks like this in Solution Explorer. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image-thumb3.png" alt="LINQ"></p>
+<h3 id="creating-data-layer">Creating Data Layer</h3>
+<p>Before we generate our data layer we must create a new connection in Server Explorer which points to Northwind database. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image-thumb8.png" alt="LINQ"> We will now generate our data layer using LINQ To SQL. To do this you need to add a new item to the data layer project of type LINQ to SQL Classes. We will name it Northwind as shown below. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image41.png" alt="LINQ"> After adding a LINQ to SQL Class we are presented with a designer surface. Here we can simply drag the tables which will become part of our data layer. For this article we will drag all tables on the designer by selecting them all in one go. Our designer should look like this after dragging all tables on it. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image30-thumb.png" alt="LINQ"> We should now build our solution to make sure everything is okay. And that&rsquo;s it. We have successfully generated our data layer. In Solution Explorer we can see that we have two new files namely Northwind.dbml.layout and Northwind.designer.cs. We can also see that references required to compile and run our code have been added by Visual Studio. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image36.png" alt="LINQ"> The .cs file contains the code for our data layer. Let&rsquo;s examine the code that has been generated for us. We will look at the Region class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#e5c890">[Table(Name=&#34;dbo.Region&#34;)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">public</span> <span style="color:#ca9ee6">partial</span> <span style="color:#ca9ee6">class</span> <span style="color:#e5c890">Region</span> <span style="color:#c6d0f5">:</span> <span style="color:#babbf1">INotifyPropertyChanging</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">INotifyPropertyChanged</span>
+</span></span></code></pre></div><p>The class itself is decorated with Table attribute and the Name property has been assigned the actual table name we have in our database. Region class also implements INotifyPropertyChanging and INotifyPropertyChanged interfaces. These interfaces are used for databinding. Region class also contains one property per column. Let&rsquo;s look at the RegionDescription property.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#e5c890">[Column(Storage=&#34;\_RegionDescription&#34;, DbType=&#34;NChar(50) NOT NULL&#34;, CanBeNull=false)]</span>
+</span></span><span style="display:flex;"><span><span style="color:#ca9ee6">public</span> <span style="color:#e5c890">string</span> <span style="color:#babbf1">RegionDescription</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ca9ee6">get</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">return</span> <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">\</span><span style="color:#babbf1">_RegionDescription</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ca9ee6">set</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">if</span> <span style="color:#c6d0f5">((</span><span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">\</span><span style="color:#babbf1">_RegionDescription</span> <span style="color:#c6d0f5">!=</span> <span style="color:#ca9ee6">value</span><span style="color:#c6d0f5">))</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">OnRegionDescriptionChanging</span><span style="color:#c6d0f5">(</span><span style="color:#ca9ee6">value</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">SendPropertyChanging</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#e78284">\</span><span style="color:#babbf1">_RegionDescription</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">value</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">SendPropertyChanged</span><span style="color:#c6d0f5">(</span><span style="color:#a6d189">&#34;RegionDescription&#34;</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">this</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">OnRegionDescriptionChanged</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>Columns are decorated with Column attribute and values are passed in for Storage, DbType and CanBeNull which indicates if the column can be null or not.</p>
+<h3 id="using-data-layer">Using Data Layer</h3>
+<p>Now that we have generated our data layer. We will work on ASP.NET web application where we will use our data layer. To keep things simple we will create a web forms to search for customers and display search results. We will also create a web form to insert new customers. Let&rsquo;s start by creating our web form for customer search. For this we will use the Default.aspx page. We will place few controls on the web form. These controls will give us search parameters and a button which will do the search and display results when clicked. This is what the form will look like after placing our controls. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image-thumb13-thumb.png" alt="LINQ"> We will also place a GridView control on our form to display search results. We will now put in some code in our button&rsquo;s click event handler to do the search and display results in GridView. Make sure that we have a reference to Data Layer project, System.Data.Linq and appropriate using statement. Here is what our button click event handler will contain.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ca9ee6">protected</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">buttonSearch_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#babbf1">using</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">NorthwindDataContext</span> <span style="color:#babbf1">context</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">new</span> <span style="color:#babbf1">NorthwindDataContext</span><span style="color:#c6d0f5">())</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c890">var</span> <span style="color:#babbf1">customers</span> <span style="color:#c6d0f5">=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">from</span> <span style="color:#babbf1">c</span> <span style="color:#ca9ee6">in</span> <span style="color:#babbf1">context</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Customers</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">select</span> <span style="color:#babbf1">c</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">gridViewCustomers</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DataSource</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">customers</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">gridViewCustomers</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DataBind</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>This code will query the customers table in northwind database and will return all customers. We will now modify it slightly to accept customer name and company name as parameters for our query. After modification our event handler looks like this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ca9ee6">protected</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">buttonSearch_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#babbf1">using</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">NorthwindDataContext</span> <span style="color:#babbf1">context</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">new</span> <span style="color:#babbf1">NorthwindDataContext</span><span style="color:#c6d0f5">())</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c890">var</span> <span style="color:#babbf1">customers</span> <span style="color:#c6d0f5">=</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ca9ee6">from</span> <span style="color:#babbf1">c</span> <span style="color:#ca9ee6">in</span> <span style="color:#babbf1">context</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Customers</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">where</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">c</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">ContactName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Contains</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">textBoxCustomerName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Trim</span><span style="color:#c6d0f5">())</span> <span style="color:#c6d0f5">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#babbf1">c</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">CompanyName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Contains</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">textBoxCompanyName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Trim</span><span style="color:#c6d0f5">()))</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ca9ee6">select</span> <span style="color:#babbf1">c</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">gridViewCustomers</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DataSource</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">customers</span><span style="color:#c6d0f5">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">gridViewCustomers</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">DataBind</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>Our search results will now be filtered. Let us now created a data entry form for customers.  We will insert a new web form in our ASP.NET project and call it CustomerEntry. To start with we will make sure that our form contains fields required to insert a customer. Our form after completion will look like this. <img src="https://googledrive.com/host/0B6PDO8HPEQZNZWpTRms0ZWtlaUU/uploads/2008/07/image.png" alt="LINQ"> We expect a new row to be inserted into customers table when Save Customer button is clicked. This code achieves data insertion into customers table for us.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ef9f76;background-color:#303446;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ca9ee6">protected</span> <span style="color:#ca9ee6">void</span> <span style="color:#babbf1">buttonSave_Click</span><span style="color:#c6d0f5">(</span><span style="color:#e5c890">object</span> <span style="color:#babbf1">sender</span><span style="color:#c6d0f5">,</span> <span style="color:#babbf1">EventArgs</span> <span style="color:#babbf1">e</span><span style="color:#c6d0f5">)</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#babbf1">using</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">NorthwindDataContext</span> <span style="color:#babbf1">context</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">new</span> <span style="color:#babbf1">NorthwindDataContext</span><span style="color:#c6d0f5">())</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">Customer</span> <span style="color:#babbf1">customer</span> <span style="color:#c6d0f5">=</span> <span style="color:#ca9ee6">new</span> <span style="color:#babbf1">Customer</span> <span style="color:#c6d0f5">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#babbf1">CustomerID</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxCustomerID</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">CompanyName</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxCompanyName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">ContactName</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxCustomerName</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">ContactTitle</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxTitle</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Address</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxAddress</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">City</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxCity</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Region</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxRegion</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">PostalCode</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxPostalCode</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Country</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxCountry</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Phone</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxPhone</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span><span style="color:#c6d0f5">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#babbf1">Fax</span> <span style="color:#c6d0f5">=</span> <span style="color:#babbf1">textBoxFax</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Text</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c6d0f5">};</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">context</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">Customers</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">InsertOnSubmit</span><span style="color:#c6d0f5">(</span><span style="color:#babbf1">customer</span><span style="color:#c6d0f5">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#babbf1">context</span><span style="color:#c6d0f5">.</span><span style="color:#babbf1">SubmitChanges</span><span style="color:#c6d0f5">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c6d0f5">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c6d0f5">}</span>
+</span></span></code></pre></div><p>Similarly an existing row in database can be updated by first retrieving the data and then submitting it via DataContext.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>In this tutorial we have not written a single SQL statement to retrieve or insert data into a database. This is the beauty of LINQ To SQL. Further our retrieval code while in C# looks a lot like a query. We can already appreciate the benefits of such a streamlined and unified approach in dealing with data.</p>
+
+</content>
+
+  
+  <div class="previous-next-container">
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Previous Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/menus-in-avalon/?ref=footer">Menus in Avalon</a>
+        </small>
+      </div>
+      
+
+      
+      <div class="previous-next-post">
+        <small>
+          <div>Next Post</div>
+          <a class="link-reverse" href="https://bitofbinary.com/dynamic-sort-with-linq/?ref=footer">Dynamic sort with LINQ</a>
+        </small>
+      </div>
+      
+  </div>
+  
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

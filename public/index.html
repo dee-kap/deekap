@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta name="generator" content="Hugo 0.117.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://bitofbinary.com/true" />
+<title>:bit :of :binary</title>
+<meta name="title" content=":bit :of :binary" />
+<meta name="description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby" />
+<meta name="keywords" content=".net,activerecord,android,aws,blogging,cloud,community,docker,fastapi,google,hardware,javascript,kali,linq,linux,mac,microsoft,node.js,python,rails,react,ruby,til,tools,typescript,uncategorized,vim,vs-code,web," />
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://bitofbinary.com/" /><meta property="og:image" content="https://bitofbinary.com/images/share.png"/><meta property="og:site_name" content="Bit of Binary" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://bitofbinary.com/images/share.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby"/>
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Explore BitOfBinary.com, a technical haven for coding enthusiasts and professionals. Dive into  insightful blog posts covering a range of programming topics including React, Node.js, Python and Ruby">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <link rel="alternate" type="application/rss+xml" href="https://bitofbinary.com/index.xml" title=":bit :of :binary" />
+  <style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #f4f4f2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+     
+    color: #3578e5
+  }
+
+  main {
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 100%;
+  }
+
+  li {
+    margin: 15px 0;
+  }
+
+  input {
+    font-size: 100%;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 80%;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+   
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+   
+
+   
+
+  .book-list > ul {
+    list-style: none;
+  }
+
+  .book-list > ul > li {
+    display: flex;
+    margin-bottom: 3em;
+  }
+
+  .book-list > ul > li > p {
+    width: 100%;
+    display: flex;
+  }
+
+  .book-list > ul > li > p > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .book-list > ul > li > img {
+    width: 100px;
+    height: 150px;
+    margin-right: 1em;
+  }
+
+  .post-featured-image{
+    margin-right: 1em; 
+    width: 35px; 
+    height: 35px; 
+    border-radius:5px
+  }
+  @media screen and (max-width: 600px) {
+    .post-featured-image {
+      display: none;
+    }
+}
+
+.previous-next-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.previous-next-post {
+  flex: 1;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+.previous-next-post:not(:last-child) {
+  margin-right: 50px;
+}
+
+.restore {
+  border: 1px solid #ff6969;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 85%;
+  font-style: italic;
+}
+</style>
+
+
+
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-9NL14TLHGE"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-9NL14TLHGE");
+</script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  
+  <h2><span style="color:#f38ba8;font-weight: 800;">:</span>bit <span style="color:#a6e3a1;font-weight: 800;">:</span>of <span style="color:#89b4fa; font-weight: 800;">:</span>binary</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+<a href="/about">About</a>
+<a href="/contact">Contact</a></nav>
+<hr/>
+</header>
+  <main> <p>Hi! I&rsquo;m Deepak.</p>
+<p>Welcome to my digital space!</p>
+<p>I&rsquo;m a Software Developer from Sydney, Australia 🇦🇺</p>
+<p>My journey in the world of programming began in the mid-1990s, just as the World Wide Web was starting to weave its global tapestry.</p>
+<p>To know more about me, you can visit my <a href="about">About</a> page.</p>
+<p>These days I&rsquo;m having fun building <strong>React</strong> front-ends in <strong>Typescript</strong> and back-ends in <strong>Ruby</strong>, <strong>Python</strong> and <strong>node.js</strong></p>
+<hr/>
+<h3 id="tech-i-work-with">Tech I work with</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px, 1fr));">
+    <div style="text-align:center;">
+      <img src="/images/languages/react.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">React</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/nodejs.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Node.js</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/django.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Django</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/fastapi.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">FastAPI</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/rails.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Rails</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/aws.png" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">AWS</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/tailwindcss.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Tailwind</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/typescript.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Typescript</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/javascript.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Javascript</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/ruby.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Ruby</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/python.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Python</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/css3.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">CSS</p>
+    </div>
+</div>
+<hr/>
+<h3 id="stay-up-to-date">Stay up to date</h3>
+<p>Subscribe to my infrequent newsletter which is subjectively interesting. It contains my website&rsquo;s updates and interesting links I come across.</p>
+<div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
+<div id="custom-substack-embed"></div>
+<script>
+  window.CustomSubstackWidget = {
+    substackUrl: "bitofbinary.substack.com",
+    placeholder: "example@example.com",
+    buttonText: "Subscribe",
+    theme: "custom",
+    colors: {
+      primary: "#3578e5",
+      input: "#F4F4F2",
+      text: "#000000",
+    },
+
+    // Go to substackapi.com to unlock custom redirect
+
+  };
+</script>
+<script src="https://substackapi.com/widget.js" async></script>
+</div>
+<h3 id="social">Social</h3>
+<div>
+    <a href="https://twitter.com/bitofbinary">
+        <img height="30" alt="Twitter - BitOfBinary" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>
+        <a href="https://www.linkedin.com/in/kapoordeepak/">
+        <img height="30" alt="LinkedIn - Deepak Kapoor" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+</div>
+<hr/>
+<h3 id="pages-of-interest">Pages of Interest</h3>
+<ul>
+<li><a href="/setup">My Setup</a></li>
+<li><a href="/now">Now</a></li>
+</ul>
+<hr/>
+ 
+
+<h3>Tags</h3>
+<div>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/.net/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.492475028030697rem;">
+            #.NET
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/activerecord/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #ActiveRecord
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/android/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+            #Android
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/aws/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #AWS
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/blogging/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+            #Blogging
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/cloud/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2898309383103697rem;">
+            #Cloud
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/community/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Community
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/docker/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Docker
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/fastapi/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #FastAPI
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/google/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Google
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/hardware/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Hardware
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/javascript/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #JavaScript
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/kali/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.1121219121087877rem;">
+            #Kali
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/linq/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #LINQ
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/linux/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2242438242175755rem;">
+            #Linux
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/mac/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Mac
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/microsoft/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3363657363263632rem;">
+            #Microsoft
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/node.js/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3147660018291152rem;">
+            #Node.js
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/python/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2242438242175755rem;">
+            #Python
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/rails/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #Rails
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/react/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+            #React
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/ruby/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.2898309383103697rem;">
+            #Ruby
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/til/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+            #TIL
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/tools/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3363657363263632rem;">
+            #Tools
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/typescript/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #TypeScript
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/uncategorized/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.3554180524031638rem;">
+            #Uncategorized
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/vim/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.177709026201582rem;">
+            #Vim
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/vs-code/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1rem;">
+            #VS Code
+          </a>
+      
+        
+        
+        
+        
+          <a href="https://bitofbinary.com/blog/web/" 
+          class="tagcloud-item" style="margin-right:.5rem; font-size: 1.1121219121087877rem;">
+            #Web
+          </a>
+      
+  
+</div>
+
+
+  </main>
+  <footer><hr style="margin-bottom: 0;" />
+ </footer>
+
+    
+</body>
+
+</html>

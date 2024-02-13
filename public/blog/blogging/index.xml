@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogging on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/blogging/</link>
+    <description>Recent content in Blogging on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Sun, 11 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/blogging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project Restore</title>
+      <link>https://bitofbinary.com/project-restore/</link>
+      <pubDate>Sun, 11 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/project-restore/</guid>
+      <description>I was browsing through some old files stored on an external disk and I found some of my old writings.
+When I started this blog, I wrote a post in which I mentioned about my past blogging adventures. While browsing through those files, I realized that I started blogging in 2005. At that time I was involved with WinFX which eventually became Microsoft .NET 3.0.
+I also realized that although it may not be of any use to either me or anyone else, it is still a record of my forays into different technologies and I must preserve it.</description>
+    </item>
+    
+    <item>
+      <title>Few thoughts on Blogging</title>
+      <link>https://bitofbinary.com/few-thoughts-on-blogging/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/few-thoughts-on-blogging/</guid>
+      <description>According to the History of Blogging, the first blog was created in 1994. The term weblog which eventually became blog was coined in 1997.
+For me blogging started around 2003 when Wordpress was launched. This was also the time when I was heavily invested in Microsoft ecosystem. After spending many years working with ASP and VB, I found .NET to be a relief. During this time I also got involved with the local Microsoft community</description>
+    </item>
+    
+    <item>
+      <title>Rebooting My Blog</title>
+      <link>https://bitofbinary.com/rebooting-my-blog/</link>
+      <pubDate>Fri, 14 Jun 2019 08:48:43 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/rebooting-my-blog/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. I am re-booting my blog under the new domain BitOfBinary.com A little bit of history. I started this blog in 2008 under the domain DeepakKapoor.Net. The early days (2008-2009) were very good. I was enjoying the newly found adventure.</description>
+    </item>
+    
+  </channel>
+</rss>

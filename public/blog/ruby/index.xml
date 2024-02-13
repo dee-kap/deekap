@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/ruby/</link>
+    <description>Recent content in Ruby on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Tue, 06 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teaching Ruby One Post at a Time</title>
+      <link>https://bitofbinary.com/teaching-ruby-one-post-at-a-time/</link>
+      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/teaching-ruby-one-post-at-a-time/</guid>
+      <description>Lately, I have been talking a lot about Ruby on Rails and how it is one of the best frameworks for developing web applications with junior developers I&amp;rsquo;m mentoring these days.
+I have seen some great interest from them and a desire to learn Ruby and then Ruby on Rails. I often show them a snippet of code or demonstrate how a particular problem can be solved in Ruby. This is now happening on almost daily basis and it has motivated me to creates these posts in which I will write about how something can be done using Ruby.</description>
+    </item>
+    
+    <item>
+      <title>Handling Single Record Queries in Rails with Grace</title>
+      <link>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/handling-single-record-queries-in-rails-with-grace/</guid>
+      <description>In Ruby on Rails, when dealing with database queries, there are instances where we anticipate a query to return a single record. This expectation arises in scenarios where the uniqueness of a record is integral to the application&amp;rsquo;s logic. However, databases can sometimes contain duplicates or multiple records that meet the query criteria, leading to potential conflicts or unexpected behavior in our application. To ensure robust and error-free application behavior, it&amp;rsquo;s essential to handle these cases effectively.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Symbols in Ruby Programming Language</title>
+      <link>https://bitofbinary.com/understanding-symbols-in-ruby-programming-language/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/understanding-symbols-in-ruby-programming-language/</guid>
+      <description>What is a Symbol in Ruby? In Ruby, a symbol is a lightweight, immutable identifier. It is often used in situations where a string would traditionally be used, but it offers performance benefits. Symbols are denoted by a colon (:) followed by a name. For example, :user and :email are symbols.
+Key Characteristics of Symbols Immutability: Unlike strings, symbols are immutable. Once a symbol is created, it cannot be altered. This property makes them safe to use as identifiers or keys in hashes.</description>
+    </item>
+    
+    <item>
+      <title>Mastering Ruby Blocks: A Comprehensive Guide</title>
+      <link>https://bitofbinary.com/mastering-ruby-blocks-a-comprehensive-guide/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:04 -0700</pubDate>
+      
+      <guid>https://bitofbinary.com/mastering-ruby-blocks-a-comprehensive-guide/</guid>
+      <description>Introduction In Ruby, blocks stand as one of the language&amp;rsquo;s most unique and powerful features. They allow you to encapsulate code into discrete units, making your programs more modular, flexible, and expressive. In this article, we will explore the mechanics of Ruby blocks, the versatility of the yield statement, and their practical applications, especially in conjunction with methods which return enumerators.
+What are Blocks in Ruby? A block in Ruby is essentially an anonymous piece of code that can be passed to methods as arguments.</description>
+    </item>
+    
+    <item>
+      <title>Ruby - Calculate MD5 hash of a file</title>
+      <link>https://bitofbinary.com/ruby-calculate-md5-hash-of-a-file/</link>
+      <pubDate>Fri, 04 Jul 2014 10:44:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/ruby-calculate-md5-hash-of-a-file/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Ruby makes calculating MD5 hash easy peasy.
+Here I am calculating MD5 hash of a file I have.
+` require &amp;#39;digest/md5&amp;#39; md5 = Ditest::MD5.new digest = md5.hexdigest(File.read(&amp;#39;/Users/deepak/s3/coco.jpg&amp;#39;)) puts digest # =&amp;gt; &amp;#34;ed00890f2e661a94fdf046c503d0ce34&amp;#34; ` Code above can be shortened to this</description>
+    </item>
+    
+    <item>
+      <title>How does RVM know my name?</title>
+      <link>https://bitofbinary.com/how-does-rvm-know-my-name/</link>
+      <pubDate>Fri, 30 May 2014 06:20:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/how-does-rvm-know-my-name/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. Today while installing RVM on my newly minted Kali VM, I found something which caught my attention. After running curl -ssl https://get.rvm.io | bash -s stable --ruby I saw after few lines this
+It knows who I am.</description>
+    </item>
+    
+  </channel>
+</rss>

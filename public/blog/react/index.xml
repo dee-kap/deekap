@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on :bit :of :binary</title>
+    <link>https://bitofbinary.com/blog/react/</link>
+    <description>Recent content in React on :bit :of :binary</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2023, Deepak.</copyright>
+    <lastBuildDate>Thu, 11 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://bitofbinary.com/blog/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplifying Your React Forms with the Magic of useState</title>
+      <link>https://bitofbinary.com/simplifying-your-react-forms-with-the-magic-of-usestate/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/simplifying-your-react-forms-with-the-magic-of-usestate/</guid>
+      <description>When working with forms in React, each input field needs its own state and handler, right? Well, what if I told you there&amp;rsquo;s a way to manage all your input fields with just one state and one handler? That&amp;rsquo;s right, it&amp;rsquo;s time to streamline your forms with the magic of the useState hook.
+The Typical Way: One State Per Input In the usual approach, every input field in a React form gets its own state:</description>
+    </item>
+    
+    <item>
+      <title>React useReducer Hook Example</title>
+      <link>https://bitofbinary.com/react-usereducer-hook-example/</link>
+      <pubDate>Fri, 02 Aug 2019 01:30:35 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/react-usereducer-hook-example/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. In this post, we will look at useReducer hook in React. useReducer is not too different from useState hook which I wrote about in an earlier post. useReducer similar to useState provides a mechanism to work with state in React functional components.</description>
+    </item>
+    
+    <item>
+      <title>React useState Hook Example</title>
+      <link>https://bitofbinary.com/react-usestate-hook-example/</link>
+      <pubDate>Wed, 24 Jul 2019 03:21:37 +0000</pubDate>
+      
+      <guid>https://bitofbinary.com/react-usestate-hook-example/</guid>
+      <description>This post is a part of the Project Restore, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless. React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I&amp;rsquo;d like to show you how to use the useState hook to build a simple tabs component.</description>
+    </item>
+    
+  </channel>
+</rss>
