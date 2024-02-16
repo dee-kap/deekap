@@ -67,11 +67,11 @@ These days I'm having fun building **React** front-ends in **Typescript** and ba
 
 <hr/>
 
-### Stay up to date
+<!-- ### Stay up to date
 
-Subscribe to my infrequent newsletter which is subjectively interesting. It contains my website's updates and interesting links I come across.
+Subscribe to my infrequent newsletter which is subjectively interesting. It contains my website's updates and interesting links I come across. -->
 
-<div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
+<!-- <div style="display:flex; justify-content:center; margin-bottom:2.5rem;">
 
 <div id="custom-substack-embed"></div>
 
@@ -86,14 +86,11 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
       input: "#F4F4F2",
       text: "#000000",
     },
-
-    // Go to substackapi.com to unlock custom redirect
-
   };
 </script>
 <script src="https://substackapi.com/widget.js" async></script>
 
-</div>
+</div> -->
 
 ### Social
 
