@@ -1,7 +1,7 @@
 ---
 title: "node.js EventEmitter example"
 date: Tue, 05 May 2015 02:59:02 +0000
-draft: false
+draft: true
 tags: ["Node.js"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Use SqlConnection With LINQ to SQL"
 date: Tue, 16 Sep 2008 01:25:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 

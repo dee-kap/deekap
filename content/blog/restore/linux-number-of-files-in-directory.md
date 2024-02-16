@@ -1,7 +1,7 @@
 ---
 title: "Linux - Number of Files in Directory"
 date: Wed, 03 Jul 2013 03:18:00 +0000
-draft: false
+draft: true
 tags: ["Linux"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "AWS - SDK for Ruby Unable to find AWS credentials"
 date: Wed, 02 Jul 2014 01:44:00 +0000
-draft: false
+draft: true
 tags: ["Cloud"]
 ---
 

@@ -2,6 +2,7 @@
 title: "Introduction to WinFX"
 date: 2005-01-13
 featured_image: "dotnet.svg"
+draft: true
 tags: [".NET"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "My Windows Phone App Is Runner-up in Lifehacker and Microsoft’s Developer Challenge"
 date: Mon, 20 May 2013 03:14:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 

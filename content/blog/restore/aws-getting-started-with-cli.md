@@ -1,7 +1,7 @@
 ---
 title: "AWS - Getting Started with CLI"
 date: Tue, 01 Jul 2014 00:42:00 +0000
-draft: false
+draft: true
 tags: ["Cloud"]
 ---
 

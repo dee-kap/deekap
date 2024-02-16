@@ -1,7 +1,7 @@
 ---
 title: "git log basic to advance"
 date: Wed, 21 May 2014 03:33:00 +0000
-draft: false
+draft: true
 tags: ["Tools"]
 ---
 
@@ -12,8 +12,6 @@ This post is a part of the  <a href="/project-restore/">Project Restore</a>, wit
 Git is just awesome and more awesome are the tools it comes with. Git log is one of those tools I use extensively throughout my day.
 
 I started using git log in its vanilla form and then slowly as my understanding of git increased, I started using fancier git log commands. The last one is my current favourite and I have it as an alias in the config file.
-
-
 
 `git log`
 

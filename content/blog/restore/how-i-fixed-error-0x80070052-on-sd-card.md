@@ -1,7 +1,7 @@
 ---
 title: "How I Fixed Error 0×80070052 On SD Card"
 date: Sun, 28 Sep 2008 07:02:46 +0000
-draft: false
+draft: true
 tags: ["Uncategorized"]
 ---
 

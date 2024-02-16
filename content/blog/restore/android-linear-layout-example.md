@@ -1,7 +1,7 @@
 ---
 title: "Android - Linear Layout Example"
 date: Tue, 07 Jan 2014 10:19:00 +0000
-draft: false
+draft: true
 tags: ["Android"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Moving from iTerm to Alacritty"
 date: Mon, 08 Jul 2019 04:07:58 +0000
-draft: false
+draft: true
 tags: ["Tools"]
 ---
 

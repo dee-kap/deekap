@@ -1,7 +1,7 @@
 ---
 title: "Wi-Fi Not Working With Vodafone Software"
 date: Wed, 05 Nov 2008 00:46:00 +0000
-draft: false
+draft: true
 tags: ["Uncategorized"]
 ---
 

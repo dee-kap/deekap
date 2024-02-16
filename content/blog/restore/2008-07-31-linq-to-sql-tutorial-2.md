@@ -1,7 +1,7 @@
 ---
 title: "LINQ To SQL Tutorial"
 date: Thu, 31 Jul 2008 05:27:04 +0000
-draft: false
+draft: true
 featured_image: "dotnet.svg"
 tags: [".NET", "LINQ"]
 ---

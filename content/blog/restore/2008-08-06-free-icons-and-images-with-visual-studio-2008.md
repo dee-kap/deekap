@@ -1,7 +1,7 @@
 ---
 title: "Free Icons And Images With Visual Studio 2008"
 date: Wed, 06 Aug 2008 05:33:19 +0000
-draft: false
+draft: true
 featured_image: "visualstudio.svg"
 tags: ["Tools", ".NET"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Could Not Create SSL/TSL Secure Channel Solution"
 date: Fri, 20 Aug 2010 01:35:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 

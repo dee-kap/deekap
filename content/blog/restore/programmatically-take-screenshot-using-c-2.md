@@ -1,7 +1,7 @@
 ---
 title: "Programmatically Take Screenshot Using C#"
 date: Thu, 26 Feb 2009 01:00:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 

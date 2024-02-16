@@ -1,7 +1,7 @@
 ---
 title: "Connect to ssh server on Kali Linux"
 date: Tue, 03 Jun 2014 05:04:00 +0000
-draft: false
+draft: true
 tags: ["Kali", "Linux"]
 ---
 

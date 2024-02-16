@@ -1,7 +1,7 @@
 ---
 title: "AWS - Explore S3 with CLI"
 date: Tue, 01 Jul 2014 05:47:00 +0000
-draft: false
+draft: true
 tags: ["Cloud"]
 ---
 

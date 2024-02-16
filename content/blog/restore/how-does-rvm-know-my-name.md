@@ -1,7 +1,7 @@
 ---
 title: "How does RVM know my name?"
 date: Fri, 30 May 2014 06:20:00 +0000
-draft: false
+draft: true
 tags: ["Ruby"]
 ---
 

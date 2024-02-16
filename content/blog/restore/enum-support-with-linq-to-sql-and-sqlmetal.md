@@ -1,7 +1,7 @@
 ---
 title: "Enum Support With LINQ to SQL and SqlMetal"
 date: Tue, 18 Nov 2008 00:47:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 
@@ -10,8 +10,6 @@ This post is a part of the  <a href="/project-restore/">Project Restore</a>, wit
 </div>
 
 As a programmer I love my enums. I find code written using enums to be more readable than without them. However, there has been and there still is a disconnect between lookup tables in a database and enums in code. One has to restore to some creative trickery to get them working in harmony. Recently while working on a project which involves using LINQ To SQL, I came up with a process which gives me the best of both worlds i.e. using lookup tables in database and enums in code. I am documenting my solution here. Hopefully it will help you.
-
-
 
 #### The problem
 

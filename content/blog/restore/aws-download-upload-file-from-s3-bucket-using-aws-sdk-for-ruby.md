@@ -1,7 +1,7 @@
 ---
 title: "AWS - Download Upload file from S3 bucket using AWS SDK for Ruby"
 date: Thu, 03 Jul 2014 10:25:00 +0000
-draft: false
+draft: true
 tags: ["Cloud"]
 ---
 

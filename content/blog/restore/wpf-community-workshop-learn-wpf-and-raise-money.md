@@ -1,7 +1,7 @@
 ---
 title: "WPF Community Workshop – Learn WPF and Raise Money"
 date: Mon, 16 Mar 2009 07:59:13 +0000
-draft: false
+draft: true
 tags: ["Microsoft"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Code Sample: Programmatically Download File Using C#"
 date: Wed, 17 Sep 2008 01:26:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 

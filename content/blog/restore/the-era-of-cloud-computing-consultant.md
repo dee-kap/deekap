@@ -1,7 +1,7 @@
 ---
 title: "The Era of Cloud Computing Consultant"
 date: Thu, 04 Dec 2008 07:49:03 +0000
-draft: false
+draft: true
 tags: ["Uncategorized"]
 ---
 

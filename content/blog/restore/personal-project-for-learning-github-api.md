@@ -1,7 +1,7 @@
 ---
 title: "Personal project for learning GitHub API"
 date: Wed, 13 Aug 2014 02:11:00 +0000
-draft: false
+draft: true
 tags: ["Uncategorized"]
 ---
 
@@ -13,14 +13,14 @@ Couple of weeks ago on a rainy weekend I started hacking on a project to learn G
 
 I plan to refactor the code significantly as I make progress on this project. The [repository](https://github.com/deepak-kapoor/ng-git) for this project is on [GitHub](https://github.com/deepak-kapoor/ng-git) for the world to see. Before I get into what I did, I will show you a screenshot of the running application. ![Screen Shot 2014 08 13 at 11 13 01 am](http://kapoor.io/wp-content/uploads/2014/08/Screen-252520Shot-2525202014-08-13-252520at-25252011.13.01-252520am-300x284.png "Screen Shot 2014-08-13 at 11.13.01 am.png") What you see here is repositories of Mozilla on Github. Elements on the page will become more clear as you read this post further. If you wish to run the application on your machine then clone the [repository](https://github.com/deepak-kapoor/ng-git), go to the location where you cloned it and run `grunt serve`. You will need to have grunt-cli installed on your machine. Now I will talk a bit about how I built this application. To get going I used the awesome [Yo](http://yeoman.io/) scaffolding tool to generate an AngularJS app. [Yo](http://yeoman.io/) combined with [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/) is a must have toolset for web developers. I highly recommend that you look into these tools. Once I had the application generated, I simply ran `grunt server` to run the application. Because I have other apps running on port 9000, I made a change to my Gruntfile.js to run my application on port 9001.```
 
-` 
+`
 connect: {  
       options: {  
         port: 9001,  
         // Change this to '0.0.0.0' to access the server from outside.  
         hostname: 'localhost',  
         livereload: 35728  
-      },  `
+      }, `
 
 ````Yo generates a basic AngularJS app which displays the famous Alo Alo page when you run it for the first time. As I picked bootstrap while generating the app, I decided to look for a nice theme for my application. I found one called [Slate](http://bootswatch.com/slate/) at Bootswatch. I am a fan of dark themes and this one looked pretty good to me.
 

@@ -1,7 +1,7 @@
 ---
 title: "Capture XML in WCF Service"
 date: Tue, 07 Jan 2014 10:16:00 +0000
-draft: false
+draft: true
 tags: [".NET"]
 ---
 
@@ -9,12 +9,12 @@ tags: [".NET"]
 This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
 </div>
 
-Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service. As an example we will create a simple service which implements one operation called SayHello. Our service contract will look like this.` [ServiceContract]
+Working on a project where we wrote WCF Services a need was identified to capture the raw xml passed in to the service operation and also capture the reply xml sent back by the service. WCF does not provide such facility out of the box but it can be easily implemented using behaviours. In this article we will look at how to capture raw xml messages when a call is made to a service. As an example we will create a simple service which implements one operation called SayHello. Our service contract will look like this.`[ServiceContract]
 public interface IHelloService
 { 
   [OperationContract] 
   string SayHello(string name);
-} `In the operation “SayHello” we will return a string. Here is the implementation of IHelloService contract.```
+}`In the operation “SayHello” we will return a string. Here is the implementation of IHelloService contract.```
 public class HelloService : IHelloService
 {  
  public string SayHello(string name)

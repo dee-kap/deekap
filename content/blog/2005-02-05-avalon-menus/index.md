@@ -1,6 +1,7 @@
 ---
 title: "Menus in Avalon"
 date: 2005-02-05
+draft: true
 featured_image: "dotnet.svg"
 tags: [".NET"]
 ---
