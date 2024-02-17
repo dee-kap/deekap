@@ -1,9 +1,16 @@
-<a href="{{ "" | relURL }}">Home</a>
-<!-- {{ range .Site.Menus.main }}
-<a href="{{ .URL }}">{{ .Name }}</a>
-{{ end }} -->
-{{ with .Site.GetPage "/blog" }}
-<a href="{{ "blog" | relURL }}">Blog</a>
-{{ end }}
-<a href="/about">About</a>
-<a href="/contact">Contact</a>
+<div style="display: flex;align-items: center;justify-content: space-between;">
+    <div>
+        <a href="{{ "" | relURL }}">Home</a>
+        <!-- {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }} -->
+        {{ with .Site.GetPage "/blog" }}
+        <a href="{{ "blog" | relURL }}">Blog</a>
+        {{ end }}
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+        <a href="index.xml">
+            <img src="/images/rss.svg" alt="RSS" style="width: 20px; height: 20px;">
+        </a>
+</div>

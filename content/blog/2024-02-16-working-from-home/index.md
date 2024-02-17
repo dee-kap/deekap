@@ -52,6 +52,8 @@ The journey to becoming a full-time remote worker has been a revelation. It has 
 
 As we move forward, it's clear that remote work can offer a sustainable, productive, and fulfilling way of working for many, proving that with the right mindset and discipline, work is not a place you go, but something you do—regardless of location.
 
+#15
+
 ---
 
 #### Discuss on Reddit
