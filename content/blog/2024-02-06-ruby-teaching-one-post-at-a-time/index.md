@@ -3,7 +3,7 @@ title: "Teaching Ruby One Post at a Time"
 date: 2024-02-06
 featured_image: "ruby.png"
 tags: ["Ruby"]
-draft: false
+draft: true
 ---
 
 Lately, I have been talking a lot about Ruby on Rails and how it is one of the best frameworks for developing web applications with junior developers I'm mentoring these days.
