@@ -9,7 +9,6 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
-      <div style="display: flex; align-items: center;">
         <!--
         <div>
           {{ if .Params.featured_image }}
@@ -20,7 +19,7 @@
         </div>
         -->
         <div>
-          <a href="{{ .Permalink }}" style="font-size: 1em;">{{ .Title }}</a>
+          <a href="{{ .Permalink }}" style="font-size:1em;font-weight:800;">{{ .Title }}</a>
           <div>
             <i>
               <time style="font-size: .85em; color:#747474" datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
@@ -29,7 +28,6 @@
             </i>
           </div>
         </div>
-      </div>
     </li>
     {{ else }}
     <li>
