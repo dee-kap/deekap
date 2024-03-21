@@ -47,4 +47,4 @@ Why am I posting this online?
 
 Another distant goal is that maybe someone else will also get inspired to pursue the path of life-long learning. From experience I can tell you that, it is a lot of fun.
 
-I am looking forward to reading this books and in the process learn a thing or two.
+I am looking forward to reading the books and in the process learn a thing or two.
