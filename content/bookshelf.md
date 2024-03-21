@@ -1,12 +1,14 @@
 ---
 title: "Library"
 menu: "main"
-draft: true
+draft: false
 ---
 
 # Books I'm reading
 
 <div class="book-list">
+
+- ![One Life](/images/covers/one-life.jpg)One Life
 
 - ![Emperor of all Maladies](/images/covers/emperor-of-all-maladies.jpg)Emperor of All Maladies
 
@@ -32,7 +34,6 @@ draft: true
 
 - ![Einstein His Life and Universe](/images/covers/einstein-his-life-and-universe.jpg)Einstein His Life and Universe ★★★★
 
-
 </div>
 
 ## 2022
@@ -51,8 +52,8 @@ draft: true
 
 - ![The Rebel Allocator](/images/covers/the-rebel-allocator.jpg)The Rebel Allocator by Jacob Taylor ★★
 
-- ![Richer Wiser Happier](/images/covers/richer-wiser-happier.jpg)Richer, Wiser, Happier: How the World’s Greatest 
-Investors Win in Markets and Life by William Green ★★★★
+- ![Richer Wiser Happier](/images/covers/richer-wiser-happier.jpg)Richer, Wiser, Happier: How the World’s Greatest
+  Investors Win in Markets and Life by William Green ★★★★
 
 - ![How to Take Smart Notes](/images/covers/how-to-take-smart-notes.jpg)How to Take Smart Notes by Sönke Ahrens ★★★★
 
@@ -61,7 +62,6 @@ Investors Win in Markets and Life by William Green ★★★★
 - ![Dark Emu](notes/images/covers/dark-emu.jpg)<span>[Dark Emu](notes/2022-05-07-dark-emu.md) by Bruce Pascoe ★★★</span>
 
 </div>
-
 
 ## Pre 2022
 
@@ -145,7 +145,7 @@ Investors Win in Markets and Life by William Green ★★★★
 
 - ![The Richest Man in Babylon](/images/covers/the-richest-man-in-babylon.jpg) The Richest Man in Babylon by Clason, George S.
 
-- ![Code Complete](/images/covers/code-complete.jpg) Code Complete by McConnell, Steve 
+- ![Code Complete](/images/covers/code-complete.jpg) Code Complete by McConnell, Steve
 
 - ![The Art of Deception: Controlling the Human Element of Security](/images/covers/the-art-of-deception.jpg) The Art of Deception: Controlling the Human Element of Security by Mitnick, Kevin D.
 
@@ -292,6 +292,3 @@ Investors Win in Markets and Life by William Green ★★★★
 - ![Tap Dancing to Work: Warren Buffett on Practically Everything, 1966-2012](/images/covers/tap-dancing-to-work.jpg) Tap Dancing to Work: Warren Buffett on Practically Everything, 1966-2012 by Loomis, Carol J.
 
 </div>
-
-
-
