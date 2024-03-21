@@ -20,6 +20,10 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 
+[taxonomies]
+tags = "tags"
+non_tech_tags = "non_tech_tags"
+
 [permalinks]
 blog = "/:slug/"
 tags = "/blog/:slug"
