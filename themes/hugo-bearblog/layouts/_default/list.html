@@ -1,11 +1,49 @@
 {{ define "main" }}
 <content>
+
+  {{ if .Data.Singular }}
+  {{ else }}
+    <h3>Tags</h3>
+    <!-- <small>
+      <div>
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
+        {{ end }}
+      </div>
+    </small> -->
+    <div>
+      {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+        {{ $largestFontSize := 1.5 }}
+        {{ $smallestFontSize := 1.0 }}
+        {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+        {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+        {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+        {{ $spread := sub $max $min }}
+        {{ $fontStep := div $fontSpread $spread }}
+          {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+            {{ $tagCount := len $taxonomy.Pages }}
+            {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
+            {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+            {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
+              <a href="{{ .Page.Permalink }}" 
+              class="tagcloud-item" style="margin-right:.5rem; font-size: {{ $currentFontSize }}rem;">
+                #{{ .Page.Title }}
+              </a>
+          {{ end }}
+      {{ end }}
+    <hr/>
+    </div>
+  
+    {{ end }}
+
+
   {{ if .Data.Singular }}
   <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
   <small>
     <a href="{{ "blog" | relURL }}">Remove filter</a>
   </small>
   {{ end }}
+  <h3>Posts</h3>
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
@@ -35,39 +73,5 @@
     </li>
     {{ end }}
   </ul>
-  {{ if .Data.Singular }}
-  {{ else }}
-    <hr/>
-    <h3>Tags</h3>
-    <!-- <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small> -->
-    <div>
-      {{ if ne (len $.Site.Taxonomies.tags) 0 }}
-        {{ $largestFontSize := 1.5 }}
-        {{ $smallestFontSize := 1.0 }}
-        {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
-        {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
-        {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
-        {{ $spread := sub $max $min }}
-        {{ $fontStep := div $fontSpread $spread }}
-          {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-            {{ $tagCount := len $taxonomy.Pages }}
-            {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
-            {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-            {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
-              <a href="{{ .Page.Permalink }}" 
-              class="tagcloud-item" style="margin-right:.5rem; font-size: {{ $currentFontSize }}rem;">
-                #{{ .Page.Title }}
-              </a>
-          {{ end }}
-      {{ end }}
-    </div>
-  
-    {{ end }}
 </content>
 {{ end }}
