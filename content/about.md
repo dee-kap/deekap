@@ -21,7 +21,7 @@ Take what you will from this. All I can say is that it is not completely wrong. 
 
 This website/blog is my home on the World Wide Web.
 
-My goal for this place to be a near accurate reflection of me. Not just a place where I write about my technical adventures but a catalogue of many other things I get into, travel, photography and [books](/bookshelf) are a few of them.
+My goal for this place to be a near accurate reflection of me. Not just a place where I write about my technical adventures but a catalogue of many [other things](/general-interests) I get into, travel, photography and [books](/bookshelf) are a few of them.
 
 It is also a reflection of the [old Web](https://info.cern.ch/) which where websites were a quirky reflection of it's creators. It is a personal space in public.
 

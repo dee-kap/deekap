@@ -22,7 +22,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 
 [taxonomies]
 tags = "tags"
-non_tech_tags = "non_tech_tags"
+general_interests_tags = "general_interests_tags"
 
 [permalinks]
 blog = "/:slug/"
