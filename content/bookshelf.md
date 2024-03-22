@@ -1,5 +1,5 @@
 ---
-title: "Library"
+title: "Bokshelf"
 menu: "main"
 draft: false
 ---
@@ -26,7 +26,7 @@ draft: false
 
 - ![Investing: The Last Liberal Art](/images/covers/investing-the-last-liberal-art.jpg)Investing: The Last Liberal Art ★★★★
 
-- ![f Permanent Value: The Story of Warren Buffett](/images/covers/of-permanent-value.jpg)Of Permanent Value: The Story of Warren Buffett ★★★★★
+- ![Of Permanent Value: The Story of Warren Buffett](/images/covers/of-permanent-value.jpg)Of Permanent Value: The Story of Warren Buffett ★★★★★
 
 - ![Flash Crash](/images/covers/flash-crash.jpg)<span>Flash Crash ★★★★</span>
 
