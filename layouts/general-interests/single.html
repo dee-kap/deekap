@@ -10,11 +10,16 @@
 </p>
 
 <p>
-  {{ range (.GetTerms "non_tech_tags") }}
+  {{ range (.GetTerms "general_interests_tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}
 </p>
 
 <content> {{ .Content }} </content>
+
+<small
+  >This post is part of
+  <a href="/general-interests">General Interests</a></small
+>
 
 {{ end }}
