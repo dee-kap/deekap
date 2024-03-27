@@ -1,5 +1,5 @@
 ---
-title: "Write Your Own Memoize JavaScript"
+title: "Write Your Own Memoize in JavaScript"
 date: 2024-03-27
 featured_image: "javascript.png"
 tags: ["JavaScript"]
