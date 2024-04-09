@@ -8,7 +8,7 @@ tags = [
 ]
 +++
 
-According to the [History of Blogging](https://online.ndm.edu/news/communication/history-of-blogging/), the first blog was created in 1994. The term weblog which eventually became [blog](/posts) was coined in 1997.
+According to the [History of Blogging](https://online.ndm.edu/news/communication/history-of-blogging/), the first blog was created in 1994. The term weblog which eventually became [blog](/) was coined in 1997.
 
 For me blogging started around 2003 when Wordpress was launched. This was also the time when I was heavily invested in Microsoft ecosystem. After spending many years working with ASP and VB, I found .NET to be a relief. During this time I also got involved with the local [Microsoft community](https://www.ssw.com.au/ssw/NETUG/SSWUpdate/_2006_02__Do%20you%20understand%20the%20value%20of%20consistency_.htm)
 

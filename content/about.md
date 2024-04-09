@@ -16,3 +16,35 @@ According to 16personalities, my personality type is [Logician INTP-A](https://w
 <img src="/images/personality-type.png" style="width:350px;margin-bottom:40px;" />
 
 Take what you will from this. All I can say is that it is not completely wrong. [Strengths and Weaknesses](https://www.16personalities.com/intp-strengths-and-weaknesses) are of particular interest.
+
+## My Professional Journey
+
+I started my career as a software developer in 1999. These are the technologies, programming languages and tools I have worked with in last ten years.
+
+### Languages
+
+- TypeScript
+- JavaScript
+- Python
+- Ruby
+- Go
+- C#
+
+### Frameworks
+
+- React (I know it is a library, and not a framework)
+- Express
+- Django
+- Ruby on Rails
+
+### Databases
+
+- PostgreSQL
+- MySQL
+- SQLite
+- SQL Server
+- DynamoDB
+
+### Cloud
+
+- AWS
