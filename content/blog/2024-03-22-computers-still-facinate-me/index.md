@@ -2,7 +2,7 @@
 title: "Computers Still Fascinate Me"
 date: 2024-03-22
 featured_image: "javascript.png"
-general_interests_tags: ["Thoughts"]
+tags: ["Thoughts"]
 draft: false
 ---
 

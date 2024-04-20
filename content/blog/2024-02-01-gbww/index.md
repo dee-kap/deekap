@@ -1,7 +1,7 @@
 ---
 title: "The Great Books of Western World"
 date: "2024-02-01T01:36:00.232Z"
-general_interests_tags: ["Books", "GBWW"]
+tags: ["Books", "GBWW"]
 ---
 
 Few days ago I ordered [Great Books of the Western World](https://en.wikipedia.org/wiki/Great_Books_of_the_Western_World) and the books arrived two days ago. It is set of **54 volumes** by Encyclopedia Britannica first printed in 1952. The set I ordered is the 1952 edition. Only volume 50 is from a later edition.

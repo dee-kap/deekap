@@ -7,6 +7,10 @@ This is my personalized version of a "now" page, structured in reverse chronolog
 
 This arrangement appeals to me as it facilitates an overview of my activities and engagements during specific time frames.
 
+### 2024 April 20
+
+- Reading a couple of books these days. I'm trying this new way of reading where I read books from multiple disciplines simultaneously.
+
 ### 2024 March 22
 
 - I started an interesting personal project today. The project is to create a digital catalogue of my books which should be approximately one thousand.
