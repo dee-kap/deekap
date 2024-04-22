@@ -3,7 +3,7 @@ title: "Computers Still Fascinate Me"
 date: 2024-03-22
 featured_image: "javascript.png"
 tags: ["Thoughts"]
-draft: false
+draft: true
 ---
 
 I have been working working with computers for more than 25 years now and they still fascinate me.
