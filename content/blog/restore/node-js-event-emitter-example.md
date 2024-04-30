@@ -19,39 +19,54 @@ EventEmitter is used to either raise or listen to events. Think of a typical Use
 
 ## How can I use it?
 
-Let's build a example which gets a URL. It raises or to be more specific it emits an event if GET operation was succesful or a failure.```
-var EventEmitter = require('events').EventEmitter;
+Let's build a example which gets a URL. It raises or to be more specific it emits an event if GET operation was successful or a failure.
+
+```javascript
+var EventEmitter = require("events").EventEmitter;
 var emitter = new EventEmitter();
-var http = require('http');
+var http = require("http");
 
-emitter.on('get_page', function(url) {
-http.get(url, function(res) {
-emitter.emit('page_get_successful');
-}).on('error', function() {
-emitter.emit('page_get_fail');
-})
-})
+emitter.on("get_page", function (url) {
+  http
+    .get(url, function (res) {
+      emitter.emit("page_get_successful");
+    })
+    .on("error", function () {
+      emitter.emit("page_get_fail");
+    });
+});
 
-emitter.on('page_get_successful', function(data) {
-console.log('page get was succesful');
-})
+emitter.on("page_get_successful", function (data) {
+  console.log("page get was succesful");
+});
 
-emitter.on('page_get_fail', function() {
-console.log('page get failed');
-})
+emitter.on("page_get_fail", function () {
+  console.log("page get failed");
+});
 
-emitter.emit('get_page', 'http://kapoor.io');
-``In the code above look at the last line `emitter.emit('get_page', 'http://kapoor.io');` here we emit an event called **get\_page**. We have a listener for this event in `emitter.on('get_page')`. When the event **get\_page** is raised the listener gets into action and uses `http` module to fetch the URL for us. If the action is successful then an event is emitted **page\_get\_successful**. This is handled by the listener `page_get_successful`. Similarly if there was an error fetching the URL an event **page\_get\_fail** will be raised. This can be tested by fudging the URL passed in to **get\_page** event like this `emitter.emit('get_page', 'http://kapoor.blah');` EvenEmitter is heavily used in node.js by other modules. This can be seen in our example where we are listening to **error** event raised by http module.``
-http.get(url, function(res) {
-emitter.emit('page_get_successful');
-}).on('error', function() {
-emitter.emit('page_get_fail');
-})
-
+emitter.emit("get_page", "http://bitofbinary.com");
 ```
 
-Beyond basics
--------------
+In the code above look at the last line
+
+```javascript
+emitter.emit("get_page", "http://bitofbinary.com");
+```
+
+here we emit an event called **get_page**. We have a listener for this event in `emitter.on('get_page')`. When the event **get_page** is raised the listener gets into action and uses `http` module to fetch the URL for us. If the action is successful then an event is emitted **page_get_successful**. This is handled by the listener `page_get_successful`. Similarly if there was an error fetching the URL an event **page_get_fail** will be raised. This can be tested by fudging the URL passed in to **get_page** event like this `emitter.emit('get_page', 'http://bitofbinary.blah');`
+
+EvenEmitter is heavily used in node.js by other modules. This can be seen in our example where we are listening to **error** event raised by http module.
+
+```javascript
+http
+  .get(url, function (res) {
+    emitter.emit("page_get_successful");
+  })
+  .on("error", function () {
+    emitter.emit("page_get_fail");
+  });
+```
+
+## Beyond basics
 
 EventEmitter is packed with more methods than just simply raising and listening to events. For example if we want a listener to be invoked only once we can use `.once()` method of EventEmitter. Multiple listeners can also be attached to an event and they can all be removed by calling `.removeAllListener()` method.
-```
