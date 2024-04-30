@@ -1,7 +1,7 @@
 ---
 title: "Run Google Chrome as non root user in Kali Linux"
 date: Thu, 05 Jun 2014 02:04:00 +0000
-draft: true
+draft: false
 tags: ["Kali", "Linux"]
 ---
 

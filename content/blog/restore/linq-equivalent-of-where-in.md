@@ -1,7 +1,7 @@
 ---
 title: "LINQ Equivalent Of Where IN"
 date: Mon, 25 Aug 2008 00:05:01 +0000
-draft: true
+draft: false
 tags: ["Microsoft"]
 ---
 

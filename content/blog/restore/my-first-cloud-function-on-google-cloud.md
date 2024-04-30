@@ -1,7 +1,7 @@
 ---
 title: "My first Cloud Function on Google Cloud"
 date: Tue, 18 Jun 2019 01:43:36 +0000
-draft: true
+draft: false
 tags: ["Cloud", "Google"]
 ---
 

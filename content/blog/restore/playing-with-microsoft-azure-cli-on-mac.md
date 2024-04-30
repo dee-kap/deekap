@@ -1,7 +1,7 @@
 ---
 title: "Playing with Microsoft Azure CLI on mac"
 date: Tue, 20 May 2014 04:31:00 +0000
-draft: true
+draft: false
 tags: ["Cloud"]
 ---
 

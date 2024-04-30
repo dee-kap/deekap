@@ -1,8 +1,8 @@
 ---
 title: "Upcoming Speaking Engagements"
 date: Tue, 12 May 2009 02:04:00 +0000
-draft: true
-tags: ["Uncategorized"]
+draft: false
+tags: ["Community"]
 ---
 
 <div class="restore">

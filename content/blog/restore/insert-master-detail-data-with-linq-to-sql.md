@@ -1,7 +1,7 @@
 ---
 title: "Insert Master Detail Data With LINQ to SQL"
 date: Wed, 08 Jul 2009 02:36:00 +0000
-draft: true
+draft: false
 tags: [".NET"]
 ---
 

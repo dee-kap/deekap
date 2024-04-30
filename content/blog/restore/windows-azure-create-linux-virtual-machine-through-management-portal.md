@@ -1,8 +1,8 @@
 ---
 title: "Windows Azure - Create Linux Virtual Machine Through Management Portal"
 date: Thu, 30 May 2013 03:16:00 +0000
-draft: true
-tags: ["Uncategorized"]
+draft: false
+tags: ["Azure", "Cloud"]
 ---
 
 <div class="restore">

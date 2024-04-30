@@ -1,7 +1,7 @@
 ---
 title: "Linux - Setgid on Directory and Share Directory With Users"
 date: Thu, 25 Jul 2013 03:20:00 +0000
-draft: true
+draft: false
 tags: ["Linux"]
 ---
 

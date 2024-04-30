@@ -1,7 +1,7 @@
 ---
 title: "Execute Stored Procedure With ADO.NET Data Services"
 date: Sun, 16 Aug 2009 02:42:00 +0000
-draft: true
+draft: false
 tags: [".NET"]
 ---
 

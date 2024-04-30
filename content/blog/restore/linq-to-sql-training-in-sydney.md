@@ -1,7 +1,7 @@
 ---
 title: "LINQ To SQL Training In Sydney"
 date: Wed, 29 Oct 2008 07:45:04 +0000
-draft: true
+draft: false
 tags: ["Uncategorized"]
 ---
 

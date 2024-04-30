@@ -1,8 +1,8 @@
 ---
 title: "Increasing Your Learning By Learning How To Learn"
 date: Sun, 29 Jan 2017 04:30:32 +0000
-draft: true
-tags: ["Uncategorized"]
+draft: false
+tags: []
 ---
 
 <div class="restore">

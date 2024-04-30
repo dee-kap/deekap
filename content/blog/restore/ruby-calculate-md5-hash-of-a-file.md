@@ -1,7 +1,7 @@
 ---
 title: "Ruby - Calculate MD5 hash of a file"
 date: Fri, 04 Jul 2014 10:44:00 +0000
-draft: true
+draft: false
 tags: ["Ruby"]
 ---
 

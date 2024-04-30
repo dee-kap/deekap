@@ -1,7 +1,7 @@
 ---
 title: "Reflections on 9 years of blogging"
 date: Thu, 31 Aug 2017 06:03:14 +0000
-draft: true
+draft: false
 tags: ["Uncategorized"]
 ---
 

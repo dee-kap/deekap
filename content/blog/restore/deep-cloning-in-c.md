@@ -1,15 +1,17 @@
 ---
 title: "Deep Cloning In C#"
 date: Mon, 01 Sep 2008 07:08:23 +0000
-draft: true
-tags: ["Uncategorized"]
+draft: false
+tags: [".NET", "C#"]
 ---
 
 <div class="restore">
 This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
 </div>
 
-To make an object cloneable in .NET we should implement ICloneable interface. ICloneable is a simple interface with only one method Clone(). In this post I will show you how to make a deep clone of an object.```
+To make an object cloneable in .NET we should implement ICloneable interface. ICloneable is a simple interface with only one method Clone(). In this post I will show you how to make a deep clone of an object.
+
+```csharp
 class Program
 {
 static void Main(string\[\] args)
@@ -40,7 +42,7 @@ ApprovedAmount = 1000
         }
     }
 
-    \[Serializable\]
+    [Serializable]
     public class Customer : ICloneable
     {
         public string FirstName { get; set; }
@@ -65,13 +67,13 @@ ApprovedAmount = 1000
         #endregion
     }
 
-    \[Serializable\]
+    [Serializable]
     public class CreditLimit
     {
         public int ApprovedAmount { get; set; }
         public bool AccountOverdue { get; set; }
     }
 
-```In the code above I have a Customer class which has three properties. In the clone method I use a MemoryStream to serialize and then de-serialize to another object. One of the properties of customer class is called Limit which is of type CreditLimit. I have done this to illustrated deep cloning. As a test I write property values of the original customer class and its clone to console. Note that I modify values for the cloned object. That's all you need to do for cloning. Nice and simple.
-
 ```
+
+In the code above I have a Customer class which has three properties. In the clone method I use a MemoryStream to serialize and then de-serialize to another object. One of the properties of customer class is called Limit which is of type CreditLimit. I have done this to illustrated deep cloning. As a test I write property values of the original customer class and its clone to console. Note that I modify values for the cloned object. That's all you need to do for cloning. Nice and simple.

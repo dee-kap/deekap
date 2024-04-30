@@ -1,7 +1,7 @@
 ---
 title: "Vim update after using it for more than a month"
 date: Fri, 09 May 2014 06:29:00 +0000
-draft: true
+draft: false
 tags: ["Tools", "Vim"]
 ---
 

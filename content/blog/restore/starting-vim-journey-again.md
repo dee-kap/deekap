@@ -1,7 +1,7 @@
 ---
 title: "Starting Vim Journey Again"
 date: Fri, 11 Apr 2014 05:52:00 +0000
-draft: true
+draft: false
 tags: ["Tools", "Vim"]
 ---
 

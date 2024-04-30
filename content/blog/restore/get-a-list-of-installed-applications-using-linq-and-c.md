@@ -1,7 +1,7 @@
 ---
 title: "Get A List Of Installed Applications Using LINQ And C#"
 date: Fri, 29 Aug 2008 23:59:50 +0000
-draft: true
+draft: false
 tags: ["Microsoft"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Test REST APIs with Frisby"
 date: Fri, 17 Apr 2015 00:22:02 +0000
-draft: true
+draft: false
 tags: ["Node.js"]
 ---
 

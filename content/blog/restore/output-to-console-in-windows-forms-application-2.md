@@ -1,7 +1,7 @@
 ---
 title: "Output to Console in Windows Forms Application"
 date: Tue, 01 Sep 2009 02:45:00 +0000
-draft: true
+draft: false
 tags: [".NET"]
 ---
 

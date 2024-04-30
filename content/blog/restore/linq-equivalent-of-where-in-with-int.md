@@ -1,7 +1,7 @@
 ---
 title: "LINQ Equivalent Of Where IN With Int"
 date: Mon, 05 Jan 2009 07:55:04 +0000
-draft: true
+draft: false
 tags: ["Microsoft"]
 ---
 

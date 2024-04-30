@@ -1,7 +1,7 @@
 ---
 title: "git log basic to advance"
 date: Wed, 21 May 2014 03:33:00 +0000
-draft: true
+draft: false
 tags: ["Tools"]
 ---
 

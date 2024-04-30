@@ -1,7 +1,7 @@
 ---
 title: "My Visual Studio Code Setup"
 date: Fri, 19 Oct 2018 01:48:25 +0000
-draft: true
+draft: false
 tags: ["Tools", "VS Code"]
 ---
 
