@@ -1,8 +1,8 @@
 ---
 title: "AWS - Getting Started with CLI"
 date: Tue, 01 Jul 2014 00:42:00 +0000
-draft: true
-tags: ["Cloud"]
+draft: false
+tags: ["Cloud", "AWS"]
 ---
 
 <div class="restore">
@@ -16,23 +16,20 @@ Account creation and verification process went without a hitch and the first thi
 To install CLI run these commands
 
 ```
-`
 $ wget https://s3.amazonaws.com/aws-cli/awscli-bundle.zip
 $ unzip awscli-bundle.zip
 $ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-`
-
 ```
 
 Now that CLI is installed, it needs to be configured. Configuring CLI can be done by running `aws configure` command. There are four pieces of information I need to configure the CLI. These are AWS Access key, AWS Secret Access key, default region and default output format. The last one which is the output format is optional. If I do not supply a value then it defaults to json.
 
 AWS recommends that I should create an IAM user as this is considered a best practice. When I access the credentials section of management console, I am presented with an info box which says that I should create an IAM user. For now I will go ahead and create a new access key. I will at some later point come back and understand how IAM works.
 
-![Screen Shot 2014 07 01 at 10 56 32 am](http://kapoor.io/wp-content/uploads/2014/07/Screen-Shot-2014-07-01-at-10.56.32-am-300x128.png "Screen-Shot-2014-07-01-at-10.56.32-am.png")
+![Screen Shot 2014 07 01 at 10 56 32 am]()
 
 After clicking Create New Access Key button, a popup appears which says that I should download my key file. This is the last chance I have to download the file. I better do this.
 
-![Screen Shot 2014 07 01 at 11 00 25 am](http://kapoor.io/wp-content/uploads/2014/07/Screen-Shot-2014-07-01-at-11.00.25-am-300x80.png "Screen-Shot-2014-07-01-at-11.00.25-am.png")
+![Screen Shot 2014 07 01 at 11 00 25 am]()
 
 After downloading my key file, I go back to the terminal and fire up `aws configure`. First thing it asks me is the access key, after that it prompts me to enter secret access key and then the default region.
 
@@ -50,14 +47,10 @@ I will retrieve a list of ec2 instances I am running. I do not have any instance
 
 When I run `aws ec2 describe-instances` I see the following output which I will take it as saying that I do not have any instances.
 
-```
-
-`
+```json
 {
-    "Reservations": []
+  "Reservations": []
 }
-`
-
 ```
 
 Day 1 looks good. I was able to create an account, install and configure the command line interface and run a command successfully. Looking forward to day 2 when I will work with S3 storage.

@@ -1,9 +1,9 @@
 ---
 title: "Tutorial Reading A Text File Using LINQ"
 date: Wed, 13 Aug 2008 05:00:14 +0000
-draft: true
+draft: false
 featured_image: "dotnet.svg"
-tags: [".NET", "C#"]
+tags: [".NET", "C#", "LINQ"]
 ---
 
 <div class="restore">

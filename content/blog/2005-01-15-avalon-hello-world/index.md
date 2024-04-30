@@ -1,7 +1,7 @@
 ---
 title: "Avalon Says Hello World in XAML"
 date: 2005-01-15
-draft: true
+draft: false
 featured_image: "dotnet.svg"
 tags: [".NET"]
 ---

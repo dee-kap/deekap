@@ -1,7 +1,7 @@
 ---
 title: "Advanced Debugging Techniques with Chrome"
 date: Wed, 12 Nov 2014 02:59:49 +0000
-draft: true
+draft: false
 tags: ["Tools", "Web"]
 ---
 

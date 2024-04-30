@@ -1,7 +1,7 @@
 ---
 title: "Android - ListView Tutorial With Images and Text"
 date: Tue, 07 Jan 2014 10:20:00 +0000
-draft: true
+draft: false
 tags: ["Android"]
 ---
 
@@ -23,7 +23,9 @@ We need some items which we will display in the ListView. As we are also display
 
 ### Model
 
-We will create a new class which will act as the model for our list items. Let’s call this class Item. Here is the code.```
+We will create a new class which will act as the model for our list items. Let’s call this class Item. Here is the code.
+
+```java
 package com.debugrelease.android.listviewwithimagesandtext;
 
 public class Item {
@@ -42,8 +44,11 @@ public class Item {
 
 }
 
-````
-We will also create a Model class which will provide us with an ArrayList of our items. Model class also has a method GetById which is used by the adapter. Here is the code for Model class.```
+```
+
+We will also create a Model class which will provide us with an ArrayList of our items. Model class also has a method GetById which is used by the adapter. Here is the code for Model class.
+
+```java
 package com.debugrelease.android.listviewwithimagesandtext;
 
 import java.util.ArrayList;
@@ -76,17 +81,20 @@ public class Model {
     }
 
 }
-````
+
+```
 
 ### Layouts
 
-In the main.xml which is the layout used by MainActivity, we will place a ListView widget and set it’s layout_width and layout_height to wrap_content. ListView will also have a id set because we’ll need to reference it in code. Here are contents of main.xml```
+In the main.xml which is the layout used by MainActivity, we will place a ListView widget and set it’s layout_width and layout_height to wrap_content. ListView will also have a id set because we’ll need to reference it in code. Here are contents of main.xml
+
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
- android:orientation="vertical"  
- android:layout_width="fill_parent"  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="vertical"
+ android:layout_width="fill_parent"
  android:layout_height="fill_parent">
 
     <ListView
@@ -96,15 +104,19 @@ In the main.xml which is the layout used by MainActivity, we will place a ListVi
 
 </LinearLayout>
 
-````
-Now this is important. If we were just displaying text then there would be no need to create a custom layout, we could just use one from sdk resources. But since we are displaying more than text, we need to create a new layout which will be the template for each item. Let’s call it row.xml```
+```
+
+Now this is important. If we were just displaying text then there would be no need to create a custom layout, we could just use one from sdk resources. But since we are displaying more than text, we need to create a new layout which will be the template for each item. Let’s call it row.xml
+
+```xml
+
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout\_width="match\_parent"
-                android:layout\_height="match\_parent"
-                android:gravity="center\_vertical"
-                android:minHeight="64dp">
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center_vertical"
+android:minHeight="64dp">
 
     <ImageView
             android:id="@+id/imageView"
@@ -124,25 +136,27 @@ Now this is important. If we were just displaying text then there would be no ne
             android:gravity="center\_vertical"/>
 
 </RelativeLayout>
-````
+```
 
 See how I have placed an ImageView and a TextView within RelativeLayout. For each item one of these will be used.
 
 ### Adapter
 
-A ListView needs an adapter to display items. And because of our slightly custom requriement of displaying images and text, we will create our own custom adapter. This can be done by creating a class which extends ArrayAdatpter<String>. In this class **getView** method is of interest to us. Within this method we will inflate the row layout we created earlier. We will then write some code to populate both ImageView and TextView. Below is the full code for our adapter.```
+A ListView needs an adapter to display items. And because of our slightly custom requriement of displaying images and text, we will create our own custom adapter. This can be done by creating a class which extends ArrayAdatpter<String>. In this class **getView** method is of interest to us. Within this method we will inflate the row layout we created earlier. We will then write some code to populate both ImageView and TextView. Below is the full code for our adapter.
+
+```java
 package com.debugrelease.android.listviewwithimagesandtext;
 
-import android.content.Context;  
-import android.graphics.drawable.Drawable;  
-import android.view.LayoutInflater;  
-import android.view.View;  
-import android.view.ViewGroup;  
-import android.widget.ArrayAdapter;  
-import android.widget.ImageView;  
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.IOException;  
+import java.io.IOException;
 import java.io.InputStream;
 
 public class ItemAdapter extends ArrayAdapter<String> {
@@ -191,8 +205,11 @@ public class ItemAdapter extends ArrayAdapter<String> {
 
 }
 
-````
-What’s left now is to load the Model by calling Model.LoadModel static method, finding the ListView and assigning it the adapter. This is done in MainActivity class within overridden onCreate method.```
+```
+
+What’s left now is to load the Model by calling Model.LoadModel static method, finding the ListView and assigning it the adapter. This is done in MainActivity class within overridden onCreate method.
+
+```java
 package com.debugrelease.android.listviewwithimagesandtext;
 
 import android.app.Activity;
@@ -222,10 +239,10 @@ public class MainActivity extends Activity {
 
     }
 }
-````
+```
 
 ### Conclusion
 
-In conclusion, displaying image and text in each cell of ListView is pretty simple. All you need to do is define your preferred layout for each cell, and create an adapter which will load that view for each position.  
-The code for this post and all my Android related posts is in a [Github repository](https://github.com/deepak-kapoor/debug-release-android-samples). For this tutorial look for ListViewWithImagesAndText folder within the repository.  
+In conclusion, displaying image and text in each cell of ListView is pretty simple. All you need to do is define your preferred layout for each cell, and create an adapter which will load that view for each position.
+The code for this post and all my Android related posts is in a [Github repository](https://github.com/deepak-kapoor/debug-release-android-samples). For this tutorial look for ListViewWithImagesAndText folder within the repository.
 Icons used in this post and the code are from [androidicons.com](http://www.androidicons.com/)

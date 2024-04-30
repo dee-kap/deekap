@@ -1,7 +1,7 @@
 ---
 title: "5 npm commands recommended for node.js developers"
 date: Thu, 09 Apr 2015 06:59:41 +0000
-draft: true
+draft: false
 featured_image: "nodejs.svg"
 tags: ["Node.js"]
 ---

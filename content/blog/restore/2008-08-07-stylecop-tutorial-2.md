@@ -1,7 +1,7 @@
 ---
 title: "StyleCop tutorial"
 date: Thu, 07 Aug 2008 01:08:00 +0000
-draft: true
+draft: false
 featured_image: "dotnet.svg"
 tags: [".NET"]
 ---
