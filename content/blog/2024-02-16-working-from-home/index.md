@@ -59,7 +59,3 @@ As we move forward, it's clear that remote work can offer a sustainable, product
 #### Discuss on Reddit
 
 https://www.reddit.com/r/programming/s/MRD91plDnu
-
-#### Discuss on Hacker News
-
-https://news.ycombinator.com/item?id=39395551
