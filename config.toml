@@ -7,7 +7,7 @@ theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
 # title = "{ 👋 I'm Deepak }"
-title = ":bit :of :binary"
+title = "deekap.com"
 author = "Deepak"
 
 copyright = "Copyright © 2023, Deepak."
