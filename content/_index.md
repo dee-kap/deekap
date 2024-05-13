@@ -77,7 +77,7 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
 
 <script>
   window.CustomSubstackWidget = {
-    substackUrl: "bitofbinary.substack.com",
+    substackUrl: "substack.com",
     placeholder: "example@example.com",
     buttonText: "Subscribe",
     theme: "custom",
@@ -95,8 +95,8 @@ Subscribe to my infrequent newsletter which is subjectively interesting. It cont
 ### Social
 
 <div>
-    <a href="https://twitter.com/bitofbinary">
-        <img height="30" alt="Twitter - BitOfBinary" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>
+    <a href="https://twitter.com/_dee_kap_">
+        <img height="30" alt="Twitter - _dee_kap_" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>
         <a href="https://www.linkedin.com/in/kapoordeepak/">
         <img height="30" alt="LinkedIn - Deepak Kapoor" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 </div>

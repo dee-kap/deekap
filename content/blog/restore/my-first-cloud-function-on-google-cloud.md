@@ -33,5 +33,5 @@ gcloud functions deploy helloWorld --trigger-http --runtime=nodejs10
 4.  **\--trigger-http**: function I am deploying will be invoked by HTTP
 5.  **\--runtime=nodejs10**: The runtime for this function. Can be Python, Go or node
 
-Running the command deploys the function. I can also go to the console and see the function I just created. ![](https://bitofbinary.com/wp-content/uploads/2018/06/google-function-hello-world.png) This was not hard at all. Invoking the function returns the string "Hello World!". The function can be invoked by clicking on the URL in the Trigger tab, or by issuing a simple cURL command. We have liftoff!
+Running the command deploys the function. I can also go to the console and see the function I just created. ![](https://deekap.com/wp-content/uploads/2018/06/google-function-hello-world.png) This was not hard at all. Invoking the function returns the string "Hello World!". The function can be invoked by clicking on the URL in the Trigger tab, or by issuing a simple cURL command. We have liftoff!
 ````

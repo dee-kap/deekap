@@ -19,7 +19,7 @@ WHERE (Country IN ('UK', 'USA', 'Australia'))
 
 #### How do I write Where IN in LINQ?
 
-Below is the query which can be used for a "WHERE IN" scenario. Query 1 uses query syntax and Query 2 uses lambda expression. I am using using a DataContext for Northwind database. See [LINQ To SQL Tutorial](https://bitofbinary.com//2008/07/31/linq-to-sql-tutorial/) to see how to generate a DataContext.
+Below is the query which can be used for a "WHERE IN" scenario. Query 1 uses query syntax and Query 2 uses lambda expression. I am using using a DataContext for Northwind database. See [LINQ To SQL Tutorial](https://deekap.com//2008/07/31/linq-to-sql-tutorial/) to see how to generate a DataContext.
 
 ##### LINQ Query 1
 

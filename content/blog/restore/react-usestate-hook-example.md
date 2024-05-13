@@ -11,7 +11,7 @@ This post is a part of the  <a href="/project-restore/">Project Restore</a>, wit
 
 React hooks are a great way to work with many React features without writing classes. I think classes have no place in JavaScript, but that is a topic for another post. In this post, I'd like to show you how to use the **useState** hook to build a simple tabs component. In our component, we will use the state to keep track of the active tab. If you have worked with React and state, you would have done it using classes. We will not use a class but instead, our component will be purely functional. Our component implements features of a simple tab control. When a user clicks on a tab item, it is expected that the clicked item will be visually highlighted. This is what it will look like.
 
-![](https://bitofbinary.com/wp-content/uploads/2019/07/usestate-tabs.gif)
+![](https://deekap.com/wp-content/uploads/2019/07/usestate-tabs.gif)
 
 The first thing we need to do within our component is to call **useState** method like this.
 

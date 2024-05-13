@@ -17,7 +17,7 @@ He or she (if girls get interested in this stuff) is a person who sucks up the k
 
 ### Why do we need him/her?
 
-Good question. I am glad you asked it. No I seriously am. We need him for the same reasons we need tech consultants today. He/She is skilled and knowledgeable to recommend, advise and also implement business solutions based on Cloud Computing. CCS (Cloud Computing Solution) to be more precise. There, I've done it again. For the record; BitOfBinary is the birth-place of the acronym CCS.
+Good question. I am glad you asked it. No I seriously am. We need him for the same reasons we need tech consultants today. He/She is skilled and knowledgeable to recommend, advise and also implement business solutions based on Cloud Computing. CCS (Cloud Computing Solution) to be more precise. There, I've done it again. For the record; This is the birth-place of the acronym CCS.
 
 ### Should you become one?
 
@@ -25,4 +25,4 @@ If you are a night programmer who sacrifices luxuries of life such as television
 
 ### How do you get started?
 
-A lot of it depends on what is your learning style. But this is what I would suggest. Leave not a single unread word on [Microsoft Azure site](http://www.microsoft.com/azure/default.mspx) and to everything else linked from here. Once you have done that, I recommend watching all [PDC videos](https://sessions.microsoftpdc.com/public/timeline.aspx) on Azure. By this time you will be ready and excited to check out the Cloud for yourself. To do just that you can [download Azure SDK](http://www.microsoft.com/azure/sdk.mspx) and also [ask for access to CTP](https://connect.microsoft.com/SelfNomination.aspx?SiteID=681&ProgramID=2500&pageType=1). Microsoft will be more than happy to provide one. I got mine in less than a day. Finally, keep visiting [BitOfBinary.com](https://bitofbinary.com/). All the best.
+A lot of it depends on what is your learning style. But this is what I would suggest. Leave not a single unread word on [Microsoft Azure site](http://www.microsoft.com/azure/default.mspx) and to everything else linked from here. Once you have done that, I recommend watching all [PDC videos](https://sessions.microsoftpdc.com/public/timeline.aspx) on Azure. By this time you will be ready and excited to check out the Cloud for yourself. To do just that you can [download Azure SDK](http://www.microsoft.com/azure/sdk.mspx) and also [ask for access to CTP](https://connect.microsoft.com/SelfNomination.aspx?SiteID=681&ProgramID=2500&pageType=1). Microsoft will be more than happy to provide one. I got mine in less than a day. Finally, keep visiting [deekap.com](https://deekap.com/). All the best.

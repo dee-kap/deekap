@@ -9,7 +9,7 @@ tags: ["Microsoft"]
 This post is a part of the  <a href="/project-restore/">Project Restore</a>, with the primary aim of excavating my previous writings. The material contained herein may not hold practical relevance and is most likely completely useless.
 </div>
 
-Earlier I wrote a post showing how to write a [LINQ query which gets transformed into a T-SQL query with a "Where In" clause](https://bitofbinary.com//2008/08/25/linq-equivalent-of-where-in/). I had a comment on the post by Steve saying that the approach only works with strings. In this post I will show you a similar query which works with Integers.
+Earlier I wrote a post showing how to write a [LINQ query which gets transformed into a T-SQL query with a "Where In" clause](https://deekap.com//2008/08/25/linq-equivalent-of-where-in/). I had a comment on the post by Steve saying that the approach only works with strings. In this post I will show you a similar query which works with Integers.
 
 Let's say that we want to select rows from Products table in Northwind database where ProductId matches 3, 7, 8, 10. Our query should include the Where IN clause. Something like this:
 

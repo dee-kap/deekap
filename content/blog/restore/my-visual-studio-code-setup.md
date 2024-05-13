@@ -15,7 +15,7 @@ When Microsoft announced Visual Studio Code in 2015, I did not have good things 
 
 The first thing I look for in an editor is support for themes and availability of good themes. VS Code gets five stars in this area. My preferred theme these days in [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl) by [Sarah Drasnar](https://github.com/sdras). It looks beautiful on my 4k monitor. Yes, I'm _showing off_ :)
 
-![](https://bitofbinary.com/wp-content/uploads/2019/05/vs-code-night-owl-1024x738.png)
+![](https://deekap.com/wp-content/uploads/2019/05/vs-code-night-owl-1024x738.png)
 
 I have also customised a few minor things. One of them is the current line highlight. This is from my settings.json
 
@@ -32,7 +32,7 @@ I feel that there is more art than science to themes and Night Owl is just perfe
 
 Extensions for a code editor can be a hot topic. There are people who are against them and there are people who cannot see the world without them. I belong to the latter camp. Before I tell you about the extensions I use, enjoy this tweet by Damian Edwards.
 
-![](https://bitofbinary.com/wp-content/uploads/2019/05/damianedwardstweet-1024x581.png)
+![](https://deekap.com/wp-content/uploads/2019/05/damianedwardstweet-1024x581.png)
 
 In the past, I would install any extension which showed up and had good reviews. I have learned to break that habit and now I only install extensions which are must-have for me.
 

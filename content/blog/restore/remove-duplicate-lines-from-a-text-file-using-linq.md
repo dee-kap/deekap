@@ -21,7 +21,7 @@ On the forum there is also some Java code which has been used as a solution. But
 
 #### Solution The LINQ Way
 
-Here is my approach to remove duplicate lines from a text file. Firstly, I read the contents of the file into a collection of Type List<Error> using an approach [I described in an earlier post](https://bitofbinary.com//2008/08/13/tutorial-reading-a-text-file-using-linq/) .
+Here is my approach to remove duplicate lines from a text file. Firstly, I read the contents of the file into a collection of Type List<Error> using an approach [I described in an earlier post](https://deekap.com//2008/08/13/tutorial-reading-a-text-file-using-linq/) .
 
 ```csharp
 var query = from e in
