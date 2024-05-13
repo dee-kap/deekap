@@ -1,33 +1,37 @@
 {{ define "main" }} {{ .Content }}
-<h3>Latest Posts</h3>
+<h3>Blog</h3>
 <ul class="blog-posts">
-  {{ $blogPages := where .Site.RegularPages "Section" "blog" | first 7 }}
-
-  {{ range $blogPages}}
+  {{ $blogPages := where .Site.RegularPages "Section" "blog" | first 7 }} {{
+  range $blogPages}}
   <li>
+    <div>
+      <a href="{{ .Permalink }}" style="font-size: 1em">{{ .Title }}</a>
       <div>
-      <a href="{{ .Permalink }}" style="font-size:1em;">{{ .Title }}</a>
-        <div>
-          <i>
-            <time style="font-size: .85em; color:#747474" datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-              {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-            </time>
-          </i>
+        <i>
+          <time
+            style="font-size: 0.85em; color: #747474"
+            datetime='{{ .Date.Format "2006-01-02" }}'
+            pubdate
+          >
+            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+          </time>
+        </i>
 
-          {{ if .Params.tags }}
-            <span style="margin-left: .5rem;font-size:small">
-              {{ range .Params.tags }}
-                <a href="{{ $.Site.BaseURL }}blog/{{ . | urlize }}" style="color: #585b70">#{{ . }}</a>&nbsp;
-              {{ end }}
-            </span>
-          {{ end }}
-        </div>
+        {{ if .Params.tags }}
+        <span style="margin-left: 0.5rem; font-size: small">
+          {{ range .Params.tags }}
+          <a
+            href="{{ $.Site.BaseURL }}blog/{{ . | urlize }}"
+            style="color: #585b70"
+            >#{{ . }}</a
+          >&nbsp; {{ end }}
+        </span>
+        {{ end }}
       </div>
+    </div>
   </li>
   {{ else }}
-  <li>
-    No posts yet
-  </li>
+  <li>No posts yet</li>
   {{ end }}
 </ul>
 ... <a href="/blog">Archives</a>
@@ -54,5 +58,12 @@
   </a>
   {{ end }} {{ end }}
 </div>
+
+<h3>Other</h3>
+
+<ul>
+  <li><a href="/setup">My Setup</a></li>
+  <li><a href="/now">Now</a></li>
+</ul>
 
 {{ end }}
