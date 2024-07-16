@@ -8,11 +8,7 @@
       <a href="{{ .Permalink }}" style="font-size: 1em">{{ .Title }}</a>
       <div>
         <i>
-          <time
-            style="font-size: 0.85em; color: #747474"
-            datetime='{{ .Date.Format "2006-01-02" }}'
-            pubdate
-          >
+          <time style="font-size: 0.85em; color: #747474" datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
             {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
           </time>
         </i>
@@ -20,11 +16,7 @@
         {{ if .Params.tags }}
         <span style="margin-left: 0.5rem; font-size: small">
           {{ range .Params.tags }}
-          <a
-            href="{{ $.Site.BaseURL }}blog/{{ . | urlize }}"
-            style="color: #585b70"
-            >#{{ . }}</a
-          >&nbsp; {{ end }}
+          <a href="{{ $.Site.BaseURL }}blog/{{ . | urlize }}" style="color: #585b70">#{{ . }}</a>&nbsp; {{ end }}
         </span>
         {{ end }}
       </div>
@@ -36,6 +28,7 @@
 </ul>
 ... <a href="/blog">Archives</a>
 
+<!--
 <h3>Tags</h3>
 <div>
   {{ if ne (len $.Site.Taxonomies.tags) 0 }} {{ $largestFontSize := 1.5 }} {{
@@ -58,6 +51,7 @@
   </a>
   {{ end }} {{ end }}
 </div>
+-->
 
 <h3>Other</h3>
 
