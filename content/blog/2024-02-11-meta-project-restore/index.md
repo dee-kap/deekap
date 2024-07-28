@@ -6,8 +6,6 @@ tags: ["Blogging"]
 draft: false
 ---
 
-While browsing through some old files on an external disk, I found some of old writings. The files I found were from year 2005 when I was involved with WinFX which eventually became .NET Framework 3.0.
-
 When I started this blog, I wrote a [post](/few-thoughts-on-blogging/) in which I mentioned about my past blogging adventures. While browsing through those files, I realized that I started blogging in 2005. At that time I was involved with WinFX which eventually became Microsoft .NET 3.0.
 
 I also realized that although it may not be of any use to either me or anyone else, it is still a record of my forays into different technologies and I should preserve it.
