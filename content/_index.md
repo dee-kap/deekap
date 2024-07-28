@@ -16,6 +16,10 @@ These days I'm having fun building front-ends in **React** and back-ends in **no
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px, 1fr));">
     <div style="text-align:center;">
+      <img src="/images/languages/linux.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">Linux</p>
+    </div>
+    <div style="text-align:center;">
       <img src="/images/languages/react.svg" style="width:50px;height:50px;">
       <p style="font-size:90%; margin-top:0;">React</p>
     </div>
@@ -40,6 +44,10 @@ These days I'm having fun building front-ends in **React** and back-ends in **no
       <p style="font-size:90%; margin-top:0;">AWS</p>
     </div>
     <div style="text-align:center;">
+      <img src="/images/languages/postgresql.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">PostgreSQL</p>
+    </div>
+    <div style="text-align:center;">
       <img src="/images/languages/tailwindcss.svg" style="width:50px;height:50px;">
       <p style="font-size:90%; margin-top:0;">Tailwind</p>
     </div>
@@ -62,6 +70,14 @@ These days I'm having fun building front-ends in **React** and back-ends in **no
     <div style="text-align:center;">
       <img src="/images/languages/css3.svg" style="width:50px;height:50px;">
       <p style="font-size:90%; margin-top:0;">CSS</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/neovim.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">VIM</p>
+    </div>
+    <div style="text-align:center;">
+      <img src="/images/languages/git.svg" style="width:50px;height:50px;">
+      <p style="font-size:90%; margin-top:0;">GIT</p>
     </div>
 </div>
 
