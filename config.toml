@@ -1,0 +1,34 @@
+title = "deekap"
+base_url = "https://deekap.com"
+description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
+
+compile_sass = true
+build_search_index = false
+
+taxonomies = [
+  {name = "tags", feed = true},
+]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+  { theme = "OneHalfDark", filename = "syntax-theme-dark.css" },
+  { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+]
+
+[extra]
+post_date_format="%d %B, %Y"
+list_date_format="%d %b, %Y"
+theme_toggle = true
+mathjax = true
+echarts = true
+
+[[extra.main_menu]]
+name = "Blog"
+url = "@/blog/_index.md"
+
+[[extra.main_menu]]
+name = "About"
+url = "about"
+

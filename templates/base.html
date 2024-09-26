@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="{{ lang | default(value="en-US" ) }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if config.extra.favicon %}
+    <link rel="shortcut icon" href="{{ config.extra.favicon }}">
+  {%- endif -%}
+  <title>{%- block title %}{{ config.title }}{%- endblock %}</title>
+  <meta name="title" content="{% if page.title %}{{ page.title }}{% else %}{{ config.title }}{% endif %}">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  {%- if config.generate_feed %}
+    {% block rss -%}
+      <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }}" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {%- endblock -%}
+  {%- endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <link id="syntax-theme-stylesheet" rel="stylesheet" type="text/css" href="/syntax-theme-light.css" />
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+
+  <script>
+    /* Dark mode toggle */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        document.getElementById("syntax-theme-stylesheet").href = "/syntax-theme-" + theme + ".css";
+        localStorage.setItem("theme", theme);
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+      {% if config.extra.theme_toggle | default (value = true) %}
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+      {% endif %}
+    });
+  </script>
+
+  <script>
+    /* Add footnote backlinks (code from https://github.com/getzola/zola/issues/1070#issuecomment-1166637092) */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const references = document.getElementsByClassName('footnote-reference')
+      // For each footnote reference, set an id so we can refer to it from the definition.
+      // If the definition had an id of 'some_id', then the reference has id `some_id_ref`.
+      for (const reference of references) {
+        const link = reference.firstChild
+        const id = link.getAttribute('href').slice(1) // skip the '#'
+        link.setAttribute('id', `${id}_ref`)
+      }
+
+      const footnotes = document.getElementsByClassName('footnote-definition')
+      // For each footnote-definition, add an anchor element with an href to its corresponding reference.
+      // The text used for the added anchor is 'Leftwards Arrow with Hook' (U+21A9).
+      for (const footnote of footnotes) {
+        const id = footnote.getAttribute('id')
+        const backReference = document.createElement('a')
+        backReference.setAttribute('href', `#${id}_ref`)
+        backReference.textContent = '↩'
+        const ps = footnote.children
+        ps[ps.length - 1].appendChild(backReference)
+      }
+    });
+  </script>
+
+  {% if config.extra.mathjax | default(value=false) %}
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  {% endif %}
+
+  {% if config.extra.echarts | default(value=false) %}
+    <script src="https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+  {% endif %}
+</head>
+<body>
+  {% include "header.html" ignore missing -%}
+  {% block main %}{%- endblock -%}
+  {% include "footer.html" ignore missing -%}
+</body>
+</html>
