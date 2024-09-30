@@ -1,6 +1,6 @@
 title = "deekap"
 base_url = "https://deekap.com"
-description = "Minimalistic yet a bit featureful theme for Zola, based on Bear Blog"
+description = "Personal website of Deepak Kapoor"
 
 compile_sass = true
 build_search_index = false
