@@ -7,12 +7,10 @@ taxonomies.tags = [
 ]
 +++
 
-I dropped my Mac M2 to repari
+This blog up until now was creating using Hugo which worked well until now.
 
-We are all used to way too much memory, remember google chrome tabs
+Since last few days I noticed that the Hugo process was taking up much more CPU. This did not sit well with me. Why should a static site generator be one of the top items for CPU usage.
 
-I found that hugo was using way too much CPU
+I decided that it was time for me to retire Hugo and move to Zola which is written in Rust and is super fast and highly efficient. Lately I have been using a bunch of tools written in Rust such as eza, zoxide, bat and few more. I decided that Zola fits in perfectly with my preference for tools written in Rust.
 
-In the past I tried Zola
-
-I ported this site to Zola
+So from now on, this site is generated using Zola. Check it out, it is cool.
