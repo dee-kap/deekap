@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   margin: auto;
   padding: 20px;
   max-width: 720px;
@@ -9,6 +9,16 @@ body {
   overflow-wrap: break-word;
   line-height: 1.5;
   color: black;
+}
+
+blockquote {
+  background-color: #e6e9ef;
+  border-left: 5px solid #179299;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 20px 0;
 }
 
 a {
@@ -65,7 +75,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: 'Noto Sans Mono', monospace;
+  font-family: "Noto Sans Mono", monospace;
   font-size: 90%;
 }
 
@@ -108,39 +118,86 @@ ul.blog-posts {
   }
 
   p {
-    display: inline;  // Fix https://github.com/getzola/zola/issues/1070
+    display: inline; // Fix https://github.com/getzola/zola/issues/1070
   }
 }
 
 // Dark theme
 body.dark-theme {
-  background-color: black;
+  /* Background color */
+  background-color: #1e1e2e; /* Base color from Catppuccin Mocha */
 
-  &, .title, #theme-toggle {
-    color: white;
+  /* Text and theme toggle */
+  &,
+  .title,
+  #theme-toggle {
+    color: #cdd6f4; /* Text color from Catppuccin Mocha */
   }
 
+  /* Code blocks */
   pre {
-    background-color: #111111 !important;
+    background-color: #181825 !important; /* Darker shade from Catppuccin Mocha */
   }
 
+  /* Links */
   a {
-    color: skyblue;
+    color: #89b4fa; /* Sky-blue like color from Catppuccin Mocha */
   }
 
+  /* Footnote definition styling */
   .footnote-definition:target {
-    background-color: gold;
-    color: black;
+    background-color: #fab387; /* Yellow-orange color from Catppuccin Mocha */
+    color: #1e1e2e; /* Base background color from Catppuccin Mocha */
 
     a {
-      color: royalblue;
+      color: #74c7ec; /* Soft blue for links from Catppuccin Mocha */
     }
   }
 
+  /* Inverted elements */
   .inverse {
     filter: invert(1);
   }
+
+  blockquote {
+    background-color: #313244;
+    border-left: 5px solid #eba0ac;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 20px 0;
+  }
 }
+
+// body.dark-theme {
+//   background-color: black;
+//
+//   &, .title, #theme-toggle {
+//     color: white;
+//   }
+//
+//   pre {
+//     background-color: #111111 !important;
+//   }
+//
+//   a {
+//     color: skyblue;
+//   }
+//
+//   .footnote-definition:target {
+//     background-color: gold;
+//     color: black;
+//
+//     a {
+//       color: royalblue;
+//     }
+//   }
+//
+//   .inverse {
+//     filter: invert(1);
+//   }
+// }
 
 header {
   display: flex;
@@ -160,4 +217,3 @@ header {
     }
   }
 }
-
