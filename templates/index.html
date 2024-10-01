@@ -6,7 +6,7 @@
 
 
     {% set section = get_section(path="blog/_index.md")  %}
-    <h2>Latest Posts</h2>
+    <h2>Latest from the log</h2>
 
     <ul class="blog-posts">
       {% for page in section.pages %}
@@ -23,7 +23,18 @@
         </li>
         {% endif %}
       {% endfor %}
+        <li>
+          <a href="/blog">More...</a>
+        </li>
     </ul>
+
+    <h2>Currently Reading</h2>
+    <div class="book-gallery">
+        <img src="/images/covers/the-lucky-country.jpg" class="book-thumbnail" />
+        <img src="/images/covers/ultralearning.jpg" class="book-thumbnail" />
+        <img src="/images/covers/emperor-of-all-maladies.jpg" class="book-thumbnail" />
+        <img src="/images/covers/the-victorian-internet.jpg" class="book-thumbnail" />
+    </div>
 
   </main>
 {% endblock %}

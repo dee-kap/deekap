@@ -1,14 +1,15 @@
 <header>
   <div class="title-bar">
-    <a href="{{ config.base_url }}" class="title">
-      <h2>{{ config.title }}</h2>
-    </a>
+    <div>
+      <a href="{{ config.base_url }}" class="title">
+        <h2>{{ config.title }}</h2>
+      </a>
+      <h4 style="font-style: italic">Personal website of Deepak</h4>
+    </div>
     {% if config.extra.theme_toggle | default(value=true) %}
-      <button id="theme-toggle">●</button>
+    <button id="theme-toggle">●</button>
     {% endif %}
   </div>
 
-  <nav>
-    {% include "nav.html" %}
-  </nav>
+  <nav>{% include "nav.html" %}</nav>
 </header>

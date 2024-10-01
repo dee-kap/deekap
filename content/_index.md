@@ -9,7 +9,4 @@
 
 My journey in the world of programming began in the mid-1990s, just as the World Wide Web was starting to weave its global tapestry.
 
-To know more about me, you can visit my About page.
-
-These days I’m having fun building front-ends in React and back-ends in node.js and Python.
-
+To know more about me, you can visit my [About](/about) page.

@@ -76,7 +76,8 @@ code,
 kbd,
 samp {
   font-family: "Noto Sans Mono", monospace;
-  font-size: 90%;
+  font-size: 97%;
+  padding: 10px;
 }
 
 div.highlight pre {
@@ -216,4 +217,47 @@ header {
       line-height: 1;
     }
   }
+}
+
+.book-gallery {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .book-gallery {
+    flex-direction: column;
+    gap: 20px; /* Adjust gap for mobile if needed */
+  }
+}
+
+.book-thumbnail {
+  width: 100px;
+  height: 150px;
+}
+
+.book-list > ul {
+  list-style: none;
+}
+
+.book-list > ul > li {
+  display: flex;
+}
+
+.book-list > ul > li > p {
+  width: 100%;
+  display: flex;
+}
+
+.book-list > ul > li > p > img {
+  width: 100px;
+  height: 150px;
+  margin-right: 1em;
+}
+
+.book-list > ul > li > img {
+  width: 100px;
+  height: 150px;
+  margin-right: 1em;
 }
