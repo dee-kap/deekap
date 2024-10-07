@@ -1,6 +1,7 @@
 +++
 title = "Moving from Hugo to Zola"
 date = "2024-09-26"
+draft = true
 description = "Moving this blog from Hugo to Zola"
 taxonomies.tags = [
     "blogging",
