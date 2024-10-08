@@ -1,8 +1,9 @@
 AUTHOR = "Deepak"
 SITENAME = "deekap"
-SITEURL = ""
+SITEURL = "https://deekap.com"
 
 THEME = "theme"
+RELATIVE_URLS = True
 
 
 PATH = "content"
@@ -13,9 +14,15 @@ DEFAULT_LANG = "en"
 MENUITEMS = [
     ("Home", "/"),
     ("Blog", "/blog"),
-    ("About", "/about"),
+    ("About", "/pages/about"),
 ]
 DISPLAY_CATEGORIES_ON_MENU = False
+
+ARTICLE_URL = "{date:%Y}/{date:%m}/{date:%d}/{slug}/"
+ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
+INDEX_SAVE_AS = "index.html"
+BLOG_URL = "blog/"  # Blog will be accessible at /blog/
+BLOG_SAVE_AS = "blog/index.html"  # The blog page will be saved at blog/index.html
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -38,7 +45,7 @@ SOCIAL = (
     ("Another social link", "#"),
 )
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 0
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

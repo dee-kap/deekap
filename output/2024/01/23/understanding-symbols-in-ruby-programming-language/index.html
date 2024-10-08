@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="    en
+">
+<head>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <meta name="robots" content="" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../theme/css/main.css" />
+
+
+
+
+            <link rel="canonical" href="../../../.." />
+            <meta name="title" content="deekap">
+            <meta name="author" content="Deepak" />
+            <meta name="description" content="" />
+
+            <meta property="og:site_name" content="deekap"/>
+            <meta property="og:type" content="blog"/>
+            <meta property="og:title" content="deekap"/>
+            <meta property="og:description" content=""/>
+            <meta property="og:locale" content=""/>
+            <meta property="og:url" content="../../../.."/>
+
+            <meta property="twitter:card" content="summary">
+            <meta property="twitter:url" content="../../../..">
+            <meta property="twitter:title" content="deekap">
+            <meta property="twitter:description" content="">
+
+        <title>    deekap - Understanding Symbols in Ruby Programming Language
+</title>
+
+
+
+
+
+        <meta name="tags" content="Ruby" />
+</head>
+
+<body>
+  <header>
+  <div class="title-bar">
+    <div>
+      <a href="../../../.." class="title">
+        <h2>deekap</h2>
+      </a>
+    </div>
+    
+    <button id="theme-toggle" aria-label="Toggle Theme">●</button>
+    
+  </div>
+
+        <nav>
+            <p>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/pages/about">About</a>
+            </p>
+        </nav>
+</header>
+    <main>
+    <h1 class="entry-title">
+        Understanding Symbols in Ruby Programming Language
+    </h1>
+
+    
+
+    <i class="date">
+        <address class="authors">
+        </address>
+        <div class="category">
+        </div>
+        <div>
+            <time class="published" datetime="2024-01-23T00:00:00+11:00">
+                Tue 23 January 2024
+            </time>
+        </div>
+        <div>
+        </div>
+    </i>
+    <content>
+        <h2>What is a Symbol in Ruby?</h2>
+<p>In Ruby, a symbol is a lightweight, immutable identifier. It is often used in situations where a string would traditionally be used, but it offers performance benefits. Symbols are denoted by a colon (:) followed by a name. For example, <strong>:user</strong> and <strong>:email</strong> are symbols.</p>
+<h2>Key Characteristics of Symbols</h2>
+<ol>
+<li>
+<p>Immutability: Unlike strings, symbols are immutable. Once a symbol is created, it cannot be altered. This property makes them safe to use as identifiers or keys in hashes.</p>
+</li>
+<li>
+<p>Uniqueness: Each symbol is unique throughout a Ruby program. No matter where in the program it's used, a symbol represents the same value or state.</p>
+</li>
+<li>
+<p>Efficient: Symbols are more memory-efficient than strings. Since they are unique, Ruby internally stores each symbol only once, reducing memory usage and speeding up comparisons.</p>
+</li>
+</ol>
+<h2>Common Uses of Symbols in Ruby</h2>
+<h3>As Hash Keys</h3>
+<p>One of the most common uses of symbols is as keys in hashes. Since they are immutable and unique, they are perfect for identifying values within a hash. For example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span>
+</code></pre></div>
+
+<h3>Method &amp; Constant Names</h3>
+<p>In Ruby, method names and constant names are internally symbols. This is part of Ruby’s design, which treats everything as an object, including method names and constants.</p>
+<h3>Representing States or Options</h3>
+<p>Symbols are often used to represent states, options, or specific conditions within a program, largely because of their readability and symbolic nature.</p>
+<h3>Comparison with Strings</h3>
+<p>While symbols are similar to strings, they are not the same. The key difference lies in their identity and immutability. Two strings with the same content are considered different objects, while two symbols with the same name are exactly the same object.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="c1"># true, but they are different objects</span>
+<span class="ss">:symbol</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:symbol</span><span class="w"> </span><span class="c1"># true, and they are the same object</span>
+</code></pre></div>
+
+<h2>When to Use Symbols</h2>
+<ul>
+<li>Use symbols when an identifier is needed. They are perfect for keys in hashes, representing method names, states, or labels that do not need the flexibility of a string.</li>
+<li>Avoid using symbols when you need string-like behavior, such as concatenation, or when the text is user-generated and not a fixed identifier.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Symbols in Ruby offer a unique and efficient way to handle identifiers within your code. Their immutability, uniqueness, and memory efficiency make them a preferred choice for keys in hashes, representing method names, and more. Understanding when and how to use symbols can greatly enhance Ruby programming experience.</p>
+<h1>10</h1>
+    </content>
+        <p class="tags">
+                <a href="../../../../tag/ruby.html">#Ruby</a>
+        </p>
+    </main>
+    <footer>
+        <address id="about" class="vcard body">
+          <small>
+            Powered by <a href="https://getpelican.com/">Pelican</a>
+            <br>
+            Theme inspired by <a href="https://bearblog.dev">Bear ʕ•ᴥ•ʔ</a>
+            </small>
+        </address>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        localStorage.setItem("theme", theme);
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+    });
+    </script>
+</body>
+</html>

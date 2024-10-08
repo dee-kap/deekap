@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="    en
+">
+<head>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <meta name="robots" content="" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../theme/css/main.css" />
+
+
+
+
+            <link rel="canonical" href="../../../.." />
+            <meta name="title" content="deekap">
+            <meta name="author" content="Deepak" />
+            <meta name="description" content="" />
+
+            <meta property="og:site_name" content="deekap"/>
+            <meta property="og:type" content="blog"/>
+            <meta property="og:title" content="deekap"/>
+            <meta property="og:description" content=""/>
+            <meta property="og:locale" content=""/>
+            <meta property="og:url" content="../../../.."/>
+
+            <meta property="twitter:card" content="summary">
+            <meta property="twitter:url" content="../../../..">
+            <meta property="twitter:title" content="deekap">
+            <meta property="twitter:description" content="">
+
+        <title>    deekap - From Quadratic to Linear
+</title>
+
+
+
+
+
+        <meta name="tags" content="Python" />
+</head>
+
+<body>
+  <header>
+  <div class="title-bar">
+    <div>
+      <a href="../../../.." class="title">
+        <h2>deekap</h2>
+      </a>
+    </div>
+    
+    <button id="theme-toggle" aria-label="Toggle Theme">●</button>
+    
+  </div>
+
+        <nav>
+            <p>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/pages/about">About</a>
+            </p>
+        </nav>
+</header>
+    <main>
+    <h1 class="entry-title">
+        From Quadratic to Linear
+    </h1>
+
+    
+
+    <i class="date">
+        <address class="authors">
+        </address>
+        <div class="category">
+        </div>
+        <div>
+            <time class="published" datetime="2024-02-28T00:00:00+11:00">
+                Wed 28 February 2024
+            </time>
+        </div>
+        <div>
+        </div>
+    </i>
+    <content>
+        <p>Lately, I've been immersing myself in basic coding exercises to refresh concepts that I learned years ago but haven't utilized much recently.</p>
+<p>While going through my private repositories, I came across code from a tech test I completed for a job I applied for.</p>
+<p>The task was a simple one. <strong>Given an array of numbers, find two elements whose sum equals a target value, then return the indices of these two elements.</strong></p>
+<p>Motivated by nostalgia, I decided to tackle this task again, this time using Python.</p>
+<p>This is my data</p>
+<div class="highlight"><pre><span></span><code><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">349</span><span class="p">,</span> <span class="mi">701</span><span class="p">,</span> <span class="mi">430</span><span class="p">,</span> <span class="o">-</span><span class="mi">313</span><span class="p">,</span> <span class="mi">832</span><span class="p">,</span> <span class="o">-</span><span class="mi">947</span><span class="p">,</span> <span class="mi">560</span><span class="p">,</span>
+    <span class="mi">324</span><span class="p">,</span> <span class="o">-</span><span class="mi">456</span><span class="p">,</span> <span class="mi">982</span><span class="p">,</span> <span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">567</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="o">-</span><span class="mi">987</span><span class="p">,</span> <span class="mi">654</span><span class="p">,</span> <span class="mi">321</span><span class="p">,</span> <span class="o">-</span><span class="mi">432</span><span class="p">,</span>
+    <span class="mi">543</span><span class="p">,</span> <span class="mi">890</span><span class="p">,</span> <span class="o">-</span><span class="mi">101</span><span class="p">,</span> <span class="o">-</span><span class="mi">202</span><span class="p">,</span> <span class="o">-</span><span class="mi">303</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="o">-</span><span class="mi">505</span><span class="p">,</span> <span class="mi">606</span><span class="p">,</span> <span class="o">-</span><span class="mi">707</span><span class="p">,</span> <span class="mi">808</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">909</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="o">-</span><span class="mi">313</span><span class="p">,</span> <span class="mi">414</span><span class="p">,</span> <span class="o">-</span><span class="mi">515</span><span class="p">,</span> <span class="mi">616</span><span class="p">,</span> <span class="o">-</span><span class="mi">717</span><span class="p">,</span> <span class="mi">818</span><span class="p">,</span> <span class="o">-</span><span class="mi">919</span><span class="p">,</span>
+    <span class="mi">20</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="o">-</span><span class="mi">42</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="o">-</span><span class="mi">86</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="o">-</span><span class="mi">108</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span>
+    <span class="mi">130</span><span class="p">,</span> <span class="o">-</span><span class="mi">141</span><span class="p">,</span> <span class="mi">152</span><span class="p">,</span> <span class="o">-</span><span class="mi">163</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="o">-</span><span class="mi">185</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="o">-</span><span class="mi">207</span><span class="p">,</span> <span class="mi">218</span><span class="p">,</span> <span class="o">-</span><span class="mi">229</span><span class="p">,</span>
+    <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">251</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="o">-</span><span class="mi">273</span><span class="p">,</span> <span class="mi">284</span><span class="p">,</span> <span class="o">-</span><span class="mi">295</span><span class="p">,</span> <span class="mi">306</span><span class="p">,</span> <span class="o">-</span><span class="mi">317</span><span class="p">,</span> <span class="mi">328</span><span class="p">,</span> <span class="o">-</span><span class="mi">339</span><span class="p">,</span>
+    <span class="mi">350</span><span class="p">,</span> <span class="o">-</span><span class="mi">361</span><span class="p">,</span> <span class="mi">372</span><span class="p">,</span> <span class="o">-</span><span class="mi">383</span><span class="p">,</span> <span class="mi">394</span><span class="p">,</span> <span class="o">-</span><span class="mi">405</span><span class="p">,</span> <span class="mi">416</span><span class="p">,</span> <span class="o">-</span><span class="mi">427</span><span class="p">,</span> <span class="mi">438</span><span class="p">,</span> <span class="o">-</span><span class="mi">449</span><span class="p">,</span>
+    <span class="mi">460</span><span class="p">,</span> <span class="o">-</span><span class="mi">471</span><span class="p">,</span> <span class="mi">482</span><span class="p">,</span> <span class="o">-</span><span class="mi">493</span><span class="p">,</span> <span class="mi">504</span><span class="p">,</span> <span class="o">-</span><span class="mi">515</span><span class="p">,</span> <span class="mi">526</span><span class="p">,</span> <span class="o">-</span><span class="mi">537</span><span class="p">,</span> <span class="mi">548</span><span class="p">,</span> <span class="o">-</span><span class="mi">559</span><span class="p">,</span>
+    <span class="mi">570</span><span class="p">,</span> <span class="o">-</span><span class="mi">581</span><span class="p">,</span> <span class="mi">592</span><span class="p">,</span> <span class="o">-</span><span class="mi">603</span><span class="p">,</span> <span class="mi">614</span><span class="p">,</span> <span class="o">-</span><span class="mi">625</span><span class="p">,</span> <span class="mi">636</span><span class="p">,</span> <span class="o">-</span><span class="mi">647</span><span class="p">,</span> <span class="mi">658</span><span class="p">,</span> <span class="o">-</span><span class="mi">669</span><span class="p">,</span>
+    <span class="mi">680</span><span class="p">,</span> <span class="o">-</span><span class="mi">691</span><span class="p">,</span> <span class="mi">702</span><span class="p">,</span> <span class="o">-</span><span class="mi">713</span><span class="p">,</span> <span class="mi">724</span><span class="p">,</span> <span class="o">-</span><span class="mi">735</span><span class="p">,</span> <span class="mi">746</span><span class="p">,</span> <span class="o">-</span><span class="mi">757</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="o">-</span><span class="mi">779</span><span class="p">,</span>
+    <span class="mi">790</span><span class="p">,</span> <span class="o">-</span><span class="mi">801</span><span class="p">,</span> <span class="mi">812</span><span class="p">,</span> <span class="o">-</span><span class="mi">823</span><span class="p">,</span> <span class="mi">834</span><span class="p">,</span> <span class="o">-</span><span class="mi">845</span><span class="p">,</span> <span class="mi">856</span><span class="p">,</span> <span class="o">-</span><span class="mi">867</span><span class="p">,</span> <span class="mi">878</span><span class="p">,</span> <span class="o">-</span><span class="mi">889</span><span class="p">,</span>
+    <span class="mi">900</span><span class="p">,</span> <span class="o">-</span><span class="mi">911</span><span class="p">,</span> <span class="mi">922</span><span class="p">,</span> <span class="o">-</span><span class="mi">933</span><span class="p">,</span> <span class="mi">944</span><span class="p">,</span> <span class="o">-</span><span class="mi">955</span><span class="p">,</span> <span class="mi">966</span><span class="p">,</span> <span class="o">-</span><span class="mi">977</span><span class="p">,</span> <span class="mi">988</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span>
+    <span class="mi">111</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">444</span><span class="p">,</span> <span class="mi">555</span><span class="p">,</span> <span class="mi">666</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">888</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="o">-</span><span class="mi">111</span><span class="p">,</span>
+    <span class="o">-</span><span class="mi">222</span><span class="p">,</span> <span class="o">-</span><span class="mi">333</span><span class="p">,</span> <span class="o">-</span><span class="mi">444</span><span class="p">,</span> <span class="o">-</span><span class="mi">555</span><span class="p">,</span> <span class="o">-</span><span class="mi">666</span><span class="p">,</span> <span class="o">-</span><span class="mi">777</span><span class="p">,</span> <span class="o">-</span><span class="mi">888</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">123</span>
+<span class="p">]</span>
+<span class="n">target</span> <span class="o">=</span> <span class="mi">222</span>
+</code></pre></div>
+
+<p>With this data where I have a large array of numbers and with a target of 222, I expect my result to be <strong>[17, 19]</strong></p>
+<p>Value at <strong>nums[17]</strong> is <strong>654</strong> and the value at <strong>nums[19]</strong> is <strong>-432</strong></p>
+<p>So <strong>nums[17] + nums[19] = 222</strong></p>
+<p>Here's the initial Python code, which I converted from my original JavaScript:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">findIndexes</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index_1</span><span class="p">,</span> <span class="n">num_1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index_2</span><span class="p">,</span> <span class="n">num_2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">index_1</span> <span class="o">!=</span> <span class="n">index_2</span> <span class="ow">and</span> <span class="n">num_1</span> <span class="o">+</span> <span class="n">num_2</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">index_1</span><span class="p">,</span> <span class="n">index_2</span><span class="p">]</span>
+</code></pre></div>
+
+<p>This code works and produces the correct result.</p>
+<p>I timed it using <strong>timeit</strong> and for 100,000 executions it takes approximately 8 seconds.</p>
+<p>8 seconds is fast in human time but an eternity in computer time.</p>
+<p>Is there a more efficient solution? Absolutely.</p>
+<p>Can we do better?</p>
+<p>Yes we can.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">findIndexes</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+        <span class="n">difference</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">num</span>
+
+        <span class="k">if</span> <span class="n">difference</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">difference</span><span class="p">],</span> <span class="n">i</span><span class="p">]</span>
+
+        <span class="n">indices</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</code></pre></div>
+
+<p>This revised method drastically reduces the execution time to <strong>0.14 seconds</strong> for the same number of runs. It operates in linear time, making just one pass through the array, and utilizes a dictionary—a hash map, which is an extremely efficient data structure for lookup operations.</p>
+<p>While the original method has a time complexity of <strong>O(n²)</strong>, the optimized function operates at <strong>O(n)</strong>, a significant improvement for large datasets.</p>
+<p>Happy Coding!</p>
+    </content>
+        <p class="tags">
+                <a href="../../../../tag/python.html">#Python</a>
+        </p>
+    </main>
+    <footer>
+        <address id="about" class="vcard body">
+          <small>
+            Powered by <a href="https://getpelican.com/">Pelican</a>
+            <br>
+            Theme inspired by <a href="https://bearblog.dev">Bear ʕ•ᴥ•ʔ</a>
+            </small>
+        </address>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        localStorage.setItem("theme", theme);
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+    });
+    </script>
+</body>
+</html>

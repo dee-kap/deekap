@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="    en
+">
+<head>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <meta name="robots" content="" />
+
+        <link rel="stylesheet" type="text/css" href="../../../../theme/css/main.css" />
+
+
+
+
+            <link rel="canonical" href="../../../.." />
+            <meta name="title" content="deekap">
+            <meta name="author" content="Deepak" />
+            <meta name="description" content="" />
+
+            <meta property="og:site_name" content="deekap"/>
+            <meta property="og:type" content="blog"/>
+            <meta property="og:title" content="deekap"/>
+            <meta property="og:description" content=""/>
+            <meta property="og:locale" content=""/>
+            <meta property="og:url" content="../../../.."/>
+
+            <meta property="twitter:card" content="summary">
+            <meta property="twitter:url" content="../../../..">
+            <meta property="twitter:title" content="deekap">
+            <meta property="twitter:description" content="">
+
+        <title>    deekap - Mastering Ruby Blocks: A Comprehensive Guide
+</title>
+
+
+
+
+
+        <meta name="tags" content="Ruby" />
+</head>
+
+<body>
+  <header>
+  <div class="title-bar">
+    <div>
+      <a href="../../../.." class="title">
+        <h2>deekap</h2>
+      </a>
+    </div>
+    
+    <button id="theme-toggle" aria-label="Toggle Theme">●</button>
+    
+  </div>
+
+        <nav>
+            <p>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/pages/about">About</a>
+            </p>
+        </nav>
+</header>
+    <main>
+    <h1 class="entry-title">
+        Mastering Ruby Blocks: A Comprehensive Guide
+    </h1>
+
+    
+
+    <i class="date">
+        <address class="authors">
+        </address>
+        <div class="category">
+        </div>
+        <div>
+            <time class="published" datetime="2024-01-15T00:00:00+11:00">
+                Mon 15 January 2024
+            </time>
+        </div>
+        <div>
+        </div>
+    </i>
+    <content>
+        <h2>Introduction</h2>
+<p>In Ruby, blocks stand as one of the language's most unique and powerful features. They allow you to encapsulate code into discrete units, making your programs more modular, flexible, and expressive. In this article, we will explore the mechanics of Ruby blocks, the versatility of the yield statement, and their practical applications, especially in conjunction with methods which return enumerators.</p>
+<h2>What are Blocks in Ruby?</h2>
+<p>A block in Ruby is essentially an anonymous piece of code that can be passed to methods as arguments. Blocks can contain multiple lines of code and are crucial in Ruby's approach to iteration and callbacks.</p>
+<h2>Understanding Enumerators</h2>
+<p>Before diving into blocks, let's consider Ruby's enumerators. An enumerator is an object that allows iteration over a collection, one element at a time. For instance, when you call the times method without a block, Ruby returns an Enumerator object:</p>
+<div class="highlight"><pre><span></span><code><span class="n">enumerator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="o">.</span><span class="n">times</span>
+<span class="n">enumerator</span><span class="o">.</span><span class="n">inspect</span>
+
+<span class="c1"># =&gt; #&lt;Enumerator: 4:times&gt;</span>
+</code></pre></div>
+
+<p>This Enumerator can then be used with methods like next or peek. However, while useful, this is just the tip of the iceberg.</p>
+<h2>The Power of Blocks</h2>
+<p>Blocks transform methods like times from simple iterators into versatile tools.</p>
+<p>Consider this example:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">4</span><span class="o">.</span><span class="n">times</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># =&gt; 4</span>
+</code></pre></div>
+
+<p>Here, 4.times no longer returns an Enumerator; instead, it executes the block <strong>{ puts "hello" }</strong> four times. This functionality showcases the primary strength of blocks - their ability to add custom behavior to methods.</p>
+<h2>Syntax Variations</h2>
+<p>Blocks in Ruby can be defined with either curly braces {} for single-line blocks or <strong>do...end</strong> for multi-line blocks:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">4</span><span class="o">.</span><span class="n">times</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span>
+<span class="k">end</span>
+
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># hello</span>
+<span class="c1"># =&gt; 4</span>
+</code></pre></div>
+
+<p>The do...end syntax is particularly useful for complex blocks:</p>
+<div class="highlight"><pre><span></span><code><span class="mi">4</span><span class="o">.</span><span class="n">times</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Deepak&quot;</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="c1"># hello Deepak</span>
+<span class="c1"># hello Deepak</span>
+<span class="c1"># hello Deepak</span>
+<span class="c1"># hello Deepak</span>
+<span class="c1"># =&gt; 4</span>
+</code></pre></div>
+
+<h2>Blocks with Arguments</h2>
+<p>Blocks become even more powerful when they accept arguments. Consider iterating over an array with the each method:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="s2">&quot;Deepak&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Bill&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Steve&quot;</span><span class="o">].</span><span class="n">each</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+<span class="w"> </span><span class="o">.</span><span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">end</span>
+
+<span class="c1"># hello Deepak</span>
+<span class="c1"># hello Bill</span>
+<span class="c1"># hello Steve</span>
+<span class="c1"># =&gt; [&quot;Deepak&quot;, &quot;Bill&quot;, &quot;Steve&quot;]</span>
+</code></pre></div>
+
+<p>In this example, the each method passes each array element to the block, enabling dynamic content generation.
+Exploring the Yield Statement</p>
+<p>A key aspect of working with blocks is understanding the yield statement. In Ruby, yield transfers control from the method to the block, creating opportunities for more dynamic and flexible code.</p>
+<h2>Yield in Action</h2>
+<p>Here's a simple demonstration of yield:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">greeting</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span>
+<span class="w">  </span><span class="k">yield</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">block_given?</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Goodbye!&quot;</span>
+<span class="k">end</span>
+
+<span class="n">greeting</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">puts</span><span class="w"> </span><span class="s2">&quot;Nice to meet you.&quot;</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>This code produces:</p>
+<div class="highlight"><pre><span></span><code>Hello!
+Nice<span class="w"> </span>to<span class="w"> </span>meet<span class="w"> </span>you.
+Goodbye!
+</code></pre></div>
+
+<p>The process unfolds as follows:</p>
+<ol>
+<li>The method prints "Hello!".</li>
+<li>Upon encountering yield, the method calls the provided block, printing "Nice to meet you.".</li>
+<li>Control then returns to the greeting method, concluding with "Goodbye!".</li>
+</ol>
+<h2>Benefits of Yield</h2>
+<p>The use of yield allows for methods that are more adaptable and general-purpose, as the specifics are defined in the accompanying block. This leads to code that is both modular and expressive.</p>
+<h2>Conclusion</h2>
+<p>Ruby blocks, with their ability to encapsulate code and work seamlessly with methods via yield, are indispensable for Ruby programmers. They enable writing flexible, maintainable, and expressive code, showcasing Ruby's elegance and power.</p>
+<h1>9</h1>
+    </content>
+        <p class="tags">
+                <a href="../../../../tag/ruby.html">#Ruby</a>
+        </p>
+    </main>
+    <footer>
+        <address id="about" class="vcard body">
+          <small>
+            Powered by <a href="https://getpelican.com/">Pelican</a>
+            <br>
+            Theme inspired by <a href="https://bearblog.dev">Bear ʕ•ᴥ•ʔ</a>
+            </small>
+        </address>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        localStorage.setItem("theme", theme);
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+    });
+    </script>
+</body>
+</html>
