@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ SITENAME }} - Archives
+{% endblock %}
+
+{% block content %}
+    <h3>Archives</h3>
+
+    <ul class="blog-posts">
+        {% for article in dates %}
+            <li>
+                <span><i><time class="published" datetime="{{ article.date.isoformat() }}">
+                        {{ article.locale_date }}
+                </time></i></span>
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
