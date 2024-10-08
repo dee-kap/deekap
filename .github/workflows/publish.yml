@@ -28,6 +28,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          ghp-import -n -p output
+          ghp-import -n -p -f output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
