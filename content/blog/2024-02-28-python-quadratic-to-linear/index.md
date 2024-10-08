@@ -66,7 +66,7 @@ Can we do better?
 Yes we can.
 
 ```python
-def findIndexex(num, target):
+def findIndexes(num, target):
     indices = {}
 
     for i, num in enumerate(nums):
