@@ -26,6 +26,10 @@ jobs:
       - name: Build Pelican site
         run: pelican content -s publishconf.py
 
+      - name: Copy CNAME to output
+        run: |
+          echo "deekap.com" > output/CNAME
+
       - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f output
