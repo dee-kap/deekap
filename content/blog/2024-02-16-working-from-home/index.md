@@ -1,10 +1,11 @@
----
-title: "How Working From Home Changed My Life"
-date: 2024-02-16
-featured_image: "writing.png"
-tags: ["Work"]
-draft: false
----
++++
+title = "How Working From Home Changed My Life"
+date = 2024-02-16
+featured_image = "writing.png"
+tags = ["Work"]
+draft = false
++++
+
 
 In the profession of software development, the transition to remote work has been a significant shift for many, including myself. My journey into the world of working from home began well before COVID-19.
 

@@ -1,10 +1,11 @@
----
-title: "7 Essentials for Learning TypeScript"
-date: "2024-02-05T00:00:04-07:00"
-featured_image: "typescript.svg"
-tags: ["TypeScript"]
-draft: false
----
++++
+title = "7 Essentials for Learning TypeScript"
+date = 2024-02-05
+featured_image = "typescript.svg"
+tags = ["TypeScript"]
+draft = false
++++
+
 
 TypeScript is my preferred langauge for writing front-end code or anything node.js. I have been saved by the Type System numerous time. It has helped me track down potential errors which would have only surfaced during runtime. I think there is value in learning TypeScript and I strongly recommend to anyone who writes front-end code.
 

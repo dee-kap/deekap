@@ -1,10 +1,11 @@
----
-title: "From Quadratic to Linear"
-date: 2024-02-28
-featured_image: "python.png"
-tags: ["Python"]
-draft: false
----
++++
+title = "From Quadratic to Linear"
+date = 2024-02-28
+featured_image = "python.png"
+tags = ["Python"]
+draft = false
++++
+
 
 Lately, I've been immersing myself in basic coding exercises to refresh concepts that I learned years ago but haven't utilized much recently.
 

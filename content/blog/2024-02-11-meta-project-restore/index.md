@@ -1,10 +1,11 @@
----
-title: "Project Restore"
-date: 2024-02-11
-featured_image: "bob.png"
-tags: ["Blogging"]
-draft: false
----
++++
+title = "Project Restore"
+date = 2024-02-11
+featured_image = "bob.png"
+tags = ["Blogging"]
+draft = true
++++
+
 
 When I started this blog, I wrote a [post](/few-thoughts-on-blogging/) in which I mentioned about my past blogging adventures. While browsing through those files, I realized that I started blogging in 2005. At that time I was involved with WinFX which eventually became Microsoft .NET 3.0.
 

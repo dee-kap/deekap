@@ -1,10 +1,11 @@
----
-title: "Codecamp OZ: A Nostalgic Dive Into The Archives of the Web"
-date: "2024-01-14"
-featured_image: "writing.png"
-tags: ["Community"]
-draft: false
----
++++
+title = "Codecamp OZ: A Nostalgic Dive Into The Archives of the Web"
+date = 2024-01-14
+featured_image = "writing.png"
+tags = ["Community"]
+draft = false
++++
+
 
 I often think how fascinating it would be if the entire World Wide Web disappeared, leaving only the Wayback Machine behind. It's truly a remarkable tool and I could live with that.
 

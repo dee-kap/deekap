@@ -1,10 +1,11 @@
----
-title: "Cancel setTimeout in JavaScript"
-date: 2024-03-20
-featured_image: "javascript.png"
-tags: ["JavaScript"]
-draft: false
----
++++
+title = "Cancel setTimeout in JavaScript"
+date = 2024-03-20
+featured_image = "javascript.png"
+tags = ["JavaScript"]
+draft = false
++++
+
 
 One of the things I always have to look up is how to cancel a setTimeout in JavaScript.
 

@@ -1,10 +1,10 @@
----
-title: "Get Indexes of Negative Numbers from a List in Python"
-date: 2024-02-07
-featured_image: "python.png"
-tags:
-  - Python
----
++++
+title = "Get Indexes of Negative Numbers from a List in Python"
+date = 2024-02-07
+featured_image = "python.png"
+tags = ["Python"]
++++
+
 
 Today I was working on some code in which I had to get indexes of items in a list based on a condition. I found it interesting and thought of writing a post about a similar problem.
 

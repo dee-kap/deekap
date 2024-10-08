@@ -1,9 +1,9 @@
----
-title: "Format code before saving in vim with Prettier"
-date: "2023-08-30T01:36:00.232Z"
-featured_image: "vim.png"
-tags: ["Vim", "TIL"]
----
++++
+title = "Format code before saving in vim with Prettier"
+date = 2023-08-30
+featured_image = "vim.png"
+tags = ["Vim", "TIL"]
++++
 
 To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.
 

@@ -1,9 +1,10 @@
----
-title: "Step One of a Thousand Miles Journey"
-date: "2024-02-22T01:36:00.232Z"
-tags: ["Books", "GBWW"]
-draft: true
----
++++
+title = "Step One of a Thousand Miles Journey"
+date = 2024-02-22
+tags = ["Books", "GBWW"]
+draft = true
++++
+
 
 About two days ago, The Great Ideas Program which is a set of ten volumes arrived. Yesterday I took the first step on my thousand miles journey of reading The Great Books of Western World.
 

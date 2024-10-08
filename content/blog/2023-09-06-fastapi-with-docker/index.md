@@ -1,9 +1,10 @@
----
-title: "Run FastAPI inside a docker container"
-date: "2023-09-06T01:36:00.232Z"
-featured_image: "python.png"
-tags: ["Python", "FastAPI", "Docker"]
----
++++
+title = "Run FastAPI inside a docker container"
+date = 2023-09-06
+featured_image = "python.png"
+tags = ["Python", "FastAPI", "Docker"]
++++
+
 
 As someone who uses Docker for every project, I wanted to setup a dev environment for FastAPI. These are the steps I followed to dockerize my FastAPI Hello World.
 
