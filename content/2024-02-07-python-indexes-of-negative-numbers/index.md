@@ -2,9 +2,7 @@ Title: Get Indexes of Negative Numbers from a List in Python
 Date: 2024-02-07
 Tags: Python
 Featured_Image: python.png
-Summary: 
-
-
+Summary:
 
 Today I was working on some code in which I had to get indexes of items in a list based on a condition. I found it interesting and thought of writing a post about a similar problem.
 
@@ -64,5 +62,3 @@ if __name__ == "__main__":
 ```
 
 Happy Coding!
-
-#14

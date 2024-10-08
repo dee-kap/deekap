@@ -2,8 +2,7 @@ Title: Working with env files in Python
 Date: 2023-08-21
 Tags: Python, TIL
 Featured_Image: python.png
-Summary: 
-
+Summary:
 
 I use env files in most of my projects to store values which should not be committed to code. Env files are also an excellent way to manage multiple settings related to different environments.
 
@@ -33,5 +32,3 @@ REGION = os.getenv('REGION')
 PROFILE = os.getenv('PROFILE')
 SECRET_ARN = os.getenv('SECRET_ARN')
 ```
-
-#3

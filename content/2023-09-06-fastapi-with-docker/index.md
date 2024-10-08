@@ -2,9 +2,7 @@ Title: Run FastAPI inside a docker container
 Date: 2023-09-06
 Tags: Python, FastAPI, Docker
 Featured_Image: python.png
-Summary: 
-
-
+Summary:
 
 As someone who uses Docker for every project, I wanted to setup a dev environment for FastAPI. These are the steps I followed to dockerize my FastAPI Hello World.
 
@@ -65,5 +63,3 @@ curl http://localhost:8080
 ```bash
 { "message": "I'm dockerized FastAPI" }
 ```
-
-#5

@@ -2,9 +2,7 @@ Title: Understanding Symbols in Ruby Programming Language
 Date: 2024-01-23
 Tags: Ruby
 Featured_Image: ruby.png
-Summary: 
-
-
+Summary:
 
 ## What is a Symbol in Ruby?
 
@@ -55,5 +53,3 @@ For example:
 ## Conclusion
 
 Symbols in Ruby offer a unique and efficient way to handle identifiers within your code. Their immutability, uniqueness, and memory efficiency make them a preferred choice for keys in hashes, representing method names, and more. Understanding when and how to use symbols can greatly enhance Ruby programming experience.
-
-#10

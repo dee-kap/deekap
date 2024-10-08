@@ -2,8 +2,7 @@ Title: Connect to AWS RDS instance using boto3 and Secret Manager
 Date: 2023-03-02
 Tags: AWS, Python, TIL
 Featured_Image: aws.png
-Summary: 
-
+Summary:
 
 Code to connect to an AWS RDS instance with [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) and Secret Manager
 
@@ -47,5 +46,3 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-
-#2

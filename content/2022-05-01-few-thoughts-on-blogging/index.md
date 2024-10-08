@@ -2,8 +2,7 @@ Title: Few thoughts on Blogging
 Date: 2022-05-01
 Tags: Blogging
 Featured_Image: bob.png
-Summary: 
-
+Summary:
 
 According to the [History of Blogging](https://online.ndm.edu/news/communication/history-of-blogging/), the first blog was created in 1994. The term weblog which eventually became [blog](/) was coined in 1997.
 
@@ -11,7 +10,7 @@ For me blogging started around 2003 when Wordpress was launched. This was also t
 
 I created a website which I don't remember and wrote content which is not relevant or useful to either me or anyone else (I think). This went on for few years and I finally hosted my blog on my own domain called [OneDotNetWay.com](https://web.archive.org/web/20100602053942/http://www.onedotnetway.com/page/2/). I no longer own that domain. At that time, I thought that my site looked kinda cool. Yes, this is an opinion :)
 
-![onedotnetway.com](onedotnetway.png)
+![onedotnetway.com](/images/posts/onedotnetway.png)
 
 Things were looking good and my blog was getting popular. The traffic was growing and other popular sites were linking to my content. It was nowhere near some of the [top technical blogs](https://blog.codinghorror.com/) of that time, but still I was enjoying the attention and benefits I was getting.
 
@@ -48,5 +47,3 @@ After all
 Thanks for reading.
 
 Namaste.
-
-#1

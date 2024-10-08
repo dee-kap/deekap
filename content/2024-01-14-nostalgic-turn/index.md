@@ -2,9 +2,7 @@ Title: Codecamp OZ: A Nostalgic Dive Into The Archives of the Web
 Date: 2024-01-14
 Tags: Community
 Featured_Image: writing.png
-Summary: 
-
-
+Summary:
 
 I often think how fascinating it would be if the entire World Wide Web disappeared, leaving only the Wayback Machine behind. It's truly a remarkable tool and I could live with that.
 
@@ -17,5 +15,3 @@ Not only did I attend Codecamp, but I also had the thrill of presenting there. M
 ![Codecamp OZ 2006](codecampoz-2006.png)
 
 It's been quite some time since I've done any public speaking, and I don't plan on diving back into it soon. However, there's a special kind of joy in this nostalgic journey, revisiting memories of times spent immersed in coding and community.
-
-#8

@@ -2,8 +2,7 @@ Title: Format code before saving in vim with Prettier
 Date: 2023-08-30
 Tags: Vim, TIL
 Featured_Image: vim.png
-Summary: 
-
+Summary:
 
 To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.
 
@@ -30,5 +29,3 @@ end
 setup_external_formatter_autocmd()
 
 ```
-
-#4
