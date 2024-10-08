@@ -1,14 +1,33 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: ["master"]
   workflow_dispatch:
+
 jobs:
   deploy:
-    uses: "getpelican/pelican/.github/workflows/github_pages.yml@main"
-    permissions:
-      contents: "read"
-      pages: "write"
-      id-token: "write"
-    with:
-      settings: "publishconf.py"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pelican markdown ghp-import
+
+    - name: Build Pelican site
+      run: pelican content -s publishconf.py
+
+    - name: Deploy to GitHub Pages
+      run: |
+        ghp-import output -b gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
