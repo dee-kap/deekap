@@ -4,6 +4,9 @@ description = "Personal website of Deepak Kapoor"
 
 compile_sass = true
 build_search_index = false
+# generate_feed = true
+feed_filenames =[  "atom.xml"  ]
+
 
 taxonomies = [
   {name = "tags", feed = true},

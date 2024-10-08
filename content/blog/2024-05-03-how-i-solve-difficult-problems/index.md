@@ -2,7 +2,6 @@
 title: "How I Solve Difficult Problems"
 date: 2024-04-03
 featured_image: "javascript.png"
-tags: ["Programming"]
 draft: true
 ---
 

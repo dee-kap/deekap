@@ -1,10 +1,9 @@
----
-title: "Write Your Own Memoize in JavaScript"
-date: 2024-03-27
-featured_image: "javascript.png"
-tags: ["JavaScript"]
-draft: false
----
++++
+title = "Write Your Own Memoize in JavaScript"
+date = 2024-03-27
+featured_image = "javascript.png"
+taxonomies.tags = ["JavaScript"]
++++
 
 We often default to using NPM modules for minor utility functions that could be straightforwardly implemented ourselves. While I have no issues with popular libraries like Lodash or Ramda, I believe they are often overutilized for tasks that can be accomplished with basic code.
 
