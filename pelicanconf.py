@@ -23,6 +23,9 @@ ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
 INDEX_SAVE_AS = "index.html"
 BLOG_URL = "blog/"  # Blog will be accessible at /blog/
 BLOG_SAVE_AS = "blog/index.html"  # The blog page will be saved at blog/index.html
+TAG_SAVE_AS = "tag/{slug}.html"
+TAGS_SAVE_AS = "tags.html"
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

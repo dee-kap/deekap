@@ -8,6 +8,24 @@
   <p>To know more about me, you can visit my <a href="pages/about">About</a> page.</p>
 
   <h2>Latest from the log</h2>
+  
+  <ul class="blog-posts">
+    {% for article in articles[:5] %}
+    <li>
+      <span>
+        <i>
+          <time datetime="{{ article.date.isoformat() }}" pubdate="">
+            {{ article.date.strftime('%b %d, %Y') }}
+          </time>
+        </i>
+      </span>
+      <a href="{{SITEURL}}/{{article.url}}">{{ article.title }}</a>
+    </li>
+    {% if DISPLAY_SUMMARY %}
+    <div class="entry-content">{{ article.summary }}</div>
+    {% endif %} {% endfor %}
+  </ul>
+  <a href="/blog">More Posts...</a>
 {% endblock content %}
 
 

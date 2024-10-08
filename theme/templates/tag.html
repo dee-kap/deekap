@@ -1,9 +1,23 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
-{% block title %}
-    {{ SITENAME }} - {{ tag }} tag
+{% block content %}
+  <h1>Posts tagged with "{{ tag.name }}"</h1>
+
+  <ul class="blog-posts">
+    {% for article in articles %}
+    <li>
+      <span>
+        <i>
+          <time datetime="{{ article.date.isoformat() }}" pubdate="">
+            {{ article.date.strftime('%b %d, %Y') }}
+          </time>
+        </i>
+      </span>
+      <a href="{{SITEURL}}/{{article.url}}">{{ article.title }}</a>
+    </li>
+    {% if DISPLAY_SUMMARY %}
+    <div class="entry-content">{{ article.summary }}</div>
+    {% endif %} {% endfor %}
+  </ul>
 {% endblock %}
 
-{% block content_title %}
-    <h3>Filtering for tag "{{ tag }}"</h3>
-{% endblock %}

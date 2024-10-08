@@ -17,6 +17,8 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 DELETE_OUTPUT_DIRECTORY = True
 PATH = "content"
 OUTPUT_PATH = "output/"
+TAG_SAVE_AS = "tag/{slug}.html"  # This will generate tag pages for each tag
+TAGS_SAVE_AS = "tags.html"  # This will generate a page that lists all tags
 
 
 # Following items are often useful when publishing

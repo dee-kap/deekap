@@ -1,10 +1,8 @@
 Title: How Working From Home Changed My Life
 Date: 2024-02-16
-Tags: Work
+Tags: Productivity
 Featured_Image: writing.png
-Summary: 
-
-
+Summary:
 
 In the profession of software development, the transition to remote work has been a significant shift for many, including myself. My journey into the world of working from home began well before COVID-19.
 
@@ -52,10 +50,8 @@ The journey to becoming a full-time remote worker has been a revelation. It has 
 
 As we move forward, it's clear that remote work can offer a sustainable, productive, and fulfilling way of working for many, proving that with the right mindset and discipline, work is not a place you go, but something you do—regardless of location.
 
-#15
-
 ---
 
 #### Discuss on Reddit
 
-https://www.reddit.com/r/programming/s/MRD91plDnu
+[https://www.reddit.com/r/programming/s/MRD91plDnu](https://www.reddit.com/r/programming/s/MRD91plDnu)
