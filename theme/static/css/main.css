@@ -211,6 +211,7 @@ header .title-bar #theme-toggle {
 
 .book-list > ul > li {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .book-list > ul > li > p {

@@ -127,7 +127,6 @@
       function setTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
         localStorage.setItem("theme", theme);
-        debugger
         document.getElementById("syntax-theme").href = "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/syntax-" + theme + ".css"
       }
 
