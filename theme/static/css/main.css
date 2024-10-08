@@ -95,15 +95,15 @@ samp {
   padding: 10px;
 }
 
-div.highlight pre {
-  background-color: initial;
-  color: initial;
-}
-
-div.highlight code {
-  background-color: unset;
-  color: unset;
-}
+/*div.highlight pre {*/
+/*  background-color: initial;*/
+/*  color: initial;*/
+/*}*/
+/**/
+/*div.highlight code {*/
+/*  background-color: unset;*/
+/*  color: unset;*/
+/*}*/
 
 ul.blog-posts {
   list-style-type: none;

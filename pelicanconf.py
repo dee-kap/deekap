@@ -50,5 +50,15 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 0
 
+MARKDOWN = {
+    "extensions": ["codehilite", "extra"],
+    "extension_configs": {
+        "codehilite": {
+            "css_class": "highlight",
+            "linenums": False,
+        }
+    },
+    "output_format": "html5",
+}
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

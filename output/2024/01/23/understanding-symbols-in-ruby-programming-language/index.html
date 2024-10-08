@@ -12,6 +12,10 @@
         <link rel="stylesheet" type="text/css" href="../../../../theme/css/main.css" />
 
 
+        <!--<link rel="stylesheet" type="text/css" href="../../../../theme/css/syntax-dark.css" id="syntax-theme" />-->
+        <link rel="stylesheet" type="text/css" href="../../../../theme/css/syntax-light.css" id="syntax-theme" />
+
+
 
 
             <link rel="canonical" href="../../../.." />
@@ -136,11 +140,14 @@
             </small>
         </address>
     </footer>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       function setTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
         localStorage.setItem("theme", theme);
+        debugger
+        document.getElementById("syntax-theme").href = "../../../../theme/css/syntax-" + theme + ".css"
       }
 
       let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");

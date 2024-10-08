@@ -11,6 +11,10 @@
         <link rel="stylesheet" type="text/css" href="./theme/css/main.css" />
 
 
+        <!--<link rel="stylesheet" type="text/css" href="./theme/css/syntax-dark.css" id="syntax-theme" />-->
+        <link rel="stylesheet" type="text/css" href="./theme/css/syntax-light.css" id="syntax-theme" />
+
+
 
 
             <link rel="canonical" href="." />
@@ -78,16 +82,6 @@
      <li>
       <span>
         <i>
-          <time datetime="2024-09-26T00:00:00+10:00" pubdate="">
-            Sep 26, 2024
-          </time>
-        </i>
-      </span>
-      <a href="./2024/09/26/moving-from-hugo-to-zola/">Moving from Hugo to Zola</a>
-    </li>
-     <li>
-      <span>
-        <i>
           <time datetime="2024-03-27T00:00:00+11:00" pubdate="">
             Mar 27, 2024
           </time>
@@ -115,6 +109,16 @@
       </span>
       <a href="./2024/02/28/from-quadratic-to-linear/">From Quadratic to Linear</a>
     </li>
+     <li>
+      <span>
+        <i>
+          <time datetime="2024-02-22T00:00:00+11:00" pubdate="">
+            Feb 22, 2024
+          </time>
+        </i>
+      </span>
+      <a href="./2024/02/22/step-one-of-a-thousand-miles-journey/">Step One of a Thousand Miles Journey</a>
+    </li>
    </ul>
   <a href="/blog">More Posts...</a>
     </main>
@@ -127,11 +131,14 @@
             </small>
         </address>
     </footer>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       function setTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
         localStorage.setItem("theme", theme);
+        debugger
+        document.getElementById("syntax-theme").href = "./theme/css/syntax-" + theme + ".css"
       }
 
       let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");

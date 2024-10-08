@@ -11,6 +11,10 @@
         <link rel="stylesheet" type="text/css" href="./theme/css/main.css" />
 
 
+        <!--<link rel="stylesheet" type="text/css" href="./theme/css/syntax-dark.css" id="syntax-theme" />-->
+        <link rel="stylesheet" type="text/css" href="./theme/css/syntax-light.css" id="syntax-theme" />
+
+
 
 
             <link rel="canonical" href="." />
@@ -77,7 +81,6 @@
         <li><a href="./category/2024-02-28-python-quadratic-to-linear.html">2024-02-28-python-quadratic-to-linear</a> (1)</li>
         <li><a href="./category/2024-03-20-clear-timeout-javascript.html">2024-03-20-clear-timeout-javascript</a> (1)</li>
         <li><a href="./category/2024-03-26-javascript-memoize.html">2024-03-26-javascript-memoize</a> (1)</li>
-        <li><a href="./category/2024-09-26-hugo-to-zola.html">2024-09-26-hugo-to-zola</a> (1)</li>
         <li><a href="./category/2024-10-02-desk-cleanup.html">2024-10-02-desk-cleanup</a> (1)</li>
     </ul>
     </main>
@@ -90,11 +93,14 @@
             </small>
         </address>
     </footer>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
       function setTheme(theme) {
         document.body.classList.toggle("dark-theme", theme === "dark");
         localStorage.setItem("theme", theme);
+        debugger
+        document.getElementById("syntax-theme").href = "./theme/css/syntax-" + theme + ".css"
       }
 
       let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
