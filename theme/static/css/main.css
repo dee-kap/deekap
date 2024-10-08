@@ -93,17 +93,18 @@ samp {
   font-family: "Noto Sans Mono", monospace;
   font-size: 97%;
   padding: 10px;
+  line-height: 200%;
 }
 
-/*div.highlight pre {*/
-/*  background-color: initial;*/
-/*  color: initial;*/
-/*}*/
-/**/
-/*div.highlight code {*/
-/*  background-color: unset;*/
-/*  color: unset;*/
-/*}*/
+div.highlight pre {
+  background-color: initial;
+  color: initial;
+}
+
+div.highlight code {
+  background-color: unset;
+  color: unset;
+}
 
 ul.blog-posts {
   list-style-type: none;
