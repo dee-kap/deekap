@@ -5,6 +5,7 @@ SITEURL = "https://deekap.com"
 THEME = "theme"
 RELATIVE_URLS = True
 
+STATIC_PATHS = ["images"]
 
 PATH = "content"
 

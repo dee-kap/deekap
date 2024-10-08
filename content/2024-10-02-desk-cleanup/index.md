@@ -10,6 +10,6 @@ Getting a monitor stand is part of these ergonomic changes. I noticed that I ben
 
 As I was setting up the stand, I decided to embark on the quest of cleaning my desk which was slowly turning into a museum of all sorts of useless things. Nothing too revolutionary, just removing the clutter which unnecessarily occupied space and added zero value. At the end I'm proud of my achievement. Here is the obligatory photo of what it looks like as I'm writing this post.
 
-![Clean Desk](./desk-cleanup.jpg)
+![Clean Desk](/images/posts/desk-cleanup.jpg)
 
 Now let's get real. Soon I will have a bunch of other things (clutter) which will occupy most of the zen like space I have now. But, I will try to keep it like this or at least get into a routine of cleaning it up once a week. Until then, I'll enjoy the serenity in my room.
