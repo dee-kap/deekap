@@ -124,6 +124,11 @@ body.dark-theme {
   background-color: #1e1e2e;
 }
 
+body.dark-theme .subtitle {
+  font-style: italic;
+  color: #b8c0e0;
+}
+
 body.dark-theme,
 body.dark-theme .title,
 body.dark-theme #theme-toggle {

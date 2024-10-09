@@ -1,5 +1,5 @@
 AUTHOR = "Deepak"
-SITENAME = "deekap"
+SITENAME = "deekap.com"
 SITEURL = "https://deekap.com"
 
 THEME = "theme"
