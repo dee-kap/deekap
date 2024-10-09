@@ -1,10 +1,9 @@
 Title: From Quadratic to Linear
 Date: 2024-02-28
-Tags: Python
+Category: Tech
+Tags: Python, Tech
 Featured_Image: python.png
-Summary: 
-
-
+Summary:
 
 Lately, I've been immersing myself in basic coding exercises to refresh concepts that I learned years ago but haven't utilized much recently.
 

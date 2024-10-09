@@ -1,0 +1,27 @@
+{% macro render_blog_posts(articles) %}
+<ul class="blog-posts">
+  {% for article in articles %} {% set category = article.category %} {% if
+  category not in ["Tech", "Personal", "Books"] %} {% set category = "Tech" %}
+  {% endif %} {% set emoji = "🖥️" %} {% if article.category == "Books" %} {% set
+  emoji = "📚" %} {% elif article.category == "Personal" %} {% set emoji = "😌"
+  %} {% endif %}
+
+  <li>
+    <span>
+      <i>
+        <time datetime="{{ article.date.isoformat() }}" pubdate="">
+          {{ article.date.strftime('%b %d, %Y') }}
+        </time>
+      </i>
+    </span>
+    <a href="{{SITEURL}}/{{article.url}}">{{ article.title }}</a>
+    &nbsp; {% if category %}
+    <a href="{{ SITEURL }}/category/{{ category }}/">{{ emoji }} </a>
+    {% endif %}
+  </li>
+
+  {% if DISPLAY_SUMMARY %}
+  <div class="entry-content">{{ article.summary }}</div>
+  {% endif %} {% endfor %}
+</ul>
+{% endmacro %}

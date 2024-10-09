@@ -1,5 +1,6 @@
 Title: Step One of a Thousand Miles Journey
 Date: 2024-02-22
+Category: Books
 Tags: Books, GBWW
 Summary:
 Draft: true

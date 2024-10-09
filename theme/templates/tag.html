@@ -1,23 +1,8 @@
 {% extends "base.html" %}
+{% import '__blog_posts.html' as blog_posts %}
 
 {% block content %}
   <h1>Posts tagged with "{{ tag.name }}"</h1>
-
-  <ul class="blog-posts">
-    {% for article in articles %}
-    <li>
-      <span>
-        <i>
-          <time datetime="{{ article.date.isoformat() }}" pubdate="">
-            {{ article.date.strftime('%b %d, %Y') }}
-          </time>
-        </i>
-      </span>
-      <a href="{{SITEURL}}/{{article.url}}">{{ article.title }}</a>
-    </li>
-    {% if DISPLAY_SUMMARY %}
-    <div class="entry-content">{{ article.summary }}</div>
-    {% endif %} {% endfor %}
-  </ul>
+  {{ blog_posts.render_blog_posts(articles) }}
 {% endblock %}
 

@@ -1,6 +1,6 @@
 AUTHOR = "Deepak"
 SITENAME = "deekap.com"
-SITEURL = "https://deekap.com"
+SITEURL = ""
 
 THEME = "theme"
 RELATIVE_URLS = True

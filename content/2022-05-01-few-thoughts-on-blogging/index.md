@@ -1,5 +1,6 @@
 Title: Few thoughts on Blogging
 Date: 2022-05-01
+Category: Personal
 Tags: Blogging
 Featured_Image: bob.png
 Summary:

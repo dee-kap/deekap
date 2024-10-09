@@ -1,5 +1,6 @@
 Title: Desk Cleanup 2024
 Date: 2024-10-02
+Category: Tech
 Tags: productivity
 Featured_Image:
 Summary: Improving my working environment by cleaning my desk
