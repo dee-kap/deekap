@@ -87,23 +87,16 @@ img {
 }
 
 pre,
-code,
 kbd,
 samp {
   font-family: "Noto Sans Mono", monospace;
-  font-size: 97%;
   padding: 10px;
+}
+
+code {
+  font-family: "Noto Sans Mono", monospace;
   line-height: 200%;
-}
-
-div.highlight pre {
-  background-color: initial;
-  color: initial;
-}
-
-div.highlight code {
-  background-color: unset;
-  color: unset;
+  font-size: 90%;
 }
 
 ul.blog-posts {
