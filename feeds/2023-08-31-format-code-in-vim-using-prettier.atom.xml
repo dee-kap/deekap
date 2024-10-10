@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>deekap.com - 2023-08-31-format-code-in-vim-using-prettier</title><link href="https://deekap.com/" rel="alternate"></link><link href="https://deekap.com/feeds/2023-08-31-format-code-in-vim-using-prettier.atom.xml" rel="self"></link><id>https://deekap.com/</id><updated>2023-08-30T00:00:00+10:00</updated><entry><title>Format code before saving in vim with Prettier</title><link href="https://deekap.com/2023/08/30/format-code-before-saving-in-vim-with-prettier/" rel="alternate"></link><published>2023-08-30T00:00:00+10:00</published><updated>2023-08-30T00:00:00+10:00</updated><author><name>Deepak</name></author><id>tag:deekap.com,2023-08-30:/2023/08/30/format-code-before-saving-in-vim-with-prettier/</id><summary type="html"></summary><content type="html">&lt;p&gt;To format code before saving a buffer in Vim/Neovim, we can use some excellent plugins out there. But I prefer to do things without plugins wherever possible.&lt;/p&gt;
+&lt;p&gt;Adding the code below to config will automatically format files of type &lt;code&gt;*.ts,*.js,*.jsx,*.tsx,*.css&lt;/code&gt; before saving.&lt;/p&gt;
+&lt;p&gt;Here I am using &lt;a href="https://prettier.io/"&gt;Prettier&lt;/a&gt;, so Prettier has to be installed for this to work.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;format_and_restore_cursor&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;cursor_pos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getcurpos&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cmd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;silent! %!prettier --stdin-filepath % --single-quote&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fn&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setpos&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cursor_pos&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+
+&lt;span class="kr"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;setup_external_formatter_autocmd&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nvim_exec&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;[[&lt;/span&gt;
+&lt;span class="s"&gt;    augroup FormatterAutogroup&lt;/span&gt;
+&lt;span class="s"&gt;      autocmd!&lt;/span&gt;
+&lt;span class="s"&gt;      autocmd BufWritePre *.ts,*.js,*.jsx,*.tsx,*.css lua format_and_restore_cursor()&lt;/span&gt;
+&lt;span class="s"&gt;    augroup END&lt;/span&gt;
+&lt;span class="s"&gt;  ]]&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kr"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;setup_external_formatter_autocmd&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="2023-08-31-format-code-in-vim-using-prettier"></category><category term="Vim"></category><category term="TIL"></category></entry></feed>

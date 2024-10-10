@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>deekap.com - 2023-08-21-working-with-env-files-in-python</title><link href="https://deekap.com/" rel="alternate"></link><link href="https://deekap.com/feeds/2023-08-21-working-with-env-files-in-python.atom.xml" rel="self"></link><id>https://deekap.com/</id><updated>2023-08-21T00:00:00+10:00</updated><entry><title>Working with env files in Python</title><link href="https://deekap.com/2023/08/21/working-with-env-files-in-python/" rel="alternate"></link><published>2023-08-21T00:00:00+10:00</published><updated>2023-08-21T00:00:00+10:00</updated><author><name>Deepak</name></author><id>tag:deekap.com,2023-08-21:/2023/08/21/working-with-env-files-in-python/</id><summary type="html"></summary><content type="html">&lt;p&gt;I use env files in most of my projects to store values which should not be committed to code. Env files are also an excellent way to manage multiple settings related to different environments.&lt;/p&gt;
+&lt;p&gt;python-dotenv library makes working with .env files a breeze.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;python-dotenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Given my .env file has these settings&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;REGION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ap-southeast-2
+&lt;span class="nv"&gt;PROFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dev
+&lt;span class="nv"&gt;SECRET_ARN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;arn:aws:blahblah
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This code will get the values from .env file and put it in local variables&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dotenv&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;load_dotenv&lt;/span&gt;
+
+&lt;span class="n"&gt;load_dotenv&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;REGION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getenv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;REGION&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;PROFILE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getenv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;PROFILE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;SECRET_ARN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getenv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;SECRET_ARN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="2023-08-21-working-with-env-files-in-python"></category><category term="Python"></category><category term="TIL"></category></entry></feed>
