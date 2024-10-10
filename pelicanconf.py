@@ -16,8 +16,8 @@ MENUITEMS = [
     ("Home", "/"),
     ("Blog", "/blog"),
     ("Colophon", "/pages/colophon"),
-    ("Bookshelf", "/pages/bookshelf"),
 ]
+
 DISPLAY_CATEGORIES_ON_MENU = False
 
 ARTICLE_URL = "{date:%Y}/{date:%m}/{date:%d}/{slug}/"
