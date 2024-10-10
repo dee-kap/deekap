@@ -91,6 +91,9 @@ kbd,
 samp {
   font-family: "Noto Sans Mono", monospace;
   padding: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
 }
 
 code {
