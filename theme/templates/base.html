@@ -74,6 +74,17 @@
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
     {% endblock head %}
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG595WTNMF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QG595WTNMF');
+    </script>
+
 </head>
 
 <body>
