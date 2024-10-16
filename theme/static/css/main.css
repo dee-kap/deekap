@@ -20,6 +20,30 @@ body {
   flex-direction: column;
 }
 
+/* Dark theme (Catppuccin Mocha) */
+@media (prefers-color-scheme: dark) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #cba6f7; /* Mauve (Mocha) */
+  }
+}
+
+/* Light theme (Catppuccin Latte) */
+@media (prefers-color-scheme: light) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #8839ef; /* Mauve (Latte) */
+  }
+}
+
 main {
   flex-grow: 1;
   line-height: 1.6;
