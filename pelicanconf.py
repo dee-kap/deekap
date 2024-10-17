@@ -15,7 +15,7 @@ DEFAULT_LANG = "en"
 MENUITEMS = [
     ("Home", "/"),
     ("Blog", "/blog"),
-    ("Colophon", "/pages/colophon"),
+    ("Pages", "/pages"),
 ]
 
 DISPLAY_CATEGORIES_ON_MENU = False
