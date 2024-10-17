@@ -73,6 +73,10 @@ blockquote {
 a {
   color: #4169e1;
 }
+mark {
+  background: #f5c2e7;
+  padding: 2px 3px 2px 3px;
+}
 
 .title {
   text-decoration: none;

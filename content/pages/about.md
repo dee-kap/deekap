@@ -9,7 +9,7 @@ Beyond programming, I enjoy reading, spending quality time with my family on hol
 
 According to the 16Personalities test, I’m a [Logician INTP-A](https://www.16personalities.com/intp-personality). While these personality tests aren’t definitive, I find that the Strengths and Weaknesses section resonates with me the most.
 
-I’m on a lifelong mission to refine my thinking, aiming to be a little less wrong each day.
+I’m on a <mark>lifelong mission</mark> to refine my thinking, aiming to be a little <mark>less wrong</mark> each day.
 
 ## About This Website
 

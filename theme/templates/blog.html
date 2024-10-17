@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% import '__blog_posts.html' as blog_posts %}
+{% import '__grouped_posts.html' as blog_posts %}
 
 {% block content_title %}
 <h1>All Blog Posts</h1>
@@ -19,6 +19,7 @@
 {{ blog_posts.render_blog_posts(articles) }}
 
 {% if TAGS_POSITION != 'top' %}
+<h3>Tags</h3>
 <small>
   <div class="tags">
     {% if 'sort_by_article_count' is filter %} {% for tag, articles in
