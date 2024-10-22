@@ -59,9 +59,12 @@
             {% endif %}
         </div>
     </i>
-    <content>
+    <section>
+      <article class="h-entry">
         {{ article.content }}
-    </content>
+      </article>
+    </section>
+
     {% if article.tags %}
         <p class="tags">
             {% for tag in article.tags %}

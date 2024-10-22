@@ -3,7 +3,7 @@ Date: 2024-02-22
 Category: Books
 Tags: Books, GBWW
 Summary:
-Draft: true
+Status: draft
 
 About two days ago, The Great Ideas Program which is a set of ten volumes arrived. Yesterday I took the first step on my thousand miles journey of reading The Great Books of Western World.
 
