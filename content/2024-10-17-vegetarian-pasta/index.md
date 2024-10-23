@@ -4,6 +4,7 @@ Category: Personal
 Tags: cooking
 Featured_Image:
 Summary:
+Status: draft
 
 This is my recipe for vegetarian pasta which everyone at home enjoys. I have been cooking it for few years and many people have asked me for the recipe after enjoying it. So here it is, my recipe for a vegetarian pasta.
 
