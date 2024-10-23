@@ -1,4 +1,6 @@
-html,
+html {
+  scrollbar-color: #89b4fa #89b4fa;
+}
 body {
   /*height: 100%;*/
   margin: 0;
@@ -74,8 +76,9 @@ a {
   color: #4169e1;
 }
 mark {
-  background: #f5c2e7;
-  padding: 2px 3px 2px 3px;
+  background: #89b4fa;
+  padding: 4px;
+  border-radius: 3px;
 }
 
 .title {
