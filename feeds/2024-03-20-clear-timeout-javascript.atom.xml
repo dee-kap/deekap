@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>deekap.com - 2024-03-20-clear-timeout-javascript</title><link href="https://deekap.com/" rel="alternate"></link><link href="https://deekap.com/feeds/2024-03-20-clear-timeout-javascript.atom.xml" rel="self"></link><id>https://deekap.com/</id><updated>2024-03-20T00:00:00+11:00</updated><entry><title>Cancel setTimeout in JavaScript</title><link href="https://deekap.com/2024/03/20/cancel-settimeout-in-javascript/" rel="alternate"></link><published>2024-03-20T00:00:00+11:00</published><updated>2024-03-20T00:00:00+11:00</updated><author><name>Deepak</name></author><id>tag:deekap.com,2024-03-20:/2024/03/20/cancel-settimeout-in-javascript/</id><summary type="html"></summary><content type="html">&lt;p&gt;One of the things I always have to look up is how to cancel a setTimeout in JavaScript.&lt;/p&gt;
+&lt;p&gt;This is a quick note for myself and anyone else who might need it.&lt;/p&gt;
+&lt;h2&gt;Creating a timer&lt;/h2&gt;
+&lt;p&gt;To create a timer in JavaScript, you can use the &lt;code&gt;setTimeout&lt;/code&gt; function. This function takes two arguments: a function to execute and a time in milliseconds to wait before executing the function.&lt;/p&gt;
+&lt;p&gt;Here's an example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;timer&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, world!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;},&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this code, the &lt;code&gt;setTimeout&lt;/code&gt; function will execute the function after 1000 milliseconds (1 second).&lt;/p&gt;
+&lt;p&gt;If we console.log the &lt;code&gt;timer&lt;/code&gt; variable, we will see that it is a number. This number is the ID of the timer.&lt;/p&gt;
+&lt;h2&gt;Cancelling a timer&lt;/h2&gt;
+&lt;p&gt;To cancel a timer, you can use the &lt;code&gt;clearTimeout&lt;/code&gt; function. This function takes the ID of the timer as an argument.&lt;/p&gt;
+&lt;p&gt;Here's an example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;clearTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;timer&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this code, the &lt;code&gt;clearTimeout&lt;/code&gt; function will cancel the timer with the ID stored in the &lt;code&gt;timer&lt;/code&gt; variable.&lt;/p&gt;
+&lt;p&gt;That's it! Now we know how to cancel a timeout in JavaScript.&lt;/p&gt;</content><category term="2024-03-20-clear-timeout-javascript"></category><category term="JavaScript"></category></entry></feed>

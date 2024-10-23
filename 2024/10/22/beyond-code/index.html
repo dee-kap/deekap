@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="    en
+">
+<head>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <meta name="robots" content="" />
+
+        <link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/main.css" />
+
+
+        <!--<link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/syntax-dark.css" id="syntax-theme" />-->
+        <link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/syntax-light.css" id="syntax-theme" />
+
+
+            <link href="https://deekap.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="deekap.com Atom" />
+        <link href="https://deekap.com/feeds/personal.atom.xml" type="application/atom+xml" rel="alternate" title="deekap.com Categories Atom Feed" />
+
+
+            <link rel="canonical" href="https://deekap.com" />
+            <meta name="title" content="deekap.com">
+            <meta name="author" content="Deepak" />
+            <meta name="description" content="" />
+
+            <meta property="og:site_name" content="deekap.com"/>
+            <meta property="og:type" content="blog"/>
+            <meta property="og:title" content="deekap.com"/>
+            <meta property="og:description" content=""/>
+            <meta property="og:locale" content=""/>
+            <meta property="og:url" content="https://deekap.com"/>
+
+            <meta property="twitter:card" content="summary">
+            <meta property="twitter:url" content="https://deekap.com">
+            <meta property="twitter:title" content="deekap.com">
+            <meta property="twitter:description" content="">
+
+        <title>    deekap.com - Beyond Code
+</title>
+
+
+
+
+
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG595WTNMF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QG595WTNMF');
+    </script>
+
+</head>
+
+<body>
+  <header>
+  <div class="title-bar">
+    <div>
+      <a href="https://deekap.com" class="title">
+        <h2>deekap.com</h2>
+      </a>
+    </div>
+    
+    <button id="theme-toggle" aria-label="Toggle Theme">●</button>
+    
+  </div>
+
+        <nav>
+            <p>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/pages">Pages</a>
+            </p>
+        </nav>
+</header>
+    <main>
+    <h1 class="entry-title">
+        Beyond Code
+    </h1>
+
+    
+
+    <i class="date">
+        <address class="authors">
+        </address>
+        <div class="category">
+        </div>
+        <div>
+            <time class="published" datetime="2024-10-22T00:00:00+11:00">
+                Tue 22 October 2024
+            </time>
+        </div>
+        <div>
+        </div>
+    </i>
+    <section>
+      <article class="h-entry">
+        <p>One of the reasons I started this blog back in 2003 was to use it as a marketing tool for myself. Personal branding had started to become a thing and blogging scene was about to take off big time. I was fortunate enough to grab on to it and together with other community activities, it worked out well for me.</p>
+<p>Software is still my passion but there are also other interests I pursue. Reading, Cooking, Finance, photography are some of them.</p>
+<p>Lately I have been pondering the question of merging my tech and non-tech writings in one place. I am much more than a programmer and those aspects do not get any space online.</p>
+<p>A question comes to mind: Why bother writing about them at all? Why not just enjoy non-tech adventures in obscurity? Does the world need to know about them?</p>
+<p>First of all, I'm confident that this blog is read only by 2 people. One of them is me and the other I have yet to know about. Secondly, and more importantly <mark>this website exists only to serve me</mark> If anyone else finds anything useful here then it it incidental and not intentional. It is after all a log of my life which will be of no interest to anyone.</p>
+<p>With that thought, I decided to make it more complete by writing about the books I have read, the journeys I have been on (there are not too many), photos I have clicked and a lot more.</p>
+<p>Also, tinkering with this website gives me the joy similar to working in the garage with tools.</p>
+<p>So here it is to a more authentic place which is both about and beyond code. Cheers!</p>
+      </article>
+    </section>
+
+    </main>
+    <hr/>
+    <footer>
+      <a href="pages/duck">
+        <img src="/images/duck-dark.svg" style="width:32px;height:32px" />
+      </a>
+       📄<a href="/pages">Pages</a>
+
+        <address id="about" class="vcard body">
+        </address>
+        <div style="margin-top: 1.1rem">
+          <img src="/images/humancontent_08.png" />
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        localStorage.setItem("theme", theme);
+        document.getElementById("syntax-theme").href = "https://deekap.com/theme/css/syntax-" + theme + ".css"
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+    });
+    </script>
+</body>
+</html>

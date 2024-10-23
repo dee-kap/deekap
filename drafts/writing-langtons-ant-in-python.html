@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="    en
+">
+<head>
+            <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <meta name="robots" content="" />
+
+        <link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/main.css" />
+
+
+        <!--<link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/syntax-dark.css" id="syntax-theme" />-->
+        <link rel="stylesheet" type="text/css" href="https://deekap.com/theme/css/syntax-light.css" id="syntax-theme" />
+
+
+            <link href="https://deekap.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="deekap.com Atom" />
+        <link href="https://deekap.com/feeds/tech.atom.xml" type="application/atom+xml" rel="alternate" title="deekap.com Categories Atom Feed" />
+
+
+            <link rel="canonical" href="https://deekap.com" />
+            <meta name="title" content="deekap.com">
+            <meta name="author" content="Deepak" />
+            <meta name="description" content="" />
+
+            <meta property="og:site_name" content="deekap.com"/>
+            <meta property="og:type" content="blog"/>
+            <meta property="og:title" content="deekap.com"/>
+            <meta property="og:description" content=""/>
+            <meta property="og:locale" content=""/>
+            <meta property="og:url" content="https://deekap.com"/>
+
+            <meta property="twitter:card" content="summary">
+            <meta property="twitter:url" content="https://deekap.com">
+            <meta property="twitter:title" content="deekap.com">
+            <meta property="twitter:description" content="">
+
+        <title>    deekap.com - Writing Langton's Ant in Python
+</title>
+
+
+
+
+
+        <meta name="tags" content="Python" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG595WTNMF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QG595WTNMF');
+    </script>
+
+</head>
+
+<body>
+  <header>
+  <div class="title-bar">
+    <div>
+      <a href="https://deekap.com" class="title">
+        <h2>deekap.com</h2>
+      </a>
+    </div>
+    
+    <button id="theme-toggle" aria-label="Toggle Theme">●</button>
+    
+  </div>
+
+        <nav>
+            <p>
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="/pages">Pages</a>
+            </p>
+        </nav>
+</header>
+    <main>
+    <h1 class="entry-title">
+        Writing Langton's Ant in Python
+    </h1>
+
+    
+
+    <i class="date">
+        <address class="authors">
+        </address>
+        <div class="category">
+        </div>
+        <div>
+            <time class="published" datetime="2024-10-15T00:00:00+11:00">
+                Tue 15 October 2024
+            </time>
+        </div>
+        <div>
+        </div>
+    </i>
+    <section>
+      <article class="h-entry">
+        <p>I was looking for a fun little exercise I could write in Python and I came across Langton's Ant. According to Wikipedia:</p>
+<blockquote>
+<p>Langton's ant is a two-dimensional Turing machine with a very simple set of rules but complex emergent behavior. It was invented by Chris Langton in 1986 and runs on a square lattice of black and white cells.</p>
+</blockquote>
+<p>This could be fun, I thought. I started writing the code and quickly realised that I need a library which can be used to draw basic graphics. I came across <a href="https://www.pygame.org/wiki/about">pygame</a>. Pygame is simple, easy to understand and suitable for my basic needs.</p>
+<p>I got the code done in short time and enjoyed watching the patterns being created by the code I wrote.</p>
+<p>Writing code which works is a good feeling. A better feeling is to make the code beautiful. This post is all about making the code suck less.</p>
+<p>Before I get into chopping and carving, this is the working code.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">from</span> <span class="nn">pygame.constants</span> <span class="kn">import</span> <span class="n">QUIT</span>
+
+<span class="c1">#         If the ant is on a white cell:</span>
+<span class="c1">#             Turn 90 degrees to the right (clockwise).</span>
+<span class="c1">#             Flip the color of the cell to black.</span>
+<span class="c1">#             Move forward one cell.</span>
+<span class="c1">#         If the ant is on a black cell:</span>
+<span class="c1">#             Turn 90 degrees to the left (counterclockwise).</span>
+<span class="c1">#             Flip the color of the cell to white.</span>
+<span class="c1">#             Move forward one cell.</span>
+<span class="c1">#</span>
+<span class="c1"># The process repeats for each step of the ant’s movement, and over time, interesting patterns emerge.</span>
+
+
+<span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span> <span class="o">=</span> <span class="n">cell_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">move_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_up</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_down</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">turn_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">turn_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_down</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">WHITE</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+    <span class="n">BLACK</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">1200</span>
+    <span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">1200</span>
+    <span class="n">CELL_SIZE</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">SCREEN</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">))</span>
+    <span class="n">CLOCK</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+    <span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">SCREEN</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+    <span class="n">GRID</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">grid_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">CELL_SIZE</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">CELL_SIZE</span><span class="p">):</span>
+            <span class="n">grid_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">grid_list</span><span class="p">:</span>
+        <span class="n">GRID</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">WHITE</span>
+
+    <span class="c1"># print(GRID)</span>
+
+    <span class="n">middle_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">WIDTH</span> <span class="o">//</span> <span class="n">CELL_SIZE</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">CELL_SIZE</span>
+    <span class="n">middle_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEIGHT</span> <span class="o">//</span> <span class="n">CELL_SIZE</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">CELL_SIZE</span>
+
+    <span class="n">ant</span> <span class="o">=</span> <span class="n">Ant</span><span class="p">(</span><span class="n">middle_x</span><span class="p">,</span> <span class="n">middle_y</span><span class="p">,</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">CELL_SIZE</span><span class="p">,</span> <span class="n">CELL_SIZE</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move_ant</span><span class="p">():</span>
+        <span class="n">is_white</span> <span class="o">=</span> <span class="n">GRID</span><span class="p">[(</span><span class="n">ant</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ant</span><span class="o">.</span><span class="n">y</span><span class="p">)]</span> <span class="o">==</span> <span class="n">WHITE</span>
+        <span class="c1"># ant.move_right()</span>
+        <span class="k">if</span> <span class="n">is_white</span><span class="p">:</span>
+            <span class="n">GRID</span><span class="p">[(</span><span class="n">ant</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ant</span><span class="o">.</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">BLACK</span>
+            <span class="n">ant</span><span class="o">.</span><span class="n">turn_right</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">GRID</span><span class="p">[(</span><span class="n">ant</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ant</span><span class="o">.</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="n">WHITE</span>
+            <span class="n">ant</span><span class="o">.</span><span class="n">turn_left</span><span class="p">()</span>
+
+        <span class="n">ant</span><span class="o">.</span><span class="n">move_forward</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">draw_grid</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">GRID</span><span class="p">:</span>
+            <span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cell</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">CELL_SIZE</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">SCREEN</span><span class="p">,</span> <span class="n">GRID</span><span class="p">[(</span><span class="n">cell</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cell</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span> <span class="n">rect</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+        <span class="n">draw_grid</span><span class="p">()</span>
+        <span class="n">move_ant</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+        <span class="n">CLOCK</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+    <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<p>So let's get started. There are two objects involved in the program. An <strong>ant</strong> which moves on a <strong>grid</strong>.</p>
+<p>I don't have a grid class so I'll start with that. What data and behaviour should the grid have?</p>
+<p>It should have cells which I will represent as a dictionary where the key will be a tuple and value will be the color of the cell. Something like this</p>
+<p>I already have an Ant class which looks like this.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Ant</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">,</span> <span class="n">cell_size</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">=</span> <span class="n">upper_bound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span> <span class="o">=</span> <span class="n">cell_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">direction</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">directions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span> <span class="s2">&quot;left&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">move_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_up</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_right</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_down</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_left</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">turn_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">turn_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_down</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="k">def</span> <span class="nf">move_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">upper_bound</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+</code></pre></div>
+
+<p>The other day I was watching TV and browsing
+I remember writing Conway's game of life in C++.</p>
+      </article>
+    </section>
+
+        <p class="tags">
+                <a href="https://deekap.com/tag/python.html">#Python</a>
+        </p>
+    </main>
+    <hr/>
+    <footer>
+      <a href="pages/duck">
+        <img src="/images/duck-dark.svg" style="width:32px;height:32px" />
+      </a>
+       📄<a href="/pages">Pages</a>
+
+        <address id="about" class="vcard body">
+        </address>
+        <div style="margin-top: 1.1rem">
+          <img src="/images/humancontent_08.png" />
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      function setTheme(theme) {
+        document.body.classList.toggle("dark-theme", theme === "dark");
+        localStorage.setItem("theme", theme);
+        document.getElementById("syntax-theme").href = "https://deekap.com/theme/css/syntax-" + theme + ".css"
+      }
+
+      let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      setTheme(theme);
+
+        document.getElementById("theme-toggle").addEventListener("click", function (event) {
+          event.preventDefault();
+          theme = theme === "dark" ? "light" : "dark";
+          setTheme(theme);
+        });
+    });
+    </script>
+</body>
+</html>
